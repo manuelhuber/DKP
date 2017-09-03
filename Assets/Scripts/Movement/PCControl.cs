@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerCharacter : MonoBehaviour, MouseControllable {
+public class PCControl : MonoBehaviour, MouseControllable {
     public GameObject InactiveWaypointMarker;
     public GameObject ActiveWaypointMarker;
     public Color WaypointLineColor;
