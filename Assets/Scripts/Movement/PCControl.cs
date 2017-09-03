@@ -14,36 +14,26 @@ namespace Movement {
         private GameObject currentDestination;
         private LineRenderer currentDestinationLineRenderer;
         private readonly List<GameObject> waypoints = new List<GameObject>();
-        private bool abortWaypoint;
 
         public void OnSelect() {
-            waypoints.ForEach(o => {
-                o.GetComponent<Renderer>().enabled = true;
-                var line = o.GetComponent<LineRenderer>();
-                line.enabled = true;
-            });
+            ToggleWaypointRenderer(true);
             selectionCircle = Instantiate(SelectionCirclePrefab);
             selectionCircle.transform.SetParent(transform, false);
         }
 
         public void OnDeselect() {
             if (Settings.DisplayWaypointsPermanently) return;
-            waypoints.ForEach(o => {
-                o.GetComponent<Renderer>().enabled = false;
-                var line = o.GetComponent<LineRenderer>();
-                line.enabled = false;
-            });
+            ToggleWaypointRenderer(false);
             Destroy(selectionCircle);
         }
 
         public void OnLeftClick() {
-            OnSelect();
         }
 
         public void OnRightClick(GameObject target, Vector3 positionOnTerrain) {
             ClearWaypoints();
             AddWaypoint(positionOnTerrain);
-            abortWaypoint = true;
+            GoToNextWaypoint();
         }
 
         public void OnRightShiftClick(GameObject target, Vector3 positionOnTerrain) {
@@ -55,14 +45,15 @@ namespace Movement {
         }
 
         private void Update() {
+            var arrived = agent.remainingDistance < agent.radius * 2;
+            if (arrived) {
+                if (currentDestination != null) Destroy(currentDestination);
+                if (waypoints.Count < 1) return;
+            }
+
             UpdateCurrentWaypointLine();
 
-            var arrived = agent.remainingDistance < agent.radius * 2;
-
-            if (arrived && currentDestination != null) Destroy(currentDestination);
-
-            if (abortWaypoint || (!agent.pathPending && arrived && waypoints.Count > 0)) {
-                abortWaypoint = false;
+            if (!agent.pathPending && arrived && waypoints.Count > 0) {
                 GoToNextWaypoint();
             }
         }
@@ -98,6 +89,7 @@ namespace Movement {
         private void AddWaypoint(Vector3 position) {
             var marker = Instantiate(InactiveWaypointMarkerPrefab, position, Quaternion.identity);
             waypoints.Add(marker);
+            // Connect waypoint to previous waypoint
             var lineRenderer = marker.GetComponent<LineRenderer>();
             var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
             if (lineRenderer == null || previousWaypoint == null) return;
@@ -105,11 +97,18 @@ namespace Movement {
             lineRenderer.SetPosition(1, previousWaypoint.transform.position);
         }
 
-
         private void UpdateCurrentWaypointLine() {
             if (currentDestinationLineRenderer != null) {
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
             }
+        }
+
+        private void ToggleWaypointRenderer(bool value) {
+            waypoints.ForEach(o => {
+                o.GetComponent<Renderer>().enabled = value;
+                var line = o.GetComponent<LineRenderer>();
+                line.enabled = value;
+            });
         }
     }
 }
