@@ -6,8 +6,8 @@ namespace Movement {
     public class MouseControl : MonoBehaviour {
         public Color SelectionBorderColor;
         public Color SelectionFillColor;
-
         public LayerMask TerrainLayerMask;
+        public LayerMask ClickableLayers;
 
         private readonly List<IMouseControllable> selected = new List<IMouseControllable>();
         private bool isSelecting;
@@ -24,7 +24,7 @@ namespace Movement {
             RaycastHit hit;
             RaycastHit terrainHit;
             Physics.Raycast(ray, out terrainHit, 100, TerrainLayerMask);
-            if (!Physics.Raycast(ray, out hit, 100)) return;
+            if (!Physics.Raycast(ray, out hit, 100, ClickableLayers)) return;
 
             if (rightClick) {
                 HandleRightClick(hit, terrainHit);

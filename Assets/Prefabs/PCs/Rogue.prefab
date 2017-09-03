@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 114466488152096554}
   - component: {fileID: 54556580551053412}
   - component: {fileID: 114750600061138916}
+  - component: {fileID: 114181470851288304}
   m_Layer: 0
   m_Name: Rogue
   m_TagString: Untagged
@@ -1144,6 +1145,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   AutoInit: 1
+--- !u!114 &114181470851288304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1139174422338988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3087a225b1ea854f8c4534895e1c6f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHitpoints: 100
+  HealthbarPrefab: {fileID: 1246064743388898, guid: 0d98b5ac00905194887bef3bc4a6187f,
+    type: 2}
+  OffsetTop: 2.5
 --- !u!114 &114466488152096554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1155,11 +1171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbfc580e93cf2478b996b8f630364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveWaypointMarker: {fileID: 1221653982032466, guid: 51eb1a2e480329b4aadf386112cdc4b8,
+  InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: cbf5d373bb5b0fe44bd783cb9b237354,
     type: 2}
-  ActiveWaypointMarker: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
+  ActiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
     type: 2}
   WaypointLineColor: {r: 0, g: 0, b: 0, a: 0}
+  SelectionCirclePrefab: {fileID: 1164089754727880, guid: cbf5d373bb5b0fe44bd783cb9b237354,
+    type: 2}
 --- !u!114 &114750600061138916
 MonoBehaviour:
   m_ObjectHideFlags: 1

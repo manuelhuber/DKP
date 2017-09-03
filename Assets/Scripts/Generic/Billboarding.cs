@@ -13,7 +13,7 @@ namespace Generic {
         }
 
         private void Update() {
-            transform.LookAt(transform.position + Camera.transform.rotation * Vector3.back,
+            transform.LookAt(transform.position + Camera.transform.rotation * Vector3.forward,
                 Camera.transform.rotation * Vector3.up);
         }
     }
