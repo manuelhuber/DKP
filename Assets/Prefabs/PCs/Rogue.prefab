@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InactiveWaypointMarker: {fileID: 1221653982032466, guid: 51eb1a2e480329b4aadf386112cdc4b8,
     type: 2}
-  ActiveWaypointMarker: {fileID: 1221653982032466, guid: 51eb1a2e480329b4aadf386112cdc4b8,
+  ActiveWaypointMarker: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
     type: 2}
   WaypointLineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114750600061138916

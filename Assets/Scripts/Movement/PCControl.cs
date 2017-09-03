@@ -4,11 +4,13 @@ using UnityEngine.AI;
 
 namespace Movement {
     public class PCControl : MonoBehaviour, IMouseControllable {
-        public GameObject InactiveWaypointMarker;
-        public GameObject ActiveWaypointMarker;
+        public GameObject InactiveWaypointMarkerPrefab;
+        public GameObject ActiveWaypointMarkerPrefab;
         public Color WaypointLineColor;
+        public GameObject SelectionCirclePrefab;
 
         private NavMeshAgent agent;
+        private GameObject selectionCircle;
         private GameObject currentDestination;
         private LineRenderer currentDestinationLineRenderer;
         private readonly List<GameObject> waypoints = new List<GameObject>();
@@ -20,6 +22,8 @@ namespace Movement {
                 var line = o.GetComponent<LineRenderer>();
                 line.enabled = true;
             });
+            selectionCircle = Instantiate(SelectionCirclePrefab);
+            selectionCircle.transform.SetParent(transform, false);
         }
 
         public void OnDeselect() {
@@ -29,6 +33,7 @@ namespace Movement {
                 var line = o.GetComponent<LineRenderer>();
                 line.enabled = false;
             });
+            Destroy(selectionCircle);
         }
 
         public void OnLeftClick() {
@@ -69,7 +74,7 @@ namespace Movement {
             var next = waypoints[0];
             var nextPosition = next.transform.position;
             agent.SetDestination(nextPosition);
-            currentDestination = Instantiate(ActiveWaypointMarker, nextPosition, Quaternion.identity);
+            currentDestination = Instantiate(ActiveWaypointMarkerPrefab, nextPosition, Quaternion.identity);
             currentDestinationLineRenderer = currentDestination.GetComponent<LineRenderer>();
             if (currentDestinationLineRenderer) {
                 currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
@@ -91,7 +96,7 @@ namespace Movement {
         /// </summary>
         /// <param name="position"></param>
         private void AddWaypoint(Vector3 position) {
-            var marker = Instantiate(InactiveWaypointMarker, position, Quaternion.identity);
+            var marker = Instantiate(InactiveWaypointMarkerPrefab, position, Quaternion.identity);
             waypoints.Add(marker);
             var lineRenderer = marker.GetComponent<LineRenderer>();
             var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
