@@ -61,6 +61,9 @@ public class PCControl : MonoBehaviour, MouseControllable {
         }
     }
 
+    /// <summary>
+    /// Makes the next waypoint the current destination
+    /// </summary>
     private void GoToNextWaypoint() {
         var next = waypoints[0];
         var nextPosition = next.transform.position;
