@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using DKPSettings;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Movement {
+    [RequireComponent(typeof(NavMeshAgent))]
     public class PCControl : MonoBehaviour, IMouseControllable {
         public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;
@@ -22,7 +24,7 @@ namespace Movement {
         }
 
         public void OnDeselect() {
-            if (Settings.DisplayWaypointsPermanently) return;
+            if (GeneralSettings.DisplayWaypointsPermanently) return;
             ToggleWaypointRenderer(false);
             Destroy(selectionCircle);
         }

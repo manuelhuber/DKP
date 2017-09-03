@@ -2,32 +2,26 @@
 using UnityEngine;
 
 namespace MyCamera {
-    public class MoveOnPan : MonoBehaviour {
-        public int Boundary = 50;
-
+    public class MoveWithHotkeys : MonoBehaviour {
         private int speed;
-        private int screenWidth;
-        private int screenHeight;
 
         private void Start() {
-            speed = GeneralSettings.MouseCameraScrollingSpeed;
-            screenWidth = Screen.width;
-            screenHeight = Screen.height;
+            speed = GeneralSettings.HotkeyCameraScrollingSpeed;
         }
 
         private void Update() {
             float x = 0;
             float z = 0;
-            if (Input.mousePosition.x > screenWidth - Boundary) {
+            if (Input.GetKey(Hotkeys.CameraRight)) {
                 x += speed * Time.deltaTime; // move on +X axis
             }
-            if (Input.mousePosition.x < Boundary) {
+            if (Input.GetKey(Hotkeys.CameraLeft)) {
                 x -= speed * Time.deltaTime; // move on -X axis
             }
-            if (Input.mousePosition.y > screenHeight - Boundary) {
+            if (Input.GetKey(Hotkeys.CameraUp)) {
                 z += speed * Time.deltaTime; // move on +Z axis
             }
-            if (Input.mousePosition.y < Boundary) {
+            if (Input.GetKey(Hotkeys.CameraDown)) {
                 z -= speed * Time.deltaTime; // move on -Z axis
             }
 

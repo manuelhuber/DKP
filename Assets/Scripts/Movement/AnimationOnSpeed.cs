@@ -1,17 +1,20 @@
-﻿using UnityEngine;
+﻿using JetBrains.Annotations;
+using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class AnimationOnSpeed : MonoBehaviour {
-    public Animator Animator;
-    private NavMeshAgent agent;
+namespace Movement {
+    [RequireComponent(typeof(Animator))]
+    public class AnimationOnSpeed : MonoBehaviour {
+        public NavMeshAgent Agent;
+        private Animator animator;
 
-    private void Awake() {
-        agent = GetComponent<NavMeshAgent>();
-        Animator.SetFloat("Speed", agent.velocity.magnitude);
-    }
+        private void Awake() {
+            animator = GetComponent<Animator>();
+        }
 
-    private void Update() {
-        Animator.SetFloat("Speed", agent.velocity.magnitude);
+        private void Update() {
+            if (Agent == null) return;
+            animator.SetFloat("Speed", Agent.velocity.magnitude);
+        }
     }
 }
