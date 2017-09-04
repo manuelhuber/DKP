@@ -115,7 +115,7 @@ MonoBehaviour:
     type: 2}
   CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
     type: 2}
-  CanvasOffsetTop: 0
+  CanvasOffsetTop: 2
 --- !u!114 &114837354276751448
 MonoBehaviour:
   m_ObjectHideFlags: 1

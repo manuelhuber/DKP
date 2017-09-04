@@ -8,11 +8,13 @@ using Util;
 namespace Control {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
-    public class PCControl : MonoBehaviour, IMouseControllable {
+    public class PCControl : MouseControllable {
         public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;
         public Color WaypointLineColor;
         public GameObject SelectionCirclePrefab;
+        public Material SelectionMaterial;
+        public Material FocusMaterial;
 
         private NavMeshAgent agent;
         private GameObject selectionCircle;
@@ -23,30 +25,34 @@ namespace Control {
         private bool disabled;
         private Animator animator;
 
-        public void OnSelect() {
+        public override void OnSelect() {
             ToggleWaypointRenderer(true);
-            ToggleSelectionCircle(true);
+            ToggleSelectionCircle(true, false);
         }
 
-        public void OnDeselect() {
-            ToggleSelectionCircle(false);
+        public override void OnFocusSelect() {
+            ToggleWaypointRenderer(true);
+            ToggleSelectionCircle(true, true);
+        }
+
+        public override void OnDeselect() {
+            ToggleSelectionCircle(false, false);
             if (GeneralSettings.DisplayWaypointsPermanently) return;
             ToggleWaypointRenderer(false);
         }
 
-        public void OnLeftClick() {
-        }
-
-        public void OnRightClick(GameObject target, Vector3 positionOnTerrain) {
-            if (disabled) return;
+        public override bool OnRightClick(GameObject target, Vector3 positionOnTerrain) {
+            if (disabled) return false;
             ClearWaypoints();
             AddWaypoint(positionOnTerrain);
             GoToNextWaypoint();
+            return false;
         }
 
-        public void OnRightShiftClick(GameObject target, Vector3 positionOnTerrain) {
-            if (disabled) return;
+        public override bool OnRightShiftClick(GameObject target, Vector3 positionOnTerrain) {
+            if (disabled) return false;
             AddWaypoint(positionOnTerrain);
+            return false;
         }
 
         private void Awake() {
@@ -137,8 +143,10 @@ namespace Control {
             });
         }
 
-        private void ToggleSelectionCircle(bool foo) {
+        private void ToggleSelectionCircle(bool foo, bool focus) {
             selectionCircle.SetActive(foo);
+            selectionCircle.GetComponent<Projector>().material = 
+                focus ? FocusMaterial : SelectionMaterial;
         }
     }
 }

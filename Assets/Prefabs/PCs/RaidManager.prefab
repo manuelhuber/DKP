@@ -60,7 +60,19 @@ MonoBehaviour:
     - {fileID: 1000011922212602, guid: b3d1057caadaef44ab620edfef78b14f, type: 2}
     - {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
     - {fileID: 1000011821036864, guid: 5b210609803658e488f512fc13a6163e, type: 2}
-    AvatarPrefab: {fileID: 1098187000294846, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
+    AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
       type: 2}
   SpawnPoint: {fileID: 0}
   PcCount: 5
+  Names:
+  - xxxSLAYERxxx
+  - SilentShadow
+  - Nightkiller
+  - Stalker
+  - DarkDream
+  - LifeDrainer
+  - ThroatSlicer
+  - Stab0r
+  - Assassin
+  - Stukov
+  SpaceBetweenAvatars: 10

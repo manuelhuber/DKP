@@ -724,7 +724,7 @@ Prefab:
     - target: {fileID: 114979964524571414, guid: a8348cf0fd5b0764ea29bf874ea9a7e9,
         type: 2}
       propertyPath: PcCount
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8348cf0fd5b0764ea29bf874ea9a7e9, type: 2}
