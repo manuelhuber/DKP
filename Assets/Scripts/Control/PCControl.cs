@@ -68,7 +68,12 @@ namespace Control {
 
 
         private void Update() {
-            if (disabled) return;
+            if (disabled) {
+                disabled = health.IsDead();
+                if (disabled) return;
+                agent.enabled = true;
+                animator.SetTrigger("Revive");
+            }
             if (animator != null) animator.SetFloat("Speed", agent.velocity.magnitude);
             if (health.IsDead()) {
                 agent.enabled = false;
@@ -145,7 +150,7 @@ namespace Control {
 
         private void ToggleSelectionCircle(bool foo, bool focus) {
             selectionCircle.SetActive(foo);
-            selectionCircle.GetComponent<Projector>().material = 
+            selectionCircle.GetComponent<Projector>().material =
                 focus ? FocusMaterial : SelectionMaterial;
         }
     }

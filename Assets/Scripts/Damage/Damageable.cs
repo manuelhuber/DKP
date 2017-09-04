@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 [Serializable]
@@ -41,6 +41,11 @@ namespace Damage {
             damageInterceptors.Add(interceptor);
         }
 
+        public void AddDamageInterceptorWithDuration(DamageInterceptor interceptor, float duration) {
+            damageInterceptors.Add(interceptor);
+            StartCoroutine(RemoveInterceptorAfterTime(interceptor, duration));
+        }
+
         public void RemoveDamageInterceptor(DamageInterceptor interceptor) {
             damageInterceptors.Remove(interceptor);
         }
@@ -49,9 +54,15 @@ namespace Damage {
             return dead;
         }
 
-        public void Revive(int amount) {
+        public void Revive(int amount, float vulnerabilityDuartion) {
+            if (!dead) return;
             dead = false;
-            Hitpoints = amount;
+            ModifyHitpoints(amount > 0 ? amount : MaxHitpoints);
+            var immune = new DamageInterceptor {
+                Interceptor = (int x) => 0,
+                Order = 1
+            };
+            AddDamageInterceptorWithDuration(immune, vulnerabilityDuartion);
         }
 
         public void ModifyHitpoints(int initialAmount) {
@@ -60,6 +71,7 @@ namespace Damage {
 
             var amount =
                 orderedInterceptors.Aggregate(initialAmount, (acc, interceptor) => interceptor.Interceptor(acc));
+            if (amount == 0) return;
             Hitpoints += amount;
             healthbars.ForEach(bar => bar.value = Hitpoints);
             var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
@@ -84,6 +96,11 @@ namespace Damage {
         private void CoreDie() {
             dead = true;
             Die();
+        }
+
+        private IEnumerator RemoveInterceptorAfterTime(DamageInterceptor interceptor, float duration) {
+            yield return new WaitForSeconds(duration);
+            RemoveDamageInterceptor(interceptor);
         }
 
         private void Awake() {

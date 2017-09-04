@@ -5,6 +5,9 @@ namespace Control {
     /// A GameObject that can be selected and receive commands via mouse clicks
     /// </summary>
     public abstract class MouseControllable : MonoBehaviour {
+        // TODO: improve select/focus lifecycle. what if a unit is selected and then becomes focused? or the other way around?
+        // maybe "onSelect", "onDeselect", "onGainFocus", "onLoseFocus"
+
         public abstract void OnSelect();
         public abstract void OnFocusSelect();
         public abstract void OnDeselect();

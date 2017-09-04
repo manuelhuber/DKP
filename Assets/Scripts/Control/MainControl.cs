@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Damage;
 using DKPSettings;
 using MyCamera;
 using UnityEngine;
@@ -81,6 +81,19 @@ namespace Control {
         private void HandleHotkeys() {
             if (Input.GetKey(Hotkeys.CenterCamera) && focusedSelected != null) {
                 cameraController.FocusOn(focusedSelected.transform.gameObject);
+            }
+            if (Input.GetKeyDown(Hotkeys.NextSelection) && selected.Count > 1) {
+                var oldIndex = selected.IndexOf(focusedSelected);
+                var newIndex = oldIndex + 1;
+                if (focusedSelected != null) focusedSelected.OnSelect();
+                focusedSelected = selected[newIndex == selected.Count ? 0 : newIndex];
+                focusedSelected.OnFocusSelect();
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad0)) {
+                selected.ForEach(controllable => {
+                    var health = controllable.transform.gameObject.GetComponent<Damageable>();
+                    if (health != null) health.Revive(0, 2);
+                });
             }
         }
 

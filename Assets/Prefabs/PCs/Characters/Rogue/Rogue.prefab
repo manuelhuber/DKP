@@ -119,6 +119,8 @@ MonoBehaviour:
   WaypointLineColor: {r: 0, g: 0, b: 0, a: 0}
   SelectionCirclePrefab: {fileID: 1164089754727880, guid: cbf5d373bb5b0fe44bd783cb9b237354,
     type: 2}
+  SelectionMaterial: {fileID: 2100000, guid: a9deacf38e7468e4a889931d12f066ef, type: 2}
+  FocusMaterial: {fileID: 2100000, guid: 8e5e58c6b977b8e4db086da47fac8ddb, type: 2}
 --- !u!114 &114412711544428280
 MonoBehaviour:
   m_ObjectHideFlags: 1

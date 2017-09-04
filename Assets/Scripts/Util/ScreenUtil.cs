@@ -2,7 +2,6 @@
 
 namespace Util {
     public static class ScreenUtil {
-        
         /// <summary>
         /// Returns a Rect from 2 corner positions, all relative to the screen space 
         /// </summary>
