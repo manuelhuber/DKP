@@ -1,20 +1,83 @@
-﻿using Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
+[Serializable]
+public class DamageInterceptor {
+    public int Order = 5;
+    public Func<int, int> Interceptor;
+}
+
 namespace Damage {
+    [RequireComponent(typeof(Team))]
     public class Damageable : MonoBehaviour {
         public int MaxHitpoints = 100;
         public GameObject HealthbarPrefab;
-        public float OffsetTop;
+        public GameObject CombatTextPrefab;
+        public float CanvasOffsetTop;
 
         private GameObject canvas;
         private Slider healthbar;
         private int hitpoints;
+        private bool dead;
+        private readonly List<DamageInterceptor> damageInterceptors = new List<DamageInterceptor>();
 
         private int Hitpoints {
             get { return hitpoints; }
             set { hitpoints = Mathf.Min(value, MaxHitpoints); }
+        }
+
+        public void AddDamageInterceptor(DamageInterceptor interceptor) {
+            damageInterceptors.Add(interceptor);
+        }
+
+        public void RemoveDamageInterceptor(DamageInterceptor interceptor) {
+            damageInterceptors.Remove(interceptor);
+        }
+
+        public bool IsDead() {
+            return dead;
+        }
+
+        public void Revive(int amount) {
+            dead = false;
+            Hitpoints = amount;
+        }
+
+        public void ModifyHitpoints(int initialAmount) {
+            if (dead) return;
+            var orderedInterceptors = damageInterceptors.OrderBy(interceptor => interceptor.Order);
+
+            var amount =
+                orderedInterceptors.Aggregate(initialAmount, (acc, interceptor) => interceptor.Interceptor(acc));
+            Hitpoints += amount;
+            healthbar.value = Hitpoints;
+            var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
+            textObject.GetComponent<Text>().text = amount.ToString();
+            textObject.GetComponent<Animator>().SetTrigger(amount < 0 ? "Hit" : "Heal");
+            Destroy(textObject, 3);
+            if (Hitpoints <= 0) CoreDie();
+        }
+
+        /// <summary>
+        /// Can be overriden to allow custom code on death
+        /// </summary>
+        protected virtual void Die() {
+            var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
+            textObject.GetComponent<Text>().text = "X.X DEAD";
+            Destroy(textObject, 3);
+        }
+
+        /// <summary>
+        /// This needs to be called always
+        /// </summary>
+        private void CoreDie() {
+            dead = true;
+            Die();
         }
 
         private void Awake() {
@@ -22,20 +85,15 @@ namespace Damage {
             InitCanvas();
         }
 
-        public void CauseDamage(int dmg) {
-            ModifyHitpoints(-dmg);
-        }
-
-        public void Heal(int amount) {
-            ModifyHitpoints(amount);
-        }
-
+        /// <summary>
+        /// Generates a local canvas above the gameobject for healthbar and combat text
+        /// </summary>
         private void InitCanvas() {
             // Create a new local canvas that's attached to this gameobject
             canvas = new GameObject {name = "UnitCanvas"};
             canvas.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
             var transformPosition = canvas.transform.position;
-            transformPosition.y = OffsetTop;
+            transformPosition.y = CanvasOffsetTop;
             canvas.transform.position = transformPosition;
             canvas.transform.SetParent(transform, false);
             canvas.AddComponent<Canvas>();
@@ -44,11 +102,6 @@ namespace Damage {
 
             healthbar = Instantiate(HealthbarPrefab, canvas.transform, false).GetComponent<Slider>();
             healthbar.maxValue = MaxHitpoints;
-            healthbar.value = Hitpoints;
-        }
-
-        private void ModifyHitpoints(int amount) {
-            Hitpoints += amount;
             healthbar.value = Hitpoints;
         }
     }

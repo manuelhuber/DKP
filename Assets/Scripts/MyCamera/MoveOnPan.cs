@@ -9,7 +9,7 @@ namespace MyCamera {
         private int screenWidth;
         private int screenHeight;
 
-        private void Start() {
+        private void Awake() {
             speed = GeneralSettings.MouseCameraScrollingSpeed;
             screenWidth = Screen.width;
             screenHeight = Screen.height;

@@ -5,7 +5,7 @@ namespace MyCamera {
     public class MoveWithHotkeys : MonoBehaviour {
         private int speed;
 
-        private void Start() {
+        private void Awake() {
             speed = GeneralSettings.HotkeyCameraScrollingSpeed;
         }
 
