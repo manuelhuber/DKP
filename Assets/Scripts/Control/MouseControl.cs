@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using MyCamera;
 using UnityEngine;
 using Util;
 
@@ -9,18 +11,26 @@ namespace Control {
         public LayerMask TerrainLayerMask;
         public LayerMask ClickableLayers;
 
-        private readonly List<IMouseControllable> selected = new List<IMouseControllable>();
+        private readonly List<PCControl> selected = new List<PCControl>();
         private bool isSelecting;
         private Vector3 selectionStart;
+        private FocusOnObject focusOnObject;
+
+        private void Start() {
+            focusOnObject = GetComponent<FocusOnObject>();
+        }
 
         private void Update() {
+            if (Input.GetKey(KeyCode.Space) && selected.Count > 0) {
+                focusOnObject.FocusOn(selected[0].transform.gameObject);
+            }
+
             var rightClick = Input.GetMouseButtonDown(1);
             var leftClick = Input.GetMouseButtonDown(0);
             var leftClickEnd = Input.GetMouseButtonUp(0);
             if (!rightClick && !leftClick && !leftClickEnd) return;
 
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
             RaycastHit hit;
             RaycastHit terrainHit;
             Physics.Raycast(ray, out terrainHit, 100, TerrainLayerMask);
@@ -37,7 +47,11 @@ namespace Control {
         }
 
         private void HandleLeftClickEnd(RaycastHit hit) {
-            var newSelect = hit.transform.gameObject.GetComponent<IMouseControllable>();
+            var newSelect = hit.transform.gameObject.GetComponent<PCControl>();
+
+            if (selected.Contains(newSelect) && focusOnObject != null) {
+                focusOnObject.FocusOn(hit.transform.gameObject);
+            }
 
             // Deselect all
             selected.ForEach(o => o.OnDeselect());

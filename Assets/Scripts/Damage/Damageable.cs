@@ -21,7 +21,7 @@ namespace Damage {
         public float CanvasOffsetTop;
 
         private GameObject canvas;
-        private Slider healthbar;
+        private readonly List<Slider> healthbars = new List<Slider>();
         private int hitpoints;
         private bool dead;
         private readonly List<DamageInterceptor> damageInterceptors = new List<DamageInterceptor>();
@@ -29,6 +29,12 @@ namespace Damage {
         private int Hitpoints {
             get { return hitpoints; }
             set { hitpoints = Mathf.Min(value, MaxHitpoints); }
+        }
+
+        public void AddHealthbar(Slider bar) {
+            bar.maxValue = MaxHitpoints;
+            bar.value = hitpoints;
+            healthbars.Add(bar);
         }
 
         public void AddDamageInterceptor(DamageInterceptor interceptor) {
@@ -55,7 +61,7 @@ namespace Damage {
             var amount =
                 orderedInterceptors.Aggregate(initialAmount, (acc, interceptor) => interceptor.Interceptor(acc));
             Hitpoints += amount;
-            healthbar.value = Hitpoints;
+            healthbars.ForEach(bar => bar.value = Hitpoints);
             var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
             textObject.GetComponent<Text>().text = amount.ToString();
             textObject.GetComponent<Animator>().SetTrigger(amount < 0 ? "Hit" : "Heal");
@@ -100,9 +106,10 @@ namespace Damage {
             // Make the canvas face the camera
             canvas.AddComponent<Billboarding>();
 
-            healthbar = Instantiate(HealthbarPrefab, canvas.transform, false).GetComponent<Slider>();
+            var healthbar = Instantiate(HealthbarPrefab, canvas.transform, false).GetComponent<Slider>();
             healthbar.maxValue = MaxHitpoints;
             healthbar.value = Hitpoints;
+            healthbars.Add(healthbar);
         }
     }
 }

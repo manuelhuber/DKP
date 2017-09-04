@@ -51,13 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431b5208f1f5fdc48aa519c2e8fd5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rogue: {fileID: 1083188026060588, guid: fb0abac42c3331a48bb9f24579265938, type: 2}
-  RogueOutfits:
-  - {fileID: 1000010208881502, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 2}
-  - {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f, type: 2}
-  - {fileID: 1000013234968400, guid: 4a6e9a7d544412d4d92db88d8587228e, type: 2}
-  - {fileID: 1000011922212602, guid: b3d1057caadaef44ab620edfef78b14f, type: 2}
-  - {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
-  - {fileID: 1000011821036864, guid: 5b210609803658e488f512fc13a6163e, type: 2}
+  Heroes:
+  - Prefab: {fileID: 1083188026060588, guid: fb0abac42c3331a48bb9f24579265938, type: 2}
+    OutfitPrefabs:
+    - {fileID: 1000010208881502, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 2}
+    - {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f, type: 2}
+    - {fileID: 1000013234968400, guid: 4a6e9a7d544412d4d92db88d8587228e, type: 2}
+    - {fileID: 1000011922212602, guid: b3d1057caadaef44ab620edfef78b14f, type: 2}
+    - {fileID: 1000013304306144, guid: 30ef59945f2a7ea499bbbe10a7d48f1a, type: 2}
+    - {fileID: 1000011821036864, guid: 5b210609803658e488f512fc13a6163e, type: 2}
+    AvatarPrefab: {fileID: 1098187000294846, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
+      type: 2}
   SpawnPoint: {fileID: 0}
   PcCount: 5

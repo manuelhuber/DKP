@@ -25,14 +25,13 @@ namespace Control {
 
         public void OnSelect() {
             ToggleWaypointRenderer(true);
-            selectionCircle = Instantiate(SelectionCirclePrefab);
-            selectionCircle.transform.SetParent(transform, false);
+            ToggleSelectionCircle(true);
         }
 
         public void OnDeselect() {
+            ToggleSelectionCircle(false);
             if (GeneralSettings.DisplayWaypointsPermanently) return;
             ToggleWaypointRenderer(false);
-            Destroy(selectionCircle);
         }
 
         public void OnLeftClick() {
@@ -50,13 +49,17 @@ namespace Control {
             AddWaypoint(positionOnTerrain);
         }
 
+        private void Awake() {
+            selectionCircle = Instantiate(SelectionCirclePrefab);
+            selectionCircle.transform.SetParent(transform, false);
+        }
+
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
             health = GetComponent<Damageable>();
             animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
         }
-        
-        
+
 
         private void Update() {
             if (disabled) return;
@@ -67,17 +70,18 @@ namespace Control {
                 disabled = true;
                 return;
             }
-            var arrived = agent.remainingDistance < agent.radius * 2;
-            if (arrived) {
-                if (currentDestination != null) Destroy(currentDestination);
-                if (waypoints.Count < 1) return;
-            }
-
             UpdateCurrentWaypointLine();
-
-            if (!agent.pathPending && arrived && waypoints.Count > 0) {
+            var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
+            if (!agent.hasPath && waypoints.Count > 0) {
                 GoToNextWaypoint();
+                return;
             }
+            if (!arrived) return;
+
+            Destroy(currentDestination);
+            agent.ResetPath();
+            if (waypoints.Count < 1) return;
+            GoToNextWaypoint();
         }
 
         /// <summary>
@@ -131,6 +135,10 @@ namespace Control {
                 var line = o.GetComponent<LineRenderer>();
                 line.enabled = value;
             });
+        }
+
+        private void ToggleSelectionCircle(bool foo) {
+            selectionCircle.SetActive(foo);
         }
     }
 }

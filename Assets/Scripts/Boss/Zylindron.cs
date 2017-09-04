@@ -27,7 +27,7 @@ namespace Boss {
         }
 
         private void SpawnFire() {
-            PlayersWithinDistance(VulnerabilityRange).ForEach(o => { o.AddComponent<Vulnerability>(); });
+            PlayersWithinDistance(VulnerabilityRange).ForEach(o => o.AddComponent<Vulnerability>().Duration = 2);
             var availablePlayers = PlayersWithinDistance(FireRange);
             if (!availablePlayers.Any()) return;
             var target = availablePlayers.ElementAt(Random.Range(0, availablePlayers.Count));
