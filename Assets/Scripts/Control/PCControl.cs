@@ -9,10 +9,10 @@ namespace Control {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
     public class PCControl : MouseControllable {
-        public GameObject InactiveWaypointMarkerPrefab;
+        [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;
         public Color WaypointLineColor;
-        public GameObject SelectionCirclePrefab;
+        [Space] [Header("Selection")] public GameObject SelectionCirclePrefab;
         public Material SelectionMaterial;
         public Material FocusMaterial;
 
@@ -24,6 +24,8 @@ namespace Control {
         private Damageable health;
         private bool disabled;
         private Animator animator;
+
+        #region MouseControl
 
         public override void OnSelect() {
             ToggleWaypointRenderer(true);
@@ -54,6 +56,10 @@ namespace Control {
             AddWaypoint(positionOnTerrain);
             return false;
         }
+
+        #endregion
+
+        #region UnityLifeCycle
 
         private void Awake() {
             selectionCircle = Instantiate(SelectionCirclePrefab);
@@ -94,6 +100,10 @@ namespace Control {
             if (waypoints.Count < 1) return;
             GoToNextWaypoint();
         }
+
+        #endregion
+
+        #region Waypoints
 
         /// <summary>
         /// Makes the next waypoint the current destination
@@ -147,6 +157,8 @@ namespace Control {
                 line.enabled = value;
             });
         }
+
+        #endregion
 
         private void ToggleSelectionCircle(bool foo, bool focus) {
             selectionCircle.SetActive(foo);
