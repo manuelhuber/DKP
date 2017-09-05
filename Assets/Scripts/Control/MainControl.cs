@@ -79,6 +79,7 @@ namespace Control {
         }
 
         private void HandleHotkeys() {
+            if (Input.GetKey(KeyCode.Escape)) isSelecting = false;
             if (Input.GetKey(Hotkeys.CenterCamera) && focusedSelected != null) {
                 cameraController.FocusOn(focusedSelected.transform.gameObject);
             }

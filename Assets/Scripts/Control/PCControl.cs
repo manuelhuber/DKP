@@ -8,6 +8,7 @@ using Util;
 namespace Control {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
+    [RequireComponent(typeof(Team))]
     public class PCControl : MouseControllable {
         [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;
@@ -24,6 +25,7 @@ namespace Control {
         private Damageable health;
         private bool disabled;
         private Animator animator;
+        private Attack attack;
 
         #region MouseControl
 
@@ -45,6 +47,9 @@ namespace Control {
 
         public override bool OnRightClick(GameObject target, Vector3 positionOnTerrain) {
             if (disabled) return false;
+            Damageable damageable;
+            TargetAttackable(target, out damageable);
+            attack.SetTarget(damageable);
             ClearWaypoints();
             AddWaypoint(positionOnTerrain);
             GoToNextWaypoint();
@@ -69,6 +74,7 @@ namespace Control {
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
             health = GetComponent<Damageable>();
+            attack = GetComponent<Attack>();
             animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
         }
 
@@ -159,6 +165,14 @@ namespace Control {
         }
 
         #endregion
+
+        private bool TargetAttackable(GameObject target, out Damageable damageable) {
+            damageable = null;
+            var team = target.GetComponent<Team>();
+            if (team == null || team.TeamId == gameObject.GetComponent<Team>().TeamId) return false;
+            damageable = target.gameObject.GetComponent<Damageable>();
+            return damageable != null;
+        }
 
         private void ToggleSelectionCircle(bool foo, bool focus) {
             selectionCircle.SetActive(foo);

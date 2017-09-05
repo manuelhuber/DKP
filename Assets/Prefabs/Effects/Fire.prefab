@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Amount: -15
   Intervall: 1
-  AffectedTeams: 00000000
+  AffectedTeams: 0000000001000000
   Lifetime: 15
 --- !u!136 &136502179785092800
 CapsuleCollider:

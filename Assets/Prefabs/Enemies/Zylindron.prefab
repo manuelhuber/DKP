@@ -25,6 +25,9 @@ GameObject:
   - component: {fileID: 114837354276751448}
   - component: {fileID: 114395633382325716}
   - component: {fileID: 114025162846962168}
+  - component: {fileID: 54884044475887186}
+  - component: {fileID: 114554267561344414}
+  - component: {fileID: 208043374257767612}
   m_Layer: 0
   m_Name: Zylindron
   m_TagString: Untagged
@@ -39,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296246015198956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.950958, y: 2.8, z: 10.236509}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,13 +87,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296246015198956}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54884044475887186
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296246015198956}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114025162846962168
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1296246015198956}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db30bf4c411f9bd428eab22f08466f91, type: 3}
   m_Name: 
@@ -110,12 +128,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daccdcc3a5fabfa469ffaa6aa8896566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHitpoints: 100
+  MaxHitpoints: 1000
   HealthbarPrefab: {fileID: 1246064743388898, guid: 0d98b5ac00905194887bef3bc4a6187f,
     type: 2}
   CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
     type: 2}
   CanvasOffsetTop: 2
+--- !u!114 &114554267561344414
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296246015198956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496bc09b25f34958aa92b3d8185b087c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 3
+  AttackInterval: 0
+  AttackDamage: 0
 --- !u!114 &114837354276751448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,3 +173,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &208043374257767612
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296246015198956}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
