@@ -119,7 +119,10 @@ namespace Damage {
             transformPosition.y = CanvasOffsetTop;
             canvas.transform.position = transformPosition;
             canvas.transform.SetParent(transform, false);
-            canvas.AddComponent<Canvas>();
+            var canvasComponent = canvas.AddComponent<Canvas>();
+            canvasComponent.sortingOrder = 1000;
+
+
             // Make the canvas face the camera
             canvas.AddComponent<Billboarding>();
 
