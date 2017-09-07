@@ -51,9 +51,7 @@ namespace Control {
             Damageable damageable;
             TargetAttackable(click.Target, out damageable);
             attack.SetTarget(damageable);
-            waypoints.ClearWaypoints();
-            waypoints.AddWaypoint(click);
-            waypoints.GoToNextWaypoint();
+            waypoints.GoDirectlyTo(click);
             return false;
         }
 
@@ -62,44 +60,6 @@ namespace Control {
             waypoints.AddWaypoint(click);
             return false;
         }
-
-        #endregion
-
-        #region UnityLifeCycle
-
-        private void Awake() {
-            selectionCircle = Instantiate(SelectionCirclePrefab);
-            selectionCircle.transform.SetParent(transform, false);
-            selectionCircle.SetActive(false);
-        }
-
-        private void Start() {
-            agent = GetComponent<NavMeshAgent>();
-            health = GetComponent<Damageable>();
-            attack = GetComponent<Attack>();
-            waypoints = GetComponent<WaypointHandler>();
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
-        }
-
-
-        private void Update() {
-            if (isDead) CheckForRevive();
-            if (animator != null) animator.SetFloat("Speed", agent.velocity.magnitude);
-            CheckForDeath();
-            waypoints.UpdateCurrentWaypointLine();
-            var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
-            if (!agent.hasPath) {
-                waypoints.GoToNextWaypoint();
-                return;
-            }
-            if (!arrived) return;
-
-            waypoints.DestroyCurrentWaypoint();
-            agent.ResetPath();
-            waypoints.GoToNextWaypoint();
-        }
-
-        #endregion
 
         private void CheckForDeath() {
             if (!health.IsDead()) return;
@@ -128,5 +88,32 @@ namespace Control {
             selectionCircle.GetComponent<Projector>().material =
                 focus ? FocusMaterial : SelectionMaterial;
         }
+
+        #endregion
+
+        #region UnityLifeCycle
+
+        private void Awake() {
+            selectionCircle = Instantiate(SelectionCirclePrefab);
+            selectionCircle.transform.SetParent(transform, false);
+            selectionCircle.SetActive(false);
+        }
+
+        private void Start() {
+            agent = GetComponent<NavMeshAgent>();
+            health = GetComponent<Damageable>();
+            attack = GetComponent<Attack>();
+            waypoints = GetComponent<WaypointHandler>();
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
+            waypoints.Animator = animator;
+        }
+
+
+        private void Update() {
+            if (isDead) CheckForRevive();
+            CheckForDeath();
+        }
+
+        #endregion
     }
 }
