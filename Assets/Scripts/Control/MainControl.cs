@@ -51,7 +51,7 @@ namespace Control {
         private void Update() {
             HandleHotkeys();
 
-            var rightClick = Input.GetMouseButton(1);
+            var rightClick = Input.GetMouseButtonUp(1);
             var leftClickDown = Input.GetMouseButtonDown(0);
             var leftClickUp = Input.GetMouseButtonUp(0);
             if (!rightClick && !leftClickDown && !leftClickUp) return;
@@ -60,19 +60,20 @@ namespace Control {
             Vector3 terrainHit;
             if (!GetClickLocation(out target, out terrainHit)) return;
 
+            var click = new ClickLocation {Target = target, Location = terrainHit};
             if (rightClick) {
                 // Currently there is no default behaviour for right clicks so just call the handlers
                 if (Input.GetKey(Hotkeys.AddModifier)) {
-                    selected.ForEach(o => o.OnRightShiftClick(target, terrainHit));
+                    selected.ForEach(o => o.OnRightShiftClick(click));
                 } else {
-                    selected.ForEach(c => c.OnRightClick(target, terrainHit));
+                    selected.ForEach(c => c.OnRightClick(click));
                 }
             } else if (leftClickDown) {
-                if (focusedSelected == null || !focusedSelected.OnLeftClickDown(target, terrainHit)) {
+                if (focusedSelected == null || !focusedSelected.OnLeftClickDown(click)) {
                     DefaultLeftClickDown();
                 }
             } else if (leftClickUp) {
-                if (focusedSelected == null || !focusedSelected.OnLeftClickUp(target, terrainHit)) {
+                if (focusedSelected == null || !focusedSelected.OnLeftClickUp(click)) {
                     DefaultLeftClickUp(target);
                 }
             }

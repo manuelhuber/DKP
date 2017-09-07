@@ -6,13 +6,20 @@ using UnityEngine.AI;
 using Util;
 
 namespace Control {
+    internal class Waypoint {
+        public GameObject Target;
+        public bool IsMobile;
+    }
+
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(Team))]
-    public class PCControl : MouseControllable {
+    public class PcControl : MouseControllable {
         [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;
         public Color WaypointLineColor;
+        public float WaypointLineWidth;
+
         [Space] [Header("Selection")] public GameObject SelectionCirclePrefab;
         public Material SelectionMaterial;
         public Material FocusMaterial;
@@ -45,20 +52,20 @@ namespace Control {
             ToggleWaypointRenderer(false);
         }
 
-        public override bool OnRightClick(GameObject target, Vector3 positionOnTerrain) {
+        public override bool OnRightClick(ClickLocation click) {
             if (disabled) return false;
             Damageable damageable;
-            TargetAttackable(target, out damageable);
+            TargetAttackable(click.Target, out damageable);
             attack.SetTarget(damageable);
             ClearWaypoints();
-            AddWaypoint(positionOnTerrain);
+            AddWaypoint(click);
             GoToNextWaypoint();
             return false;
         }
 
-        public override bool OnRightShiftClick(GameObject target, Vector3 positionOnTerrain) {
+        public override bool OnRightShiftClick(ClickLocation click) {
             if (disabled) return false;
-            AddWaypoint(positionOnTerrain);
+            AddWaypoint(click);
             return false;
         }
 
@@ -69,6 +76,7 @@ namespace Control {
         private void Awake() {
             selectionCircle = Instantiate(SelectionCirclePrefab);
             selectionCircle.transform.SetParent(transform, false);
+            selectionCircle.SetActive(false);
         }
 
         private void Start() {
@@ -120,6 +128,7 @@ namespace Control {
             agent.SetDestination(nextPosition);
             currentDestination = Instantiate(ActiveWaypointMarkerPrefab, nextPosition, Quaternion.identity);
             currentDestinationLineRenderer = currentDestination.GetComponent<LineRenderer>();
+            currentDestinationLineRenderer.enabled = false;
             if (currentDestinationLineRenderer) {
                 currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
@@ -138,27 +147,40 @@ namespace Control {
         /// <summary>
         /// Adds a waypoint and renders a line to the previous wapoint
         /// </summary>
-        /// <param name="position"></param>
-        private void AddWaypoint(Vector3 position) {
-            var marker = Instantiate(InactiveWaypointMarkerPrefab, position, Quaternion.identity);
+        private void AddWaypoint(ClickLocation clickLocation) {
+            var markerLocation = clickLocation.Location;
+            markerLocation.y += InactiveWaypointMarkerPrefab.transform.localScale.y / 2;
+            var marker = Instantiate(
+                InactiveWaypointMarkerPrefab,
+                markerLocation,
+                InactiveWaypointMarkerPrefab.transform.rotation
+            );
             waypoints.Add(marker);
             // Connect waypoint to previous waypoint
-            var lineRenderer = marker.GetComponent<LineRenderer>();
+            var lineRenderer = marker.AddComponent<LineRenderer>();
+            lineRenderer.startColor = WaypointLineColor;
+            lineRenderer.endColor = WaypointLineColor;
+            lineRenderer.startWidth = WaypointLineWidth;
+            lineRenderer.endWidth = WaypointLineWidth;
+            Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
+            lineRenderer.material = whiteDiffuseMat;
+
             var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
-            if (lineRenderer == null || previousWaypoint == null) return;
+            if (previousWaypoint == null) return;
             lineRenderer.SetPosition(0, waypoints[waypoints.Count - 1].transform.position);
             lineRenderer.SetPosition(1, previousWaypoint.transform.position);
+            currentDestinationLineRenderer.enabled = true;
         }
 
         private void UpdateCurrentWaypointLine() {
-            if (currentDestinationLineRenderer != null) {
+            if (currentDestinationLineRenderer != null && currentDestinationLineRenderer.enabled) {
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
             }
         }
 
         private void ToggleWaypointRenderer(bool value) {
             waypoints.ForEach(o => {
-                o.GetComponent<Renderer>().enabled = value;
+                o.SetActive(value);
                 var line = o.GetComponent<LineRenderer>();
                 line.enabled = value;
             });
@@ -179,5 +201,6 @@ namespace Control {
             selectionCircle.GetComponent<Projector>().material =
                 focus ? FocusMaterial : SelectionMaterial;
         }
+        
     }
 }

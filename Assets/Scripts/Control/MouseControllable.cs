@@ -1,6 +1,15 @@
 using UnityEngine;
 
 namespace Control {
+    
+    public class ClickLocation {
+        /// The game object hit by the click
+        public GameObject Target;
+
+        /// The location of the hit on the terrain (ignoring hits with units etc)
+        public Vector3 Location;
+    }
+
     /// <summary>
     /// A GameObject that can be selected and receive commands via mouse clicks
     /// </summary>
@@ -16,12 +25,6 @@ namespace Control {
         /// A left click up happens while the unit is actively selected (actively selected = being the single selected
         /// object or purposefully focused in a group of selections)
         /// </summary>
-        /// <param name="target">the exact position of the click
-        /// The game object hit by the click 
-        /// </param>
-        /// <param name="positionOnTerrain">the position of the click, ignoring non-terrain
-        /// The location of the hit on the terrain (ignoring hits with units etc)
-        /// </param>
         /// <returns>
         /// true if the default click behaviour should be ignored. By default a left click up deselects the current
         /// selection and either selects the clicked unit or selects all drag-selected units.
@@ -32,7 +35,7 @@ namespace Control {
         /// deselecting the current selection. This can be achieved by returning true to preventing the default 
         /// deselection. 
         /// </returns>
-        public virtual bool OnLeftClickUp(GameObject target, Vector3 positionOnTerrain) {
+        public virtual bool OnLeftClickUp(ClickLocation click) {
             return false;
         }
 
@@ -40,34 +43,22 @@ namespace Control {
         /// A left click up happens while the unit is selected (actively selected = being the single selected
         /// object or purposefully focused in a group of selections)
         /// </summary>
-        /// <param name="target">the exact position of the click
-        /// The game object hit by the click 
-        /// </param>
-        /// <param name="positionOnTerrain">the position of the click, ignoring non-terrain
-        /// The location of the hit on the terrain (ignoring hits with units etc)
-        /// </param>
         /// <returns>
         /// true if the default click behaviour should be ignored.
         /// The default is to start a drag-selection
         /// </returns>
-        public virtual bool OnLeftClickDown(GameObject target, Vector3 positionOnTerrain) {
+        public virtual bool OnLeftClickDown(ClickLocation click) {
             return false;
         }
 
         /// <summary>
         /// A right click happens while the unit is selected
         /// </summary>
-        /// <param name="target">
-        /// The game object hit by the click 
-        /// </param>
-        /// <param name="positionOnTerrain">
-        /// The location of the hit on the terrain (ignoring hits with units etc)
-        /// </param>
         /// <returns>
         /// true if the default click behaviour should be ignored. For example see "OnLeftClick"
         /// Note: Currently there is no default right-click behaviour, so it doesn't matter
         /// </returns>
-        public virtual bool OnRightClick(GameObject target, Vector3 positionOnTerrain) {
+        public virtual bool OnRightClick(ClickLocation click) {
             return false;
         }
 
@@ -75,17 +66,11 @@ namespace Control {
         /// <summary>
         /// A shift-right click happens while the unit is selected
         /// </summary>
-        /// <param name="target">
-        /// The game object hit by the click 
-        /// </param>
-        /// <param name="positionOnTerrain">
-        /// The location of the hit on the terrain (ignoring hits with units etc)
-        /// </param>
         /// <returns>
         /// true if the default click behaviour should be ignored. For example see "OnLeftClick"
         /// Note: Currently there is no default right-click behaviour, so it doesn't matter
         /// </returns>
-        public virtual bool OnRightShiftClick(GameObject target, Vector3 positionOnTerrain) {
+        public virtual bool OnRightShiftClick(ClickLocation click) {
             return false;
         }
     }

@@ -113,11 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbfc580e93cf2478b996b8f630364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 51eb1a2e480329b4aadf386112cdc4b8,
+  InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
     type: 2}
   ActiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
     type: 2}
-  WaypointLineColor: {r: 0, g: 0, b: 0, a: 0}
+  WaypointLineColor: {r: 0.15686275, g: 0.78431374, b: 0, a: 1}
+  WaypointLineWidth: 0.04
   SelectionCirclePrefab: {fileID: 1164089754727880, guid: cbf5d373bb5b0fe44bd783cb9b237354,
     type: 2}
   SelectionMaterial: {fileID: 2100000, guid: a9deacf38e7468e4a889931d12f066ef, type: 2}
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 1
-  AttackInterval: 1.5
+  AttackInterval: 2
   AttackDamage: 10
 --- !u!114 &114430475861322644
 MonoBehaviour:
