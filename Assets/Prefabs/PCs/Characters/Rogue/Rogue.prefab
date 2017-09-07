@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23795535463353052}
   - component: {fileID: 195865546459566054}
   - component: {fileID: 114002742767485700}
+  - component: {fileID: 114599460657686264}
   - component: {fileID: 114412711544428280}
   - component: {fileID: 114430475861322644}
   - component: {fileID: 54923830477834438}
@@ -113,12 +114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbfc580e93cf2478b996b8f630364b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
-    type: 2}
-  ActiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
-    type: 2}
-  WaypointLineColor: {r: 0.15686275, g: 0.78431374, b: 0, a: 1}
-  WaypointLineWidth: 0.04
   SelectionCirclePrefab: {fileID: 1164089754727880, guid: cbf5d373bb5b0fe44bd783cb9b237354,
     type: 2}
   SelectionMaterial: {fileID: 2100000, guid: a9deacf38e7468e4a889931d12f066ef, type: 2}
@@ -166,6 +161,23 @@ MonoBehaviour:
   CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
     type: 2}
   CanvasOffsetTop: 2.5
+--- !u!114 &114599460657686264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1083188026060588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdedf1af91f4034b0bcdf5b226c14ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
+    type: 2}
+  ActiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
+    type: 2}
+  WaypointLineColor: {r: 0.2598884, g: 0.9191176, b: 0, a: 0}
+  WaypointLineWidth: 0.05
 --- !u!136 &136697844672569272
 CapsuleCollider:
   m_ObjectHideFlags: 1

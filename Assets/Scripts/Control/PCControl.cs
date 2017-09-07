@@ -14,58 +14,52 @@ namespace Control {
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(Team))]
+    [RequireComponent(typeof(WaypointHandler))]
     public class PcControl : MouseControllable {
-        [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
-        public GameObject ActiveWaypointMarkerPrefab;
-        public Color WaypointLineColor;
-        public float WaypointLineWidth;
-
         [Space] [Header("Selection")] public GameObject SelectionCirclePrefab;
         public Material SelectionMaterial;
         public Material FocusMaterial;
 
         private NavMeshAgent agent;
         private GameObject selectionCircle;
-        private GameObject currentDestination;
-        private LineRenderer currentDestinationLineRenderer;
-        private readonly List<GameObject> waypoints = new List<GameObject>();
         private Damageable health;
-        private bool disabled;
+        private bool isDead;
         private Animator animator;
         private Attack attack;
+        private WaypointHandler waypoints;
 
         #region MouseControl
 
         public override void OnSelect() {
-            ToggleWaypointRenderer(true);
+            waypoints.ToggleWaypointRenderer(true);
             ToggleSelectionCircle(true, false);
         }
 
         public override void OnFocusSelect() {
-            ToggleWaypointRenderer(true);
+            waypoints.ToggleWaypointRenderer(true);
             ToggleSelectionCircle(true, true);
         }
 
         public override void OnDeselect() {
             ToggleSelectionCircle(false, false);
             if (GeneralSettings.DisplayWaypointsPermanently) return;
-            ToggleWaypointRenderer(false);
+            waypoints.ToggleWaypointRenderer(false);
         }
 
         public override bool OnRightClick(ClickLocation click) {
-            if (disabled) return false;
+            if (isDead) return false;
             Damageable damageable;
             TargetAttackable(click.Target, out damageable);
             attack.SetTarget(damageable);
-            ClearWaypoints();
-            AddWaypoint(click);
-            GoToNextWaypoint();
+            waypoints.ClearWaypoints();
+            waypoints.AddWaypoint(click);
+            waypoints.GoToNextWaypoint();
             return false;
         }
 
         public override bool OnRightShiftClick(ClickLocation click) {
-            if (disabled) return false;
-            AddWaypoint(click);
+            if (isDead) return false;
+            waypoints.AddWaypoint(click);
             return false;
         }
 
@@ -83,110 +77,43 @@ namespace Control {
             agent = GetComponent<NavMeshAgent>();
             health = GetComponent<Damageable>();
             attack = GetComponent<Attack>();
+            waypoints = GetComponent<WaypointHandler>();
             animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
         }
 
 
         private void Update() {
-            if (disabled) {
-                disabled = health.IsDead();
-                if (disabled) return;
-                agent.enabled = true;
-                animator.SetTrigger("Revive");
-            }
+            if (isDead) CheckForRevive();
             if (animator != null) animator.SetFloat("Speed", agent.velocity.magnitude);
-            if (health.IsDead()) {
-                agent.enabled = false;
-                Destroy(currentDestination);
-                disabled = true;
-                return;
-            }
-            UpdateCurrentWaypointLine();
+            CheckForDeath();
+            waypoints.UpdateCurrentWaypointLine();
             var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
-            if (!agent.hasPath && waypoints.Count > 0) {
-                GoToNextWaypoint();
+            if (!agent.hasPath) {
+                waypoints.GoToNextWaypoint();
                 return;
             }
             if (!arrived) return;
 
-            Destroy(currentDestination);
+            waypoints.DestroyCurrentWaypoint();
             agent.ResetPath();
-            if (waypoints.Count < 1) return;
-            GoToNextWaypoint();
+            waypoints.GoToNextWaypoint();
         }
 
         #endregion
 
-        #region Waypoints
-
-        /// <summary>
-        /// Makes the next waypoint the current destination
-        /// </summary>
-        private void GoToNextWaypoint() {
-            var next = waypoints[0];
-            var nextPosition = next.transform.position;
-            agent.SetDestination(nextPosition);
-            currentDestination = Instantiate(ActiveWaypointMarkerPrefab, nextPosition, Quaternion.identity);
-            currentDestinationLineRenderer = currentDestination.GetComponent<LineRenderer>();
-            currentDestinationLineRenderer.enabled = false;
-            if (currentDestinationLineRenderer) {
-                currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
-                currentDestinationLineRenderer.SetPosition(1, transform.position);
-            }
-
-            Destroy(next);
-            waypoints.Remove(next);
+        private void CheckForDeath() {
+            if (!health.IsDead()) return;
+            agent.enabled = false;
+            waypoints.DestroyCurrentWaypoint();
+            isDead = true;
         }
 
-        private void ClearWaypoints() {
-            Destroy(currentDestination);
-            waypoints.ForEach(Destroy);
-            waypoints.Clear();
+        private void CheckForRevive() {
+            isDead = health.IsDead();
+            if (isDead) return;
+            agent.enabled = true;
+            animator.SetTrigger("Revive");
         }
-
-        /// <summary>
-        /// Adds a waypoint and renders a line to the previous wapoint
-        /// </summary>
-        private void AddWaypoint(ClickLocation clickLocation) {
-            var markerLocation = clickLocation.Location;
-            markerLocation.y += InactiveWaypointMarkerPrefab.transform.localScale.y / 2;
-            var marker = Instantiate(
-                InactiveWaypointMarkerPrefab,
-                markerLocation,
-                InactiveWaypointMarkerPrefab.transform.rotation
-            );
-            waypoints.Add(marker);
-            // Connect waypoint to previous waypoint
-            var lineRenderer = marker.AddComponent<LineRenderer>();
-            lineRenderer.startColor = WaypointLineColor;
-            lineRenderer.endColor = WaypointLineColor;
-            lineRenderer.startWidth = WaypointLineWidth;
-            lineRenderer.endWidth = WaypointLineWidth;
-            Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
-            lineRenderer.material = whiteDiffuseMat;
-
-            var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
-            if (previousWaypoint == null) return;
-            lineRenderer.SetPosition(0, waypoints[waypoints.Count - 1].transform.position);
-            lineRenderer.SetPosition(1, previousWaypoint.transform.position);
-            currentDestinationLineRenderer.enabled = true;
-        }
-
-        private void UpdateCurrentWaypointLine() {
-            if (currentDestinationLineRenderer != null && currentDestinationLineRenderer.enabled) {
-                currentDestinationLineRenderer.SetPosition(1, transform.position);
-            }
-        }
-
-        private void ToggleWaypointRenderer(bool value) {
-            waypoints.ForEach(o => {
-                o.SetActive(value);
-                var line = o.GetComponent<LineRenderer>();
-                line.enabled = value;
-            });
-        }
-
-        #endregion
 
         private bool TargetAttackable(GameObject target, out Damageable damageable) {
             damageable = null;
@@ -201,6 +128,5 @@ namespace Control {
             selectionCircle.GetComponent<Projector>().material =
                 focus ? FocusMaterial : SelectionMaterial;
         }
-        
     }
 }

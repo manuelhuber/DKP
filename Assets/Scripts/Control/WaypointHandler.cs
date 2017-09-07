@@ -18,16 +18,23 @@ namespace Control {
             agent = GetComponent<NavMeshAgent>();
         }
 
-        #region Waypoints
+
+        public void DestroyCurrentWaypoint() {
+            Destroy(currentDestination);
+        }
 
         /// <summary>
         /// Makes the next waypoint the current destination
         /// </summary>
         public void GoToNextWaypoint() {
+            if (waypoints.Count <= 0) return;
             var next = waypoints[0];
             var nextPosition = next.transform.position;
             agent.SetDestination(nextPosition);
-            currentDestination = Instantiate(ActiveWaypointMarkerPrefab, nextPosition, Quaternion.identity);
+            currentDestination = Instantiate(
+                ActiveWaypointMarkerPrefab,
+                nextPosition,
+                ActiveWaypointMarkerPrefab.transform.rotation);
             currentDestinationLineRenderer = currentDestination.GetComponent<LineRenderer>();
             currentDestinationLineRenderer.enabled = false;
             if (currentDestinationLineRenderer) {
@@ -39,7 +46,7 @@ namespace Control {
             waypoints.Remove(next);
         }
 
-        private void ClearWaypoints() {
+        public void ClearWaypoints() {
             Destroy(currentDestination);
             waypoints.ForEach(Destroy);
             waypoints.Clear();
@@ -49,6 +56,8 @@ namespace Control {
         /// Adds a waypoint and renders a line to the previous wapoint
         /// </summary>
         public void AddWaypoint(ClickLocation clickLocation) {
+            var markerWrapper = new GameObject("Waypoint");
+            markerWrapper.transform.position = clickLocation.Location;
             var markerLocation = clickLocation.Location;
             markerLocation.y += InactiveWaypointMarkerPrefab.transform.localScale.y / 2;
             var marker = Instantiate(
@@ -56,15 +65,14 @@ namespace Control {
                 markerLocation,
                 InactiveWaypointMarkerPrefab.transform.rotation
             );
-            waypoints.Add(marker);
+            marker.transform.SetParent(markerWrapper.transform);
+            waypoints.Add(markerWrapper);
             // Connect waypoint to previous waypoint
-            var lineRenderer = marker.AddComponent<LineRenderer>();
-            lineRenderer.startColor = WaypointLineColor;
-            lineRenderer.endColor = WaypointLineColor;
-            lineRenderer.startWidth = WaypointLineWidth;
-            lineRenderer.endWidth = WaypointLineWidth;
-            Material whiteDiffuseMat = new Material(Shader.Find("Unlit/Texture"));
-            lineRenderer.material = whiteDiffuseMat;
+            var lineRenderer = marker.GetComponent<LineRenderer>();
+//            lineRenderer.startColor = WaypointLineColor;
+//            lineRenderer.endColor = WaypointLineColor;
+//            lineRenderer.startWidth = WaypointLineWidth;
+//            lineRenderer.endWidth = WaypointLineWidth;
 
             var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
             if (previousWaypoint == null) return;
@@ -73,20 +81,18 @@ namespace Control {
             currentDestinationLineRenderer.enabled = true;
         }
 
-        private void UpdateCurrentWaypointLine() {
+        public void UpdateCurrentWaypointLine() {
             if (currentDestinationLineRenderer != null && currentDestinationLineRenderer.enabled) {
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
             }
         }
 
-        private void ToggleWaypointRenderer(bool value) {
+        public void ToggleWaypointRenderer(bool value) {
             waypoints.ForEach(o => {
                 o.SetActive(value);
-                var line = o.GetComponent<LineRenderer>();
+                var line = o.GetComponentInChildren<LineRenderer>();
                 line.enabled = value;
             });
         }
-
-        #endregion
     }
 }
