@@ -82,11 +82,13 @@ namespace Control {
             agent.SetDestination(nextPosition);
             GameObject foo;
             currentDestination = CreateMarker(ActiveWaypointMarkerPrefab, nextPosition, out foo);
+            var showLine = currentDestinationLineRenderer == null || currentDestinationLineRenderer.enabled;
             currentDestinationLineRenderer = foo.GetComponent<LineRenderer>();
             if (currentDestinationLineRenderer) {
                 currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
             }
+            currentDestinationLineRenderer.enabled = showLine;
 
             Destroy(next);
             waypoints.Remove(next);
