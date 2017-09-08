@@ -1,10 +1,11 @@
 ﻿using Control;
+using Damage;
 using UnityEngine;
 using Util;
 
 namespace Spells {
     public class AoEUnderSelf : Ability {
-        public GameObject AoEPrefab;
+        public AreaOfEffect AoEPrefab;
 
         public override bool OnActivation(GameObject caster) {
             Vector3 hitOnTerrain;

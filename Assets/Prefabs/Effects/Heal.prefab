@@ -96,7 +96,7 @@ MonoBehaviour:
   Amount: 10
   Intervall: 1
   AffectedTeams: 00000000
-  Lifetime: 0
+  Lifetime: 10
 --- !u!136 &136502179785092800
 CapsuleCollider:
   m_ObjectHideFlags: 1

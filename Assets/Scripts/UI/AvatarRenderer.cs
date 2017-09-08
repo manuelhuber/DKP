@@ -7,20 +7,16 @@ namespace UI {
         public float SpaceBetweenAvatars = 10;
 
         private int avatarCount;
-        private RectTransform folder;
-        private GameObject canvas;
-        private GameObject folderGo;
+        private Transform folder;
 
         public void InitializeAvater(GameObject prefab, out Slider healthbar, string avaterName) {
             var avatar = Instantiate(prefab);
-            avatar.transform.SetParent(folder.transform);
+            avatar.transform.SetParent(folder);
             var rectTransform = PositionUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
 
             // calculate position based on number of avatars
-            var pos = rectTransform.position;
-            var offsetTop = SpaceBetweenAvatars + (rectTransform.rect.height + SpaceBetweenAvatars) * avatarCount;
-            pos.y = pos.y - offsetTop;
-            rectTransform.position = pos;
+            var offsetTop = (rectTransform.rect.height + SpaceBetweenAvatars) * -avatarCount;
+            UnityUtil.SetAnchoredPosition(rectTransform, rectTransform.anchoredPosition.x, offsetTop);
 
             // set the out-parameter
             healthbar = avatar.GetComponentInChildren<Slider>();
@@ -32,18 +28,7 @@ namespace UI {
         }
 
         private void Awake() {
-            // Create avatar prefab as canvas child
-            canvas = GameObject.FindWithTag("Canvas");
-
-            folderGo = new GameObject("Avatars");
-            folderGo.transform.position = new Vector3(0, 0, 0);
-
-            folder = folderGo.AddComponent<RectTransform>();
-            folder.SetParent(canvas.transform);
-            PositionUtil.RectTransfromAnchorTopLeft(folder);
-            var folderPosition = folder.position;
-            folderPosition.x = SpaceBetweenAvatars;
-            folder.position = folderPosition;
+            folder = GameObject.FindWithTag("AvatarFolder").transform;
         }
     }
 }

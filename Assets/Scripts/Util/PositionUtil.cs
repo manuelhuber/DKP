@@ -48,5 +48,13 @@ namespace Util {
             rect.pivot = new Vector2(0, 1);
             return rect;
         }
+
+        public static RectTransform RectTransfromAnchorBottomCenter(RectTransform rect) {
+            rect.anchorMin = new Vector2(0.5f, 0);
+            rect.anchorMax = new Vector2(0.5f, 0);
+            rect.anchoredPosition = new Vector2(0.5f, 0);
+            rect.pivot = new Vector2(0.5f, 0);
+            return rect;
+        }
     }
 }
