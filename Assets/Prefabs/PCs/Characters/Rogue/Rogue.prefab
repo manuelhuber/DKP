@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114430475861322644}
   - component: {fileID: 54923830477834438}
   - component: {fileID: 114430215941494976}
+  - component: {fileID: 114816953037453670}
   m_Layer: 0
   m_Name: Rogue
   m_TagString: Player
@@ -174,10 +175,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
     type: 2}
-  ActiveWaypointMarkerPrefab: {fileID: 1221653982032466, guid: 4fae19ffd6d9b8344a9457b4b65d093a,
+  ActiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: 428390a77a4809b4caa7cf78dc22fb15,
     type: 2}
   WaypointLineColor: {r: 0.2598884, g: 0.9191176, b: 0, a: 0}
   WaypointLineWidth: 0.05
+  Animator: {fileID: 0}
+--- !u!114 &114816953037453670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1083188026060588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7653d6f4664c68909eba993e60f87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Abilities:
+  - {fileID: 114430343776545080, guid: 994aea63ff7b8a749b0621f72089f6a2, type: 2}
+  ListenForHotkeys: 0
 --- !u!136 &136697844672569272
 CapsuleCollider:
   m_ObjectHideFlags: 1

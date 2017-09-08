@@ -6,11 +6,6 @@ using UnityEngine.AI;
 using Util;
 
 namespace Control {
-    internal class Waypoint {
-        public GameObject Target;
-        public bool IsMobile;
-    }
-
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(Team))]
@@ -27,23 +22,27 @@ namespace Control {
         private Animator animator;
         private Attack attack;
         private WaypointHandler waypoints;
+        private AbilityHandler abilities;
 
         #region MouseControl
 
         public override void OnSelect() {
             waypoints.ToggleWaypointRenderer(true);
             ToggleSelectionCircle(true, false);
+            abilities.Active = false;
         }
 
         public override void OnFocusSelect() {
             waypoints.ToggleWaypointRenderer(true);
             ToggleSelectionCircle(true, true);
+            abilities.Active = true;
         }
 
         public override void OnDeselect() {
             ToggleSelectionCircle(false, false);
             if (GeneralSettings.DisplayWaypointsPermanently) return;
             waypoints.ToggleWaypointRenderer(false);
+            abilities.Active = false;
         }
 
         public override bool OnRightClick(ClickLocation click) {
@@ -104,6 +103,7 @@ namespace Control {
             health = GetComponent<Damageable>();
             attack = GetComponent<Attack>();
             waypoints = GetComponent<WaypointHandler>();
+            abilities = GetComponent<AbilityHandler>();
             animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
             waypoints.Animator = animator;
         }

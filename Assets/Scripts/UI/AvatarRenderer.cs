@@ -1,29 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Util;
 
 namespace UI {
     public class AvatarRenderer : MonoBehaviour {
         public float SpaceBetweenAvatars = 10;
 
         private int avatarCount;
+        private RectTransform folder;
+        private GameObject canvas;
+        private GameObject folderGo;
 
         public void InitializeAvater(GameObject prefab, out Slider healthbar, string avaterName) {
-            // Create avatar prefab as canvas child
-            var canvas = GameObject.FindWithTag("Canvas");
             var avatar = Instantiate(prefab);
-            avatar.transform.SetParent(canvas.transform);
+            avatar.transform.SetParent(folder.transform);
+//            folder.GetComponent<RectTransform>().position = new Vector3(-1, -1, -1);
 
             // Set anchor top left
-            var rectTransform = avatar.GetComponent<RectTransform>();
-            rectTransform.anchorMax = new Vector2(0, 1);
-            rectTransform.anchorMin = new Vector2(0, 1);
-            rectTransform.anchoredPosition = new Vector2(0, 1);
+            var rectTransform = PositionUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
 
             // calculate position based on number of avatars
             var pos = rectTransform.position;
-            var offset = SpaceBetweenAvatars + (rectTransform.rect.height + SpaceBetweenAvatars) * avatarCount;
-            pos.y = pos.y - offset;
-            pos.x = SpaceBetweenAvatars;
+            var offsetTop = SpaceBetweenAvatars + (rectTransform.rect.height + SpaceBetweenAvatars) * avatarCount;
+            pos.y = pos.y - offsetTop;
             rectTransform.position = pos;
 
             // set the out-parameter
@@ -33,6 +32,23 @@ namespace UI {
             avatar.GetComponentInChildren<Text>().text = avaterName;
 
             avatarCount++;
+
+            Debug.Log(folderGo.GetComponent<RectTransform>().position);
+        }
+
+        private void Awake() {
+            // Create avatar prefab as canvas child
+            canvas = GameObject.FindWithTag("Canvas");
+
+            folderGo = new GameObject("Avatars");
+            folderGo.transform.position = new Vector3(0, 0, 0);
+
+            folder = folderGo.AddComponent<RectTransform>();
+            folder.SetParent(canvas.transform);
+            PositionUtil.RectTransfromAnchorTopLeft(folder);
+            var folderPosition = folder.position;
+            folderPosition.x = SpaceBetweenAvatars;
+            folder.position = folderPosition;
         }
     }
 }

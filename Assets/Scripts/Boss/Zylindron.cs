@@ -32,7 +32,7 @@ namespace Boss {
             if (!availablePlayers.Any()) return;
             var target = availablePlayers.ElementAt(Random.Range(0, availablePlayers.Count));
             Vector3 targetPos;
-            if (PositionUtil.ProjectOnTerrain(target.transform.position, out targetPos)) {
+            if (PositionUtil.ProjectOnTerrainFromSky(target.transform.position, out targetPos)) {
                 Instantiate(FirePrefab, targetPos, FirePrefab.transform.rotation);
             }
         }
