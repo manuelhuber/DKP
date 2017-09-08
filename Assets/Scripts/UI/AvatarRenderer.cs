@@ -14,9 +14,6 @@ namespace UI {
         public void InitializeAvater(GameObject prefab, out Slider healthbar, string avaterName) {
             var avatar = Instantiate(prefab);
             avatar.transform.SetParent(folder.transform);
-//            folder.GetComponent<RectTransform>().position = new Vector3(-1, -1, -1);
-
-            // Set anchor top left
             var rectTransform = PositionUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
 
             // calculate position based on number of avatars
@@ -32,8 +29,6 @@ namespace UI {
             avatar.GetComponentInChildren<Text>().text = avaterName;
 
             avatarCount++;
-
-            Debug.Log(folderGo.GetComponent<RectTransform>().position);
         }
 
         private void Awake() {
