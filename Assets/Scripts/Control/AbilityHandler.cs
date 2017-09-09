@@ -14,7 +14,6 @@ namespace Control {
             }
         }
 
-
         private bool active;
         private float GlobalCooldown = 0.5f;
         private float gcdEnd;
@@ -22,11 +21,18 @@ namespace Control {
         private AbilityRenderer abilityRenderer;
 
         public bool OnLeftClickDown(ClickLocation click) {
-            return false;
+            // Not active or no active ability -> do nothing
+            if (!active || activeAbility == null) return false;
+            // By convention the ability can't end on a click down
+            activeAbility.OnLeftClickDown(click);
+            // if there's an active ability always return true to prevent the selection-box from startin
+            return true;
         }
 
         public bool OnLeftClickUp(ClickLocation click) {
-            return false;
+            if (!active || activeAbility == null || !activeAbility.OnLeftClickUp(click)) return false;
+            activeAbility = null;
+            return true;
         }
 
         private void Update() {
@@ -37,9 +43,9 @@ namespace Control {
                     activeAbility = ability;
                 }
             });
-            if (activeAbility == null) return;
+            if (activeAbility == null || !activeAbility.OnActivation(gameObject)) return;
+            activeAbility = null;
             gcdEnd = Time.time + GlobalCooldown;
-            if (activeAbility.OnActivation(gameObject)) activeAbility = null;
         }
 
         private void Start() {

@@ -45,6 +45,14 @@ namespace Control {
             abilities.Active = false;
         }
 
+        public override bool OnLeftClickUp(ClickLocation click) {
+            return abilities.OnLeftClickUp(click);
+        }
+
+        public override bool OnLeftClickDown(ClickLocation click) {
+            return abilities.OnLeftClickDown(click);
+        }
+
         public override bool OnRightClick(ClickLocation click) {
             if (isDead) return false;
             Damageable damageable;

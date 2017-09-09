@@ -15,11 +15,6 @@ namespace Control {
         public Color SelectionFillColor;
 
         /// <summary>
-        /// The layer mask of navigatable terrains. MouseControllable objects get these when receiving clicks
-        /// </summary>
-        public LayerMask TerrainLayerMask;
-
-        /// <summary>
         /// All layers that should be clickable - either to be selected or be the target of clicks
         /// </summary>
         public LayerMask ClickableLayers;
@@ -58,7 +53,7 @@ namespace Control {
 
             GameObject target;
             Vector3 terrainHit;
-            if (!GetClickLocation(out target, out terrainHit)) return;
+            if (!PositionUtil.GetClickLocation(out target, out terrainHit, ClickableLayers)) return;
 
             var click = new ClickLocation {Target = target, Location = terrainHit};
             if (rightClick) {
@@ -152,26 +147,6 @@ namespace Control {
             selected.ForEach(o => o.OnDeselect());
             selected.Clear();
             focusedSelected = null;
-        }
-
-        /// <summary>
-        /// Casts a ray from the main camera through the cursor and outputs the first clickable object hit aswell as
-        /// the first terrain hit
-        /// </summary>
-        /// <returns>true if anything has been hit</returns>
-        private bool GetClickLocation(out GameObject target, out Vector3 terrainHit) {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            RaycastHit terrainRaycastHit;
-            Physics.Raycast(ray, out terrainRaycastHit, 100, TerrainLayerMask);
-            if (!Physics.Raycast(ray, out hit, 100, ClickableLayers)) {
-                target = null;
-                terrainHit = new Vector3();
-                return false;
-            }
-            target = hit.transform.gameObject;
-            terrainHit = terrainRaycastHit.point;
-            return true;
         }
 
         /// <summary>

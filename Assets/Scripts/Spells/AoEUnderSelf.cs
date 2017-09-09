@@ -7,10 +7,10 @@ namespace Spells {
     public class AoEUnderSelf : Ability {
         public AreaOfEffect AoEPrefab;
 
-        public override bool OnActivation(GameObject caster) {
+        public override bool OnActivation(GameObject cas) {
             Vector3 hitOnTerrain;
-            PositionUtil.ProjectOnTerrainFromPosition(caster.transform.position, out hitOnTerrain);
-            Instantiate(AoEPrefab, hitOnTerrain, caster.transform.rotation);
+            PositionUtil.ProjectOnTerrainFromPosition(cas.transform.position, out hitOnTerrain);
+            Instantiate(AoEPrefab, hitOnTerrain, cas.transform.rotation);
             return true;
         }
     }

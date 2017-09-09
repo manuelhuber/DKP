@@ -1,7 +1,6 @@
 using UnityEngine;
 
 namespace Control {
-    
     public class ClickLocation {
         /// The game object hit by the click
         public GameObject Target;
@@ -26,14 +25,15 @@ namespace Control {
         /// object or purposefully focused in a group of selections)
         /// </summary>
         /// <returns>
-        /// true if the default click behaviour should be ignored. By default a left click up deselects the current
-        /// selection and either selects the clicked unit or selects all drag-selected units.
+        /// true if this action "consumes the click" - meaning no additional action should be cause by this click.
+        /// By default a left click up deselects the current selection and either selects the clicked unit or selects 
+        /// all drag-selected units.
         /// Example:
         /// Usually a mouse controllable doesn't want anything special to happen on a left click, so it returns false
-        /// and the unit will be deselected.
+        /// and the default behavior will happen (and the unit will be deselected).
         /// But if it is in a "spell casting" mode a left click should cast a spell at the click location without 
         /// deselecting the current selection. This can be achieved by returning true to preventing the default 
-        /// deselection. 
+        /// deselection behaviour. 
         /// </returns>
         public virtual bool OnLeftClickUp(ClickLocation click) {
             return false;

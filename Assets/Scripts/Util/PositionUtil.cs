@@ -33,9 +33,7 @@ namespace Util {
             hit = new Vector3();
             RaycastHit rayHit;
             var ray = new Ray(pos, Vector3.down);
-            // bitshift is necessary to actually get the layer number 
-            var actualLayer = 1 << LayerMask.NameToLayer("Terrain");
-            var boo = Physics.Raycast(ray, out rayHit, distance, actualLayer);
+            var boo = Physics.Raycast(ray, out rayHit, distance, GetTerrainLayerMask());
             if (!boo) return false;
             hit = rayHit.point;
             return true;
@@ -55,6 +53,33 @@ namespace Util {
             rect.anchoredPosition = new Vector2(0.5f, 0);
             rect.pivot = new Vector2(0.5f, 0);
             return rect;
+        }
+
+
+        /// <summary>
+        /// Casts a ray from the main camera through the cursor and outputs the first clickable object hit aswell as
+        /// the first terrain hit
+        /// </summary>
+        /// <returns>true if anything has been hit</returns>
+        public static bool GetClickLocation(out GameObject target, out Vector3 terrainHit,
+            LayerMask clickable) {
+            terrainHit = new Vector3();
+            target = null;
+
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            RaycastHit terrainRaycastHit;
+            if (!Physics.Raycast(ray, out terrainRaycastHit, 100, GetTerrainLayerMask())) return false;
+            terrainHit = terrainRaycastHit.point;
+            if (Physics.Raycast(ray, out hit, 100, clickable)) {
+                target = hit.transform.gameObject;
+            }
+            return true;
+        }
+
+        public static int GetTerrainLayerMask() {
+            // bitshift is necessary to actually get the layer number 
+            return 1 << LayerMask.NameToLayer("Terrain");
         }
     }
 }
