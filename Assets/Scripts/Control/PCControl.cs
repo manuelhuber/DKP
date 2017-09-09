@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Damage;
 using DKPSettings;
 using UnityEngine;
@@ -57,7 +58,10 @@ namespace Control {
             if (isDead) return false;
             Damageable damageable;
             TargetAttackable(click.Target, out damageable);
-            attack.SetTarget(damageable);
+            if (attack.SetTarget(damageable)) {
+                waypoints.Stop();
+                return true;
+            }
             waypoints.GoDirectlyTo(click);
             return false;
         }
@@ -73,6 +77,7 @@ namespace Control {
             agent.enabled = false;
             waypoints.DestroyCurrentWaypoint();
             isDead = true;
+            abilities.enabled = false;
         }
 
         private void CheckForRevive() {
@@ -80,6 +85,7 @@ namespace Control {
             if (isDead) return;
             agent.enabled = true;
             animator.SetTrigger("Revive");
+            abilities.enabled = true;
         }
 
         private bool TargetAttackable(GameObject target, out Damageable damageable) {

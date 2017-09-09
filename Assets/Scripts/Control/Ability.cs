@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Control {
     // TODO: the lifecycle model is not great - there is some hardcoded stuff in the abilty handler and some convetion
     // that have to be upheld (like an ability can't only use the leftClickDown without consuming the clickUp aswell
-    public abstract class Ability : MonoBehaviour {
+    public abstract class Ability : ScriptableObject {
         [Header("Hotkey")] public Sprite Icon;
         public KeyCode Hotkey;
         public KeyCode Modifier;
@@ -44,6 +44,9 @@ namespace Control {
         }
 
         public virtual void OnCancel() {
+        }
+
+        public virtual void OnUpdate() {
         }
     }
 }

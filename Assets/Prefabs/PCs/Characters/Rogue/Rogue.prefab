@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496bc09b25f34958aa92b3d8185b087c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 1
   AttackInterval: 2
   AttackDamage: 10
+  range: 1
 --- !u!114 &114430475861322644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,9 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7653d6f4664c68909eba993e60f87b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Abilities:
-  - {fileID: 114430343776545080, guid: 994aea63ff7b8a749b0621f72089f6a2, type: 2}
-  - {fileID: 114828689542328704, guid: 9b5433345944a6d4cbd3c56b99fc0777, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}
+  - {fileID: 11400000, guid: e16b8456fec87f24b97774ceb7680adc, type: 2}
 --- !u!136 &136697844672569272
 CapsuleCollider:
   m_ObjectHideFlags: 1

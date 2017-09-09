@@ -5,14 +5,18 @@ using UnityEngine;
 
 namespace Control {
     public class AbilityHandler : MonoBehaviour {
-        public List<GameObject> AbilityPrefabs;
+        public List<Ability> abilities;
 
-        private readonly List<Ability> abilities = new List<Ability>();
+//        private readonly List<Ability> abilities = new List<Ability>();
 
         public bool Active {
             get { return active; }
             set {
                 abilityRenderer.DisplayAbilities(value ? abilities : null);
+                if (!value) {
+                    if (activeAbility != null) activeAbility.OnCancel();
+                    activeAbility = null;
+                }
                 active = value;
             }
         }
@@ -39,11 +43,13 @@ namespace Control {
         }
 
         private void Update() {
+            if (!active) return;
+            if (activeAbility != null) activeAbility.OnUpdate();
             if (Input.GetKey(KeyCode.Escape) && activeAbility != null) {
                 activeAbility.OnCancel();
                 activeAbility = null;
             }
-            if (!active || gcdEnd > Time.time || activeAbility != null) return;
+            if (gcdEnd > Time.time || activeAbility != null) return;
             abilities.ForEach(ability => {
                 var mod = ability.Modifier == 0 || Input.GetKey(ability.Modifier);
                 if (mod && Input.GetKey(ability.Hotkey)) {
@@ -53,10 +59,6 @@ namespace Control {
             if (activeAbility == null || !activeAbility.OnActivation(gameObject)) return;
             activeAbility = null;
             gcdEnd = Time.time + GlobalCooldown;
-        }
-
-        private void Awake() {
-            AbilityPrefabs.ForEach(o => abilities.Add(Instantiate(o).GetComponent<Ability>()));
         }
 
         private void Start() {

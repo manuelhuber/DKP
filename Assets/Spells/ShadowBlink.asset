@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e5afd9197443f3b2132ef286bf22ed, type: 3}
+  m_Name: ShadowBlink
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: e29a6a06ac73e6748a2afe18daa096c0, type: 3}
+  Hotkey: 101
+  Modifier: 0
+  Name: ShadowBlink
+  Cooldown: 1
+  Distance: 10
+  MarkerPrefab: {fileID: 1659418661540198, guid: 4281a91c94f670e49a2262b6d370400d,
+    type: 2}

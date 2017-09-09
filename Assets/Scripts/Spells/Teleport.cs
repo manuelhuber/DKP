@@ -4,26 +4,29 @@ using UnityEngine.AI;
 using Util;
 
 namespace Spells {
+    [CreateAssetMenu(menuName = "Spells/Teleport")]
     public class Teleport : Ability {
         public float Distance;
+        public GameObject MarkerPrefab;
 
         private GameObject caster;
         private GameObject marker;
 
         public override bool OnActivation(GameObject cas) {
             caster = cas;
-            marker = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            marker = Instantiate(MarkerPrefab);
             marker.transform.SetParent(caster.transform, false);
             marker.transform.position = WarpLocation();
             return false;
         }
 
-        public void Update() {
+        public override void OnUpdate() {
             if (caster == null) return;
             if (marker != null) marker.transform.position = WarpLocation();
         }
 
         public override bool OnLeftClickUp(ClickLocation click) {
+            if (caster == null) return false;
             var agent = caster.GetComponent<NavMeshAgent>();
             if (agent == null) return false;
             agent.Warp(WarpLocation());

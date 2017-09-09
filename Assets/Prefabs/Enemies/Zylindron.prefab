@@ -145,9 +145,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496bc09b25f34958aa92b3d8185b087c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 3
-  AttackInterval: 0
-  AttackDamage: 0
+  AttackInterval: 5
+  AttackDamage: 10
+  range: 3
 --- !u!114 &114837354276751448
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 using Util;
 
 namespace Spells {
+    [CreateAssetMenu(menuName = "Spells/AoEUnderSelf")]
     public class AoEUnderSelf : Ability {
         public AreaOfEffect AoEPrefab;
 

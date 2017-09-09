@@ -20,6 +20,12 @@ namespace Control {
         private LineRenderer currentDestinationLineRenderer;
         private readonly List<GameObject> waypoints = new List<GameObject>();
 
+
+        public void Stop() {
+            ClearWaypoints();
+            agent.ResetPath();
+        }
+
         public void GoDirectlyTo(ClickLocation location) {
             ClearWaypoints();
             AddWaypoint(location);
