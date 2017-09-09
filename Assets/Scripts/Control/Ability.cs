@@ -42,5 +42,8 @@ namespace Control {
         public virtual bool OnLeftClickUp(ClickLocation click) {
             return false;
         }
+
+        public virtual void OnCancel() {
+        }
     }
 }

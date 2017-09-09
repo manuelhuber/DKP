@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
+using Spells;
 using UI;
 using UnityEngine;
 
 namespace Control {
     public class AbilityHandler : MonoBehaviour {
-        public List<Ability> Abilities;
+        public List<GameObject> AbilityPrefabs;
+
+        private readonly List<Ability> abilities = new List<Ability>();
 
         public bool Active {
             get { return active; }
             set {
-                abilityRenderer.DisplayAbilities(value ? Abilities : null);
+                abilityRenderer.DisplayAbilities(value ? abilities : null);
                 active = value;
             }
         }
@@ -36,8 +39,12 @@ namespace Control {
         }
 
         private void Update() {
-            if (!active || gcdEnd > Time.time) return;
-            Abilities.ForEach(ability => {
+            if (Input.GetKey(KeyCode.Escape) && activeAbility != null) {
+                activeAbility.OnCancel();
+                activeAbility = null;
+            }
+            if (!active || gcdEnd > Time.time || activeAbility != null) return;
+            abilities.ForEach(ability => {
                 var mod = ability.Modifier == 0 || Input.GetKey(ability.Modifier);
                 if (mod && Input.GetKey(ability.Hotkey)) {
                     activeAbility = ability;
@@ -46,6 +53,10 @@ namespace Control {
             if (activeAbility == null || !activeAbility.OnActivation(gameObject)) return;
             activeAbility = null;
             gcdEnd = Time.time + GlobalCooldown;
+        }
+
+        private void Awake() {
+            AbilityPrefabs.ForEach(o => abilities.Add(Instantiate(o).GetComponent<Ability>()));
         }
 
         private void Start() {

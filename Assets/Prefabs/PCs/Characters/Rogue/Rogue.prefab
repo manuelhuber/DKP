@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Abilities:
   - {fileID: 114430343776545080, guid: 994aea63ff7b8a749b0621f72089f6a2, type: 2}
-  ListenForHotkeys: 0
+  - {fileID: 114828689542328704, guid: 9b5433345944a6d4cbd3c56b99fc0777, type: 2}
 --- !u!136 &136697844672569272
 CapsuleCollider:
   m_ObjectHideFlags: 1

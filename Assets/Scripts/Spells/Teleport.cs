@@ -8,21 +8,37 @@ namespace Spells {
         public float Distance;
 
         private GameObject caster;
+        private GameObject marker;
 
         public override bool OnActivation(GameObject cas) {
             caster = cas;
+            marker = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            marker.transform.SetParent(caster.transform, false);
+            marker.transform.position = WarpLocation();
             return false;
+        }
+
+        public void Update() {
+            if (caster == null) return;
+            if (marker != null) marker.transform.position = WarpLocation();
         }
 
         public override bool OnLeftClickUp(ClickLocation click) {
             var agent = caster.GetComponent<NavMeshAgent>();
             if (agent == null) return false;
             agent.Warp(WarpLocation());
+            Destroy(marker);
+
             var waypoints = caster.GetComponent<WaypointHandler>();
             if (waypoints != null) {
                 waypoints.DestroyCurrentWaypoint();
             }
             return true;
+        }
+
+        public override void OnCancel() {
+            Destroy(marker);
+            caster = null;
         }
 
         private Vector3 WarpLocation() {
