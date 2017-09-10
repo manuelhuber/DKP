@@ -20,10 +20,9 @@ namespace Boss {
         }
 
         private void Update() {
-            if (nextFire < Time.time) {
-                SpawnFire();
-                nextFire += FireInterval;
-            }
+            if (!(nextFire < Time.time)) return;
+            SpawnFire();
+            nextFire += FireInterval;
         }
 
         private void SpawnFire() {

@@ -20,7 +20,7 @@ namespace Damage {
 
         private void Update() {
             if (!(nextTime <= Time.time)) return;
-            nextTime += Intervall;
+            nextTime = Time.time + Intervall;
             affected.ForEach(target => target.ModifyHitpoints(Amount));
         }
 

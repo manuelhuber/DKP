@@ -5,6 +5,7 @@ namespace Generic {
     public class Billboarding : MonoBehaviour {
         public Camera Camera;
         public bool AutoInit = true;
+        public bool FlipX;
 
         private void Awake() {
             if (AutoInit) {
@@ -13,7 +14,8 @@ namespace Generic {
         }
 
         private void Update() {
-            transform.LookAt(transform.position + Camera.transform.rotation * Vector3.forward,
+            var flip = FlipX ? -1 : 1;
+            transform.LookAt(transform.position + Camera.transform.rotation * Vector3.forward * flip,
                 Camera.transform.rotation * Vector3.up);
         }
     }

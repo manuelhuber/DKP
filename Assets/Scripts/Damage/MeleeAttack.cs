@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Control;
 using UnityEngine;
 using Util;
 
@@ -15,7 +16,7 @@ namespace Damage {
 
         public float AttackInterval;
         public int AttackDamage;
-        
+
         [SerializeField] private float range;
 
         private float nextAttackPossible;
@@ -86,7 +87,7 @@ namespace Damage {
         }
 
         private void Start() {
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, "PlayerAnimation");
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PLAYER_ANIMATION_TAG);
         }
 
         private void Update() {

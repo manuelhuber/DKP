@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Util;
 
 namespace Control {
     internal class Waypoint {
@@ -19,7 +22,7 @@ namespace Control {
         private GameObject currentDestination;
         private LineRenderer currentDestinationLineRenderer;
         private readonly List<GameObject> waypoints = new List<GameObject>();
-
+        private Billboarding billboarding;
 
         public void Stop() {
             ClearWaypoints();
@@ -114,10 +117,13 @@ namespace Control {
 
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
+            billboarding =
+                UnityUtil.FindComponentInChildrenWithTag<Billboarding>(gameObject, PcControl.PLAYER_ANIMATION_TAG);
         }
 
         private void Update() {
             if (Animator != null) Animator.SetFloat("Speed", agent.velocity.magnitude);
+            if (billboarding != null && Math.Abs(agent.velocity.x) > 1) billboarding.FlipX = agent.velocity.x < 0;
             UpdateCurrentWaypointLine();
             var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
             if (!agent.hasPath && waypoints.Count > 0) {

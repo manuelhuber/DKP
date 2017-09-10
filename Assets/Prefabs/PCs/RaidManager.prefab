@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Heroes:
-  - Prefab: {fileID: 1083188026060588, guid: fb0abac42c3331a48bb9f24579265938, type: 2}
+  - Prefab: {fileID: 1208260604254884, guid: d5ca5d6c3c7051a4c9ae5cbde02ed3a0, type: 2}
     OutfitPrefabs:
     - {fileID: 1000010208881502, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 2}
     - {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f, type: 2}
@@ -75,4 +75,3 @@ MonoBehaviour:
   - Stab0r
   - Crithappenz
   - Shades
-  SpaceBetweenAvatars: 10

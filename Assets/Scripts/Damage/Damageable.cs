@@ -105,28 +105,14 @@ namespace Damage {
 
         private void Awake() {
             Hitpoints = MaxHitpoints;
-            InitCanvas();
         }
 
         /// <summary>
         /// Generates a local canvas above the gameobject for healthbar and combat text
         /// </summary>
-        private void InitCanvas() {
-            // Create a new local canvas that's attached to this gameobject
-            canvas = new GameObject {name = "UnitCanvas"};
-            canvas.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
-            var transformPosition = canvas.transform.position;
-            transformPosition.y = CanvasOffsetTop;
-            canvas.transform.position = transformPosition;
-            canvas.transform.SetParent(transform, false);
-            var canvasComponent = canvas.AddComponent<Canvas>();
-            canvasComponent.sortingOrder = 1000;
-
-
-            // Make the canvas face the camera
-            canvas.AddComponent<Billboarding>();
-
-            var healthbar = Instantiate(HealthbarPrefab, canvas.transform, false).GetComponent<Slider>();
+        private void Start() {
+            canvas = GetComponentInChildren<Canvas>().gameObject;
+            var healthbar = GetComponentInChildren<Slider>();
             healthbar.maxValue = MaxHitpoints;
             healthbar.value = Hitpoints;
             healthbars.Add(healthbar);
