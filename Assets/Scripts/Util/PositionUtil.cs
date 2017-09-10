@@ -42,7 +42,6 @@ namespace Util {
         public static RectTransform RectTransfromAnchorTopLeft(RectTransform rect) {
             rect.anchorMin = new Vector2(0, 1);
             rect.anchorMax = new Vector2(0, 1);
-            rect.anchoredPosition = new Vector2(0, 1);
             rect.pivot = new Vector2(0, 1);
             return rect;
         }
@@ -50,7 +49,6 @@ namespace Util {
         public static RectTransform RectTransfromAnchorBottomCenter(RectTransform rect) {
             rect.anchorMin = new Vector2(0.5f, 0);
             rect.anchorMax = new Vector2(0.5f, 0);
-            rect.anchoredPosition = new Vector2(0.5f, 0);
             rect.pivot = new Vector2(0.5f, 0);
             return rect;
         }
@@ -60,7 +58,7 @@ namespace Util {
         /// Casts a ray from the main camera through the cursor and outputs the first clickable object hit aswell as
         /// the first terrain hit
         /// </summary>
-        /// <returns>true if anything has been hit</returns>
+        /// <returns>true if terrain has been hit</returns>
         public static bool GetClickLocation(out GameObject target, out Vector3 terrainHit,
             LayerMask clickable) {
             terrainHit = new Vector3();
