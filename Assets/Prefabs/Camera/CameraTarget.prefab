@@ -126,8 +126,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 20
-  orthographic: 0
-  orthographic size: 16.14
+  orthographic: 1
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZoomMultiplier: 10
-  FoVMax: 40
-  FoVMin: 10
+  ZoomMax: 13
+  ZoomMin: 6
 --- !u!114 &114683914231389720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,9 +256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectionBorderColor: {r: 1, g: 1, b: 1, a: 0.566}
   SelectionFillColor: {r: 1, g: 1, b: 1, a: 0.166}
-  TerrainLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
   ClickableLayers:
     serializedVersion: 2
     m_Bits: 4294966779
