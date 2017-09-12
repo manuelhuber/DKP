@@ -53,14 +53,16 @@ namespace Control {
                 activeAbility.Ability.OnCancel();
                 activeAbility = null;
             }
-            if (activeAbility != null) return;
             // Check user input to activate abliity
+            ActiveAbility newActiveAbility = null;
             abilities.ForEach(ability => {
                 var mod = ability.Ability.Modifier == 0 || Input.GetKey(ability.Ability.Modifier);
                 if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKey(ability.Ability.Hotkey)) return;
-                activeAbility = ability;
+                newActiveAbility = ability;
             });
-            if (activeAbility == null) return;
+            if (newActiveAbility == null) return;
+            if (activeAbility != null) activeAbility.Ability.OnCancel();
+            activeAbility = newActiveAbility;
             if (!activeAbility.Ability.OnActivation(gameObject)) return;
             activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
             activeAbility = null;
