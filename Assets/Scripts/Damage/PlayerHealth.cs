@@ -5,7 +5,7 @@ using Util;
 namespace Damage {
     public class PlayerHealth : Damageable {
         protected override void Die() {
-            UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PLAYER_ANIMATION_TAG)
+            UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag)
                 .SetTrigger("Die");
         }
     }

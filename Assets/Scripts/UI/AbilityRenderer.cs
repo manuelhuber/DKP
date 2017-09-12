@@ -28,10 +28,6 @@ namespace UI {
             var hotkey = UnityUtil.FindComponentInChildrenWithTag<Text>(ability, "HotkeyText");
             hotkey.text = ab.Hotkey.ToString();
 
-//            var cooldown = UnityUtil.FindComponentInChildrenWithTag<Text>(ability, "CooldownText");
-//            cooldown.text = ab.CooldownRemaining.ToString();
-
-
             var rect = ability.GetComponent<RectTransform>();
             var offsetX = renderedAbilities.Count * (rect.rect.height + 10);
             UnityUtil.SetAnchoredPosition(rect, offsetX, 0);

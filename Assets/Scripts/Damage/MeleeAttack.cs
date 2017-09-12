@@ -87,7 +87,7 @@ namespace Damage {
         }
 
         private void Start() {
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PLAYER_ANIMATION_TAG);
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag);
         }
 
         private void Update() {

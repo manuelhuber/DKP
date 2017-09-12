@@ -9,6 +9,8 @@ TagManager:
   - PlayerAnimation
   - AvatarFolder
   - AbilityFolder
+  - CooldownText
+  - HotkeyText
   layers:
   - Default
   - TransparentFX

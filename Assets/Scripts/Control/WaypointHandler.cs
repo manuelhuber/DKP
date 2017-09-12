@@ -118,7 +118,7 @@ namespace Control {
         private void Start() {
             agent = GetComponent<NavMeshAgent>();
             billboarding =
-                UnityUtil.FindComponentInChildrenWithTag<Billboarding>(gameObject, PcControl.PLAYER_ANIMATION_TAG);
+                UnityUtil.FindComponentInChildrenWithTag<Billboarding>(gameObject, PcControl.PlayerAnimationTag);
         }
 
         private void Update() {

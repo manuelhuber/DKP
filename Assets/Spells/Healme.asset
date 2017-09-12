@@ -15,6 +15,6 @@ MonoBehaviour:
   Hotkey: 113
   Modifier: 0
   Name: Healme
-  Cooldown: 0
+  Cooldown: 20
   AoEPrefab: {fileID: 114896490596620016, guid: c3786c7d646d97f4db71a2870d4c86d6,
     type: 2}

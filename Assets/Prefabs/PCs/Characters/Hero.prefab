@@ -200,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   AutoInit: 1
+  FlipX: 0
 --- !u!114 &114356072211139288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,9 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e7653d6f4664c68909eba993e60f87b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilities:
-  - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}
+  AbilityScripts:
   - {fileID: 11400000, guid: e16b8456fec87f24b97774ceb7680adc, type: 2}
+  - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}
 --- !u!114 &114555991559234328
 MonoBehaviour:
   m_ObjectHideFlags: 1

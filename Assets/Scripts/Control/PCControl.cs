@@ -16,7 +16,7 @@ namespace Control {
         public Material SelectionMaterial;
         public Material FocusMaterial;
 
-        public const string PLAYER_ANIMATION_TAG = "PlayerAnimation";
+        public const string PlayerAnimationTag = "PlayerAnimation";
 
         private NavMeshAgent agent;
         private GameObject selectionCircle;
@@ -120,7 +120,7 @@ namespace Control {
             attack = GetComponent<Attack>();
             waypoints = GetComponent<WaypointHandler>();
             abilities = GetComponent<AbilityHandler>();
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PLAYER_ANIMATION_TAG);
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PlayerAnimationTag);
             waypoints.Animator = animator;
         }
 
