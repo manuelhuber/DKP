@@ -2,8 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Control {
+    public class ActiveAbility {
+        public Ability Ability;
+        public float RemainingCooldown;
+    }
+
     // TODO: the lifecycle model is not great - there is some hardcoded stuff in the abilty handler and some convetion
-    // that have to be upheld (like an ability can't only use the leftClickDown without consuming the clickUp aswell
+    // that have to be upheld (like an ability can't only use the leftClickDown without consuming the clickUp aswell)
     public abstract class Ability : ScriptableObject {
         [Header("Hotkey")] public Sprite Icon;
         public KeyCode Hotkey;

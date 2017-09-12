@@ -1,20 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Spells;
 using UI;
 using UnityEngine;
 
 namespace Control {
     public class AbilityHandler : MonoBehaviour {
-        public List<Ability> abilities;
+        public List<Ability> AbilityScripts;
 
-//        private readonly List<Ability> abilities = new List<Ability>();
+        private List<ActiveAbility> abilities = new List<ActiveAbility>();
 
         public bool Active {
             get { return active; }
             set {
                 abilityRenderer.DisplayAbilities(value ? abilities : null);
                 if (!value) {
-                    if (activeAbility != null) activeAbility.OnCancel();
+                    if (activeAbility != null) activeAbility.Ability.OnCancel();
                     activeAbility = null;
                 }
                 active = value;
@@ -22,47 +24,54 @@ namespace Control {
         }
 
         private bool active;
-        private float GlobalCooldown = 0.5f;
-        private float gcdEnd;
-        private Ability activeAbility;
+        private ActiveAbility activeAbility;
         private AbilityRenderer abilityRenderer;
 
         public bool OnLeftClickDown(ClickLocation click) {
             // Not active or no active ability -> do nothing
             if (!active || activeAbility == null) return false;
             // By convention the ability can't end on a click down
-            activeAbility.OnLeftClickDown(click);
+            activeAbility.Ability.OnLeftClickDown(click);
             // if there's an active ability always return true to prevent the selection-box from startin
             return true;
         }
 
         public bool OnLeftClickUp(ClickLocation click) {
-            if (!active || activeAbility == null || !activeAbility.OnLeftClickUp(click)) return false;
+            if (!active || activeAbility == null || !activeAbility.Ability.OnLeftClickUp(click)) return false;
+            activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
             activeAbility = null;
             return true;
         }
 
         private void Update() {
+            abilities.Where(a => a.RemainingCooldown > 0).ToList()
+                .ForEach(ability =>
+                    ability.RemainingCooldown = Math.Max(ability.RemainingCooldown - Time.deltaTime, 0));
             if (!active) return;
-            if (activeAbility != null) activeAbility.OnUpdate();
+            if (activeAbility != null) activeAbility.Ability.OnUpdate();
             if (Input.GetKey(KeyCode.Escape) && activeAbility != null) {
-                activeAbility.OnCancel();
+                activeAbility.Ability.OnCancel();
                 activeAbility = null;
             }
-            if (gcdEnd > Time.time || activeAbility != null) return;
+            if (activeAbility != null) return;
+            // Check user input to activate abliity
             abilities.ForEach(ability => {
-                var mod = ability.Modifier == 0 || Input.GetKey(ability.Modifier);
-                if (mod && Input.GetKey(ability.Hotkey)) {
-                    activeAbility = ability;
-                }
+                var mod = ability.Ability.Modifier == 0 || Input.GetKey(ability.Ability.Modifier);
+                if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKey(ability.Ability.Hotkey)) return;
+                activeAbility = ability;
             });
-            if (activeAbility == null || !activeAbility.OnActivation(gameObject)) return;
+            if (activeAbility == null) return;
+            if (!activeAbility.Ability.OnActivation(gameObject)) return;
+            activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
             activeAbility = null;
-            gcdEnd = Time.time + GlobalCooldown;
         }
 
         private void Start() {
             abilityRenderer = RaidUi.GetAbilityRenderer();
+            abilities = AbilityScripts.Select(a => new ActiveAbility {
+                Ability = a,
+                RemainingCooldown = 0
+            }).ToList();
         }
     }
 }

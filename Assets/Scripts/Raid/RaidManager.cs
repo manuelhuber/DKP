@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Control;
 using Damage;
 using UI;
 using UnityEngine;
@@ -32,6 +33,7 @@ namespace Raid {
             var prefab = hero.Prefab;
             var outfits = hero.OutfitPrefabs;
             var avatarRenderer = RaidUi.GetAvatarRenderer();
+            var mainControl = FindObjectOfType<MainControl>();
 
             for (var i = 0; i < amount; i++) {
                 Slider hp;
@@ -43,6 +45,11 @@ namespace Raid {
                 var outfit = Instantiate(outfits[Random.Range(0, outfits.Count)], heroInstance.transform);
                 outfit.transform.SetParent(heroInstance.transform);
                 count++;
+                if (mainControl == null) continue;
+                mainControl.ControlGroups.Add(
+                    count,
+                    new List<MouseControllable> {heroInstance.GetComponent<MouseControllable>()}
+                );
             }
         }
 

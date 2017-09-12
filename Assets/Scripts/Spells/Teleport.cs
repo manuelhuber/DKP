@@ -21,7 +21,10 @@ namespace Spells {
         }
 
         public override void OnUpdate() {
-            if (caster == null) return;
+            if (caster == null) {
+                if (marker != null) Destroy(marker);
+                return;
+            }
             if (marker != null) marker.transform.position = WarpLocation();
         }
 

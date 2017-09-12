@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Damage;
 using DKPSettings;
 using MyCamera;
@@ -18,6 +19,9 @@ namespace Control {
         /// All layers that should be clickable - either to be selected or be the target of clicks
         /// </summary>
         public LayerMask ClickableLayers;
+
+        public readonly Dictionary<int, List<MouseControllable>> ControlGroups =
+            new Dictionary<int, List<MouseControllable>>();
 
         /// <summary>
         /// A group of all selected controllables
@@ -70,7 +74,7 @@ namespace Control {
             } else if (leftClickUp) {
                 if (focusedSelected == null || !focusedSelected.OnLeftClickUp(click)) {
                     DefaultLeftClickUp(target);
-                }
+                } else isSelecting = false;
             }
         }
 
@@ -98,6 +102,15 @@ namespace Control {
                     if (health != null) health.Revive(0, 2);
                 });
             }
+            if (Input.GetButtonUp("Select All")) {
+                DeselectCurrentSelection();
+                AddToSelection(FindObjectsOfType<MouseControllable>().ToList(), true);
+            }
+            for (var i = 1; i <= 5; i++) {
+                if (!Input.GetButtonUp("Select " + i)) continue;
+                DeselectCurrentSelection();
+                AddToSelection(ControlGroups[i], true);
+            }
         }
 
         private void DefaultLeftClickDown() {
@@ -110,27 +123,24 @@ namespace Control {
         /// </summary>
         /// <param name="hit"></param>
         private void DefaultLeftClickUp(GameObject hit) {
-            var newSelect = hit.GetComponent<MouseControllable>();
+            var clickTarget = hit.GetComponent<MouseControllable>();
 
-            if (selected.Contains(newSelect) && cameraController != null) {
+            if (selected.Contains(clickTarget) && cameraController != null) {
                 cameraController.FocusOn(hit);
             }
 
             DeselectCurrentSelection();
 
-            // Find objects within selection
-            var objects = FindObjectsOfType<MouseControllable>();
-            foreach (var o in objects) {
-                if (!IsWithinSelectionBounds(o.gameObject)) continue;
-                o.OnSelect();
-                selected.Add(o);
-            }
+            // Add objects within selection
+            FindObjectsOfType<MouseControllable>()
+                .Where(unit => IsWithinSelectionBounds(unit.gameObject)).ToList()
+                .ForEach(AddToSelection);
 
             // Add click target
-            if (newSelect != null) {
-                selected.Add(newSelect);
-                newSelect.OnSelect();
-                focusedSelected = newSelect;
+            if (clickTarget != null) {
+                AddToSelection(clickTarget);
+                AddToSelection(focusedSelected);
+                focusedSelected = clickTarget;
             } else if (selected.Count > 0) {
                 focusedSelected = selected[0];
             }
@@ -157,6 +167,19 @@ namespace Control {
             var mainCamera = Camera.main;
             var viewportBounds = ScreenUtil.GetViewportBounds(mainCamera, selectionStart, Input.mousePosition);
             return viewportBounds.Contains(mainCamera.WorldToViewportPoint(theObject.transform.position));
+        }
+
+        private void AddToSelection(List<MouseControllable> controllables, bool focus) {
+            controllables.ForEach(AddToSelection);
+            if (!focus || selected.Count <= 0) return;
+            focusedSelected = selected[0];
+            focusedSelected.OnFocusSelect();
+        }
+
+        private void AddToSelection(MouseControllable controllable) {
+            if (controllable == null) return;
+            selected.Add(controllable);
+            controllable.OnSelect();
         }
 
         /// <summary>
