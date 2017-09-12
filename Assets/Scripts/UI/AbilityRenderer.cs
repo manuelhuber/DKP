@@ -17,8 +17,8 @@ namespace UI {
         public void DisplayAbilities(List<ActiveAbility> abs) {
             renderedAbilities.ForEach(Destroy);
             renderedAbilities.Clear();
-            if (abs == null) return;
             abilities = abs;
+            if (abs == null) return;
             abs.ForEach(aa => DisplayAbility(aa.Ability));
         }
 
@@ -49,7 +49,7 @@ namespace UI {
             abilities.ForEach(ability => {
                 var cooldown = Math.Round(ability.RemainingCooldown, 1, MidpointRounding.AwayFromZero);
                 UnityUtil.FindComponentInChildrenWithTag<Text>(renderedAbilities[i], "CooldownText").text =
-                    cooldown > 0 ? cooldown.ToString() : "";
+                    cooldown > 0 ? cooldown.ToString("n1") : "";
                 i++;
             });
         }
