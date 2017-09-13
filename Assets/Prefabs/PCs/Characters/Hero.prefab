@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackInterval: 2
-  AttackDamage: 10
+  AttackDamage: -10
   range: 1
 --- !u!114 &114675147121179588
 MonoBehaviour:

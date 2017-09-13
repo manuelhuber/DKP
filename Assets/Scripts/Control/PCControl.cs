@@ -76,8 +76,9 @@ namespace Control {
 
         private void CheckForDeath() {
             if (!health.IsDead()) return;
+            waypoints.Stop();
             agent.enabled = false;
-            waypoints.DestroyCurrentWaypoint();
+            attack.enabled = false;
             isDead = true;
             abilities.enabled = false;
         }
@@ -86,6 +87,7 @@ namespace Control {
             isDead = health.IsDead();
             if (isDead) return;
             agent.enabled = true;
+            attack.enabled = true;
             animator.SetTrigger("Revive");
             abilities.enabled = true;
         }
@@ -128,6 +130,7 @@ namespace Control {
         private void Update() {
             if (isDead) CheckForRevive();
             CheckForDeath();
+            if (waypoints.IsIdle()) attack.AttackNearestTarget();
         }
 
         #endregion

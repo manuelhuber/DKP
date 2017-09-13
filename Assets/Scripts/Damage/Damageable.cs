@@ -31,6 +31,12 @@ namespace Damage {
             set { hitpoints = Mathf.Min(value, MaxHitpoints); }
         }
 
+        public void DisplayText(string text) {
+            var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
+            textObject.GetComponent<Text>().text = text;
+//            Destroy(textObject, 3);
+        }
+
         public void AddHealthbar(Slider bar) {
             bar.maxValue = MaxHitpoints;
             bar.value = hitpoints;

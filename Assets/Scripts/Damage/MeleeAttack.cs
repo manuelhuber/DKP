@@ -14,39 +14,38 @@ namespace Damage {
             }
         }
 
+        protected override bool InRange {
+            get { return currentTarget != null && withinRange.Contains(currentTarget); }
+        }
+
         public float AttackInterval;
-        public int AttackDamage;
+        [Tooltip("Positive numbers heal, negative numbers deal damage")] public int AttackDamage;
 
         [SerializeField] private float range;
 
         private float nextAttackPossible;
         private Damageable currentTarget;
 
-        private bool inRange;
-        private readonly List<GameObject> withinRange = new List<GameObject>();
+        private readonly List<Damageable> withinRange = new List<Damageable>();
         private Animator animator;
         private CapsuleCollider rangeCollider;
 
         #region AttackInterface
 
         public override void AttackNearestTarget() {
-            throw new NotImplementedException();
-        }
-
-        public override bool CurrentTargetIsInRange() {
-            return inRange;
+            if (withinRange.Count < 1) return;
+            currentTarget = withinRange[0].GetComponent<Damageable>();
         }
 
         public override bool SetTarget(Damageable target) {
             currentTarget = target;
-            inRange = target != null && withinRange.Contains(target.gameObject);
-            return inRange;
+            return InRange;
         }
 
         #endregion
 
         protected virtual void DealDamage() {
-            currentTarget.ModifyHitpoints(-AttackDamage);
+            currentTarget.ModifyHitpoints(AttackDamage);
             if (animator == null) return;
             animator.SetTrigger("Attack");
         }
@@ -91,21 +90,21 @@ namespace Damage {
         }
 
         private void Update() {
-            if (currentTarget == null || !inRange || !(nextAttackPossible < Time.time)) return;
+            if (currentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
             DealDamage();
             nextAttackPossible = Time.time + AttackInterval;
         }
 
         private void OnTriggerEnter(Collider other) {
-            withinRange.Add(other.gameObject);
-            var newTarget = other.gameObject.GetComponent<Damageable>();
-            if (newTarget != null && newTarget == currentTarget) inRange = true;
+            var dmg = other.gameObject.GetComponent<Damageable>();
+            if (dmg == null || GetComponent<Team>().SameTeam(dmg.gameObject)) return;
+            withinRange.Add(dmg);
         }
 
         private void OnTriggerExit(Collider other) {
-            withinRange.Remove(other.gameObject);
-            if (currentTarget != other.gameObject.GetComponent<Damageable>()) return;
-            inRange = false;
+            var dmg = other.gameObject.GetComponent<Damageable>();
+            if (dmg == null) return;
+            withinRange.Remove(dmg);
         }
 
         #endregion

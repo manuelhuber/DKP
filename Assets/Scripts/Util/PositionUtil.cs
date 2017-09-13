@@ -39,6 +39,15 @@ namespace Util {
             return true;
         }
 
+        public static bool RayFromTo(GameObject from, GameObject to, out RaycastHit hit) {
+            return RayFromTo(from.transform.position, to.transform.position, out hit);
+        }
+
+        public static bool RayFromTo(Vector3 from, Vector3 to, out RaycastHit hit) {
+            var ray = new Ray(from, to - from);
+            return Physics.Raycast(ray, out hit);
+        }
+
         public static RectTransform RectTransfromAnchorTopLeft(RectTransform rect) {
             rect.anchorMin = new Vector2(0, 1);
             rect.anchorMax = new Vector2(0, 1);

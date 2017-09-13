@@ -24,8 +24,13 @@ namespace Control {
         private readonly List<GameObject> waypoints = new List<GameObject>();
         private Billboarding billboarding;
 
+        public bool IsIdle() {
+            return waypoints.Count < 1 && !agent.hasPath;
+        }
+
         public void Stop() {
             ClearWaypoints();
+            if (!agent.enabled) return;
             agent.ResetPath();
         }
 
@@ -123,13 +128,16 @@ namespace Control {
 
         private void Update() {
             if (Animator != null) Animator.SetFloat("Speed", agent.velocity.magnitude);
+            // Flip character if walking to the left
             if (billboarding != null && Math.Abs(agent.velocity.x) > 1) billboarding.FlipX = agent.velocity.x < 0;
             UpdateCurrentWaypointLine();
-            var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
+
             if (!agent.hasPath && waypoints.Count > 0) {
                 GoToNextWaypoint();
                 return;
             }
+
+            var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
             if (!arrived) return;
 
             DestroyCurrentWaypoint();
