@@ -22,6 +22,7 @@ namespace Damage.Range {
         }
 
         public override void AttackNearestTarget() {
+            if (currentTarget != null || !(nextAttackPossible < Time.time)) return;
             var findNewTarget = nearestTarget == null
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject);
