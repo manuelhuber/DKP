@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using Util;
 
@@ -26,21 +27,20 @@ namespace Damage {
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject);
             if (findNewTarget) {
-                // Placeholder object since the list might be emtpy by the time we call .Aggregate
-                var noObject = new GameObject();
                 var target = FindObjectsOfType<Damageable>()
                     .Select(o => o.GetComponent<Team>())
                     .Where(t => t != null && !t.SameTeam(gameObject))
                     .Select(t => t.gameObject)
                     .Where(IsInLineOfSight)
-                    .Aggregate(noObject, (nearest, next) => {
-                        var oldDistance =
-                            PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
+                    .Aggregate((GameObject) null, (nearest, next) => {
+                        var oldDistance = nearest == null
+                            ? double.PositiveInfinity
+                            : PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
                         var newDistance =
-                            PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
+                            PositionUtil.BeelineDistance(next.transform.position, gameObject.transform.position);
                         return oldDistance < newDistance ? nearest : next;
                     });
-                if (target != noObject) nearestTarget = target.GetComponent<Damageable>();
+                if (target != null) nearestTarget = target.GetComponent<Damageable>();
             }
             currentTarget = nearestTarget;
         }
