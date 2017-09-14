@@ -1,5 +1,7 @@
-﻿namespace Damage {
-    public class Zylindron : Damageable {
+﻿using Damage;
+
+namespace Boss.Zylindron {
+    public class ZylindronDeath : Damageable {
         protected override void Die() {
             Destroy(gameObject, 5);
         }

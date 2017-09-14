@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Generic;
+using DKPCamera;
 using UnityEngine;
 using UnityEngine.AI;
 using Util;

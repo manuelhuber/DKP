@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MyCamera {
+namespace DKPCamera {
     public class ZoomWithMouseWheel : MonoBehaviour {
         public float ZoomMultiplier;
         public float ZoomMax = 40;

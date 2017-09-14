@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Damage;
+using DKPCamera;
 using DKPSettings;
-using MyCamera;
 using UnityEngine;
 using Util;
 

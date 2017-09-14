@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Generic;
 using UnityEngine;
 using UnityEngine.UI;
 

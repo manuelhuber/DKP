@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Generic {
+namespace DKPCamera {
     [ExecuteInEditMode]
     public class Billboarding : MonoBehaviour {
         public Camera Camera;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MyCamera {
+namespace DKPCamera {
     public class FocusOnObject : MonoBehaviour {
         public void FocusOn(GameObject target) {
             // Cast a ray straight down the center of the camera view

@@ -1,7 +1,7 @@
 ﻿using DKPSettings;
 using UnityEngine;
 
-namespace MyCamera {
+namespace DKPCamera {
     public class MoveOnPan : MonoBehaviour {
         public int Boundary = 50;
 

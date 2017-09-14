@@ -5,8 +5,8 @@ using Spells;
 using UnityEngine;
 using Util;
 
-namespace Boss {
-    public class Zylindron : MonoBehaviour {
+namespace Boss.Zylindron {
+    public class ZylindronAbilities : MonoBehaviour {
         public GameObject FirePrefab;
         public float FireInterval;
         public float FireRange = 10;
