@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using Util;
 
-namespace Damage {
-    public class HitScan : Projectile {
+namespace Damage.Range {
+    public class HitscanProjectile : Projectile {
         [Tooltip("Positive numbers heal, negative numbers deal damage")] public int Damage;
 
         private void Shoot() {

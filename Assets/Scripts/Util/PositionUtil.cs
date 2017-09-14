@@ -12,18 +12,19 @@ namespace Util {
         }
 
         /// <summary>
-        /// 
+        /// Gets the highes terrain on the given location
         /// </summary>
-        /// <param name="pos"></param>
+        /// <param name="pos">starting position - only X and Z axis will be used</param>
         /// <param name="hit"></param>
         /// <returns></returns>
-        public static bool ProjectOnTerrainFromSky(Vector3 pos, out Vector3 hit) {
+        public static bool HighestTerrain(Vector3 pos, out Vector3 hit) {
+            // We assume there will never be terrain over height 50. If there ever is, this method no longer works
             pos.y = 50;
             return ProjectOnTerrainFromPosition(pos, out hit);
         }
 
         /// <summary>
-        /// Gets the location of the terrain beneth the current position
+        /// Casts a ray straight down from the given location, colliding only with terrain
         /// </summary>
         /// <param name="pos">starting position</param>
         /// <param name="hit">the location of the hit on terrain</param>
@@ -47,21 +48,6 @@ namespace Util {
             var ray = new Ray(from, to - from);
             return Physics.Raycast(ray, out hit);
         }
-
-        public static RectTransform RectTransfromAnchorTopLeft(RectTransform rect) {
-            rect.anchorMin = new Vector2(0, 1);
-            rect.anchorMax = new Vector2(0, 1);
-            rect.pivot = new Vector2(0, 1);
-            return rect;
-        }
-
-        public static RectTransform RectTransfromAnchorBottomCenter(RectTransform rect) {
-            rect.anchorMin = new Vector2(0.5f, 0);
-            rect.anchorMax = new Vector2(0.5f, 0);
-            rect.pivot = new Vector2(0.5f, 0);
-            return rect;
-        }
-
 
         /// <summary>
         /// Casts a ray from the main camera through the cursor and outputs the first clickable object hit aswell as

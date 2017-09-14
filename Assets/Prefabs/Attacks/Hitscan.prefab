@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4250870144727142}
   - component: {fileID: 114347734435512978}
   m_Layer: 0
-  m_Name: Hit
+  m_Name: Hitscan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

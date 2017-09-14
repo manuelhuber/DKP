@@ -1,9 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using Util;
 
-namespace Damage {
+namespace Damage.Range {
     public class RangeAttack : Attack {
         public float Range;
         public float AttackInterval;
@@ -46,7 +45,8 @@ namespace Damage {
         }
 
         private void Shoot() {
-            var projectile = Instantiate(ProjectilePrefab, gameObject.transform, false);
+            var projectile = Instantiate(ProjectilePrefab, gameObject.transform.position,
+                gameObject.transform.rotation);
             projectile.GetComponent<Projectile>().SetTarget(currentTarget.gameObject);
         }
 

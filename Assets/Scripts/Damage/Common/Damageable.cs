@@ -33,7 +33,7 @@ namespace Damage {
         public void DisplayText(string text) {
             var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
             textObject.GetComponent<Text>().text = text;
-//            Destroy(textObject, 3);
+            Destroy(textObject, 3);
         }
 
         public void AddHealthbar(Slider bar) {

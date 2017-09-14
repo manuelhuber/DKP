@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using Damage.Effects;
 using UnityEngine;
 
 namespace Damage {
-    public class AreaOfEffect : MonoBehaviour {
+    public class AreaOfEffect : Effect {
         public int Amount;
         public float Intervall;
-        public List<int> AffectedTeams;
         public int Lifetime;
 
         private readonly List<Damageable> affected = new List<Damageable>();

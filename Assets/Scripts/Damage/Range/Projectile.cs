@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Damage {
+namespace Damage.Range {
     public abstract class Projectile : MonoBehaviour {
         protected GameObject Target;
 

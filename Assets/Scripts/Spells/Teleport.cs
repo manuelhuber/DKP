@@ -12,10 +12,10 @@ namespace Spells {
         private GameObject caster;
         private GameObject marker;
 
-        public override bool OnActivation(GameObject cas) {
-            caster = cas;
+        public override bool OnActivation(GameObject caster) {
+            this.caster = caster;
             marker = Instantiate(MarkerPrefab);
-            marker.transform.SetParent(caster.transform, false);
+            marker.transform.SetParent(this.caster.transform, false);
             marker.transform.position = WarpLocation();
             return false;
         }

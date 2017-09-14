@@ -12,7 +12,7 @@ namespace UI {
         public void InitializeAvater(GameObject prefab, out Slider healthbar, string avaterName) {
             var avatar = Instantiate(prefab);
             avatar.transform.SetParent(folder);
-            var rectTransform = PositionUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
+            var rectTransform = UiUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
 
             // calculate position based on number of avatars
             var offsetTop = (rectTransform.rect.height + SpaceBetweenAvatars) * -avatarCount;
