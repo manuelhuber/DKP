@@ -33,9 +33,7 @@ namespace Damage {
         }
 
         private void OnTriggerExit(Collider other) {
-            var target = other.gameObject.GetComponent<Damageable>();
-            if (target == null) return;
-            if (affected.Contains(target)) affected.Remove(target);
+            affected.Remove(other.gameObject.GetComponent<Damageable>());
         }
     }
 }

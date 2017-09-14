@@ -7,7 +7,7 @@ namespace Damage {
 
         private void Shoot() {
             RaycastHit hit;
-            if (PositionUtil.RayFromTo(gameObject, target, out hit)) {
+            if (PositionUtil.RayFromTo(gameObject, Target, out hit)) {
                 var kill = hit.transform.gameObject.GetComponent<Damageable>();
                 if (kill != null) {
                     kill.ModifyHitpoints(Damage);
@@ -17,12 +17,12 @@ namespace Damage {
         }
 
         private void Update() {
-            if (target == null) return;
+            if (Target == null) return;
             Shoot();
         }
 
         private void Start() {
-            if (target == null) return;
+            if (Target == null) return;
             Shoot();
         }
     }

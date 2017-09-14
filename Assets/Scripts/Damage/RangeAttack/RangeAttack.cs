@@ -26,19 +26,21 @@ namespace Damage {
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject);
             if (findNewTarget) {
+                // Placeholder object since the list might be emtpy by the time we call .Aggregate
+                var noObject = new GameObject();
                 var target = FindObjectsOfType<Damageable>()
                     .Select(o => o.GetComponent<Team>())
                     .Where(t => t != null && !t.SameTeam(gameObject))
                     .Select(t => t.gameObject)
                     .Where(IsInLineOfSight)
-                    .Aggregate((nearest, next) => {
+                    .Aggregate(noObject, (nearest, next) => {
                         var oldDistance =
-                            PositionUtil.DistanceCrowFlies(nearest.transform.position, gameObject.transform.position);
+                            PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
                         var newDistance =
-                            PositionUtil.DistanceCrowFlies(nearest.transform.position, gameObject.transform.position);
+                            PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
                         return oldDistance < newDistance ? nearest : next;
                     });
-                if (target != null) nearestTarget = target.GetComponent<Damageable>();
+                if (target != noObject) nearestTarget = target.GetComponent<Damageable>();
             }
             currentTarget = nearestTarget;
         }
@@ -71,7 +73,7 @@ namespace Damage {
 
         private bool IsInRange(Component target) {
             return target != null &&
-                   PositionUtil.DistanceCrowFlies(gameObject.transform.position, target.transform.position) <= Range;
+                   PositionUtil.BeelineDistance(gameObject.transform.position, target.transform.position) <= Range;
         }
     }
 }

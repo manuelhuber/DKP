@@ -5,7 +5,7 @@ namespace Util {
         /// <summary>
         /// Calculates the distance between 2 points, ignoring verticality
         /// </summary>
-        public static float DistanceCrowFlies(Vector3 one, Vector3 two) {
+        public static float BeelineDistance(Vector3 one, Vector3 two) {
             one.y = 0;
             two.y = 0;
             return Vector3.Distance(one, two);

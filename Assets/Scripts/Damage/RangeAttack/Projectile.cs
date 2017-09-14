@@ -2,10 +2,10 @@
 
 namespace Damage {
     public abstract class Projectile : MonoBehaviour {
-        protected GameObject target;
+        protected GameObject Target;
 
         public void SetTarget(GameObject t) {
-            target = t;
+            Target = t;
         }
     }
 }

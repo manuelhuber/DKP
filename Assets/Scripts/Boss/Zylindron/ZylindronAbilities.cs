@@ -48,7 +48,7 @@ namespace Boss.Zylindron {
         }
 
         private bool WithinDistance(GameObject target, float distance) {
-            return PositionUtil.DistanceCrowFlies(transform.position, target.transform.position) < distance;
+            return PositionUtil.BeelineDistance(transform.position, target.transform.position) < distance;
         }
     }
 }
