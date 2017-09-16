@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 136502179785092800}
   - component: {fileID: 23427934209109296}
   - component: {fileID: 114085065168936566}
-  m_Layer: 9
+  m_Layer: 2
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af612b2b34e6046498dcb799acd8a083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AffectedTeams: 0000000001000000
   Amount: -15
   Intervall: 1
-  AffectedTeams: 0000000001000000
   Lifetime: 15
 --- !u!136 &136502179785092800
 CapsuleCollider:
