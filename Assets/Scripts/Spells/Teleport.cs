@@ -12,10 +12,10 @@ namespace Spells {
         private GameObject caster;
         private GameObject marker;
 
-        public override bool OnActivation(GameObject caster) {
-            this.caster = caster;
+        public override bool OnActivation(GameObject c) {
+            caster = c;
             marker = Instantiate(MarkerPrefab);
-            marker.transform.SetParent(this.caster.transform, false);
+            marker.transform.SetParent(caster.transform, false);
             marker.transform.position = WarpLocation();
             return false;
         }
@@ -52,9 +52,9 @@ namespace Spells {
             Vector3 location;
             PositionUtil.GetClickLocation(out go, out location, 0);
             var currentPosition = caster.transform.position;
-            var heading = location - currentPosition;
-            var vector = heading / heading.magnitude;
-            var actualMovement = heading.magnitude < Distance ? heading : vector * Distance;
+            var direction = location - currentPosition;
+            var velocity = direction / direction.magnitude;
+            var actualMovement = direction.magnitude < Distance ? direction : velocity * Distance;
             var newPosition = currentPosition + actualMovement;
             NavMeshHit navMeshHit;
             NavMesh.SamplePosition(newPosition, out navMeshHit, 100, -1);

@@ -4,7 +4,7 @@ using Control;
 using UnityEngine;
 using Util;
 
-namespace Damage {
+namespace Damage.Melee {
     public class MeleeAttack : Attack {
         public float Range {
             get { return range; }
@@ -14,8 +14,8 @@ namespace Damage {
             }
         }
 
-        protected override bool InRange {
-            get { return currentTarget != null && withinRange.Contains(currentTarget); }
+        public override bool InRange {
+            get { return CurrentTarget != null && withinRange.Contains(CurrentTarget); }
         }
 
         public float AttackInterval;
@@ -24,28 +24,18 @@ namespace Damage {
         [SerializeField] private float range;
 
         private float nextAttackPossible;
-        private Damageable currentTarget;
 
         private readonly List<Damageable> withinRange = new List<Damageable>();
         private Animator animator;
         private CapsuleCollider rangeCollider;
 
-        #region AttackInterface
-
         public override void AttackNearestTarget() {
             if (withinRange.Count < 1) return;
-            currentTarget = withinRange[0].GetComponent<Damageable>();
+            CurrentTarget = withinRange[0].GetComponent<Damageable>();
         }
-
-        public override bool SetTarget(Damageable target) {
-            currentTarget = target;
-            return InRange;
-        }
-
-        #endregion
 
         protected virtual void DealDamage() {
-            currentTarget.ModifyHitpoints(AttackDamage);
+            CurrentTarget.ModifyHitpoints(AttackDamage);
             if (animator == null) return;
             animator.SetTrigger("Attack");
         }
@@ -90,7 +80,11 @@ namespace Damage {
         }
 
         private void Update() {
-            if (currentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
+            if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
+            if (CurrentTarget.IsDead()) {
+                CurrentTarget = null;
+                return;
+            }
             DealDamage();
             nextAttackPossible = Time.time + AttackInterval;
         }

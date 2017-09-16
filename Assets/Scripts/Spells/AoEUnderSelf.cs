@@ -9,11 +9,11 @@ namespace Spells {
     public class AoEUnderSelf : Ability {
         public AreaOfEffect AoEPrefab;
 
-        public override bool OnActivation(GameObject caster) {
+        public override bool OnActivation(GameObject c) {
             Vector3 hitOnTerrain;
-            PositionUtil.ProjectOnTerrainFromPosition(caster.transform.position, out hitOnTerrain);
-            var areaOfEffect = Instantiate(AoEPrefab, hitOnTerrain, caster.transform.rotation);
-            areaOfEffect.AffectedTeams = new List<int> {caster.GetComponent<Team>().TeamId};
+            PositionUtil.ProjectOnTerrainFromPosition(c.transform.position, out hitOnTerrain);
+            var areaOfEffect = Instantiate(AoEPrefab, hitOnTerrain, c.transform.rotation);
+            areaOfEffect.AffectedTeams = new List<int> {c.GetComponent<Team>().TeamId};
             return true;
         }
     }

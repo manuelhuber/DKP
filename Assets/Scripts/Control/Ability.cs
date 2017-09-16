@@ -22,7 +22,7 @@ namespace Control {
         /// <returns>
         /// true if this ability is done after this function call 
         /// </returns>
-        public virtual bool OnActivation(GameObject caster) {
+        public virtual bool OnActivation(GameObject c) {
             return true;
         }
 

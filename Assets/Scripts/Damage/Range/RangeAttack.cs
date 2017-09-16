@@ -8,21 +8,15 @@ namespace Damage.Range {
         public float AttackInterval;
         public GameObject ProjectilePrefab;
 
-        protected override bool InRange {
-            get { return IsInRange(currentTarget); }
+        public override bool InRange {
+            get { return IsInRange(CurrentTarget); }
         }
 
-        private Damageable currentTarget;
         private Damageable nearestTarget;
         private float nextAttackPossible;
 
-        public override bool SetTarget(Damageable t) {
-            currentTarget = t;
-            return InRange;
-        }
-
         public override void AttackNearestTarget() {
-            if (currentTarget != null || !(nextAttackPossible < Time.time)) return;
+            if (CurrentTarget != null || !(nextAttackPossible < Time.time)) return;
             var findNewTarget = nearestTarget == null
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject);
@@ -42,20 +36,24 @@ namespace Damage.Range {
                     });
                 if (target != null) nearestTarget = target.GetComponent<Damageable>();
             }
-            currentTarget = nearestTarget;
+            CurrentTarget = nearestTarget;
         }
 
         private void Shoot() {
             var projectile = Instantiate(ProjectilePrefab, gameObject.transform.position,
                 gameObject.transform.rotation);
-            projectile.GetComponent<Projectile>().SetTarget(currentTarget.gameObject);
+            projectile.GetComponent<Projectile>().SetTarget(CurrentTarget.gameObject);
         }
 
         private void Update() {
-            if (currentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
+            if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
+            if (CurrentTarget.IsDead()) {
+                CurrentTarget = null;
+                return;
+            }
             RaycastHit hit;
-            if (!PositionUtil.RayFromTo(gameObject, currentTarget.gameObject, out hit)) return;
-            if (hit.transform.gameObject != currentTarget.gameObject) {
+            if (!PositionUtil.RayFromTo(gameObject, CurrentTarget.gameObject, out hit)) return;
+            if (hit.transform.gameObject != CurrentTarget.gameObject) {
                 var status = GetComponent<Damageable>();
                 if (status != null) {
                     status.DisplayText("No Line of Sight");

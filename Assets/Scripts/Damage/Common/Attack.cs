@@ -2,9 +2,11 @@
 
 namespace Damage {
     public abstract class Attack : MonoBehaviour {
-        protected virtual bool InRange {
+        public virtual bool InRange {
             get { return false; }
         }
+
+        protected Damageable CurrentTarget;
 
         /// <summary>
         /// 
@@ -13,7 +15,14 @@ namespace Damage {
         /// <returns>
         /// true if the target is in range
         /// </returns>
-        public abstract bool SetTarget(Damageable target);
+        public virtual bool SetTarget(Damageable target) {
+            CurrentTarget = target;
+            return InRange;
+        }
+
+        public virtual Damageable GetTarget() {
+            return CurrentTarget;
+        }
 
         public abstract void AttackNearestTarget();
     }

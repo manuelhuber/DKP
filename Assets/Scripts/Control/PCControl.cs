@@ -7,6 +7,19 @@ using UnityEngine.AI;
 using Util;
 
 namespace Control {
+    internal enum MovementMode {
+        IDLE,
+
+        // The character moves to the specified location
+        MOVE,
+
+        // The character moves to the specified location and stops to attack any enemies in range
+        ATTACK_MOVE,
+
+        // The character moves to and follows the specified enemy to attack
+        ATTACK
+    }
+
     [RequireComponent(typeof(NavMeshAgent))]
     [RequireComponent(typeof(Damageable))]
     [RequireComponent(typeof(Team))]
@@ -26,6 +39,8 @@ namespace Control {
         private Attack attack;
         private WaypointHandler waypoints;
         private AbilityHandler abilities;
+
+        private MovementMode currentMode;
 
         #region MouseControl
 
@@ -59,18 +74,18 @@ namespace Control {
         public override bool OnRightClick(ClickLocation click) {
             if (isDead) return false;
             Damageable damageable;
-            TargetAttackable(click.Target, out damageable);
+            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.ATTACK : MovementMode.MOVE;
             if (attack.SetTarget(damageable)) {
                 waypoints.Stop();
                 return true;
             }
-            waypoints.GoDirectlyTo(click);
+            waypoints.GoDirectlyTo(click.Location);
             return false;
         }
 
         public override bool OnRightShiftClick(ClickLocation click) {
             if (isDead) return false;
-            waypoints.AddWaypoint(click);
+            waypoints.AddWaypoint(click.Location);
             return false;
         }
 
@@ -126,11 +141,24 @@ namespace Control {
             waypoints.Animator = animator;
         }
 
-
         private void Update() {
             if (isDead) CheckForRevive();
             CheckForDeath();
-            if (waypoints.IsIdle()) attack.AttackNearestTarget();
+            switch (currentMode) {
+                case MovementMode.ATTACK:
+                    if (attack.InRange) waypoints.Stop();
+                    else if (attack.GetTarget() == null) currentMode = MovementMode.IDLE;
+                    else waypoints.GoDirectlyTo(attack.GetTarget().gameObject.transform.position);
+                    break;
+                case MovementMode.MOVE: break;
+                case MovementMode.ATTACK_MOVE:
+                    break;
+                case MovementMode.IDLE:
+                    attack.AttackNearestTarget();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         #endregion

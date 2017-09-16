@@ -34,7 +34,7 @@ namespace Control {
             agent.ResetPath();
         }
 
-        public void GoDirectlyTo(ClickLocation location) {
+        public void GoDirectlyTo(Vector3 location) {
             ClearWaypoints();
             AddWaypoint(location);
             GoToNextWaypoint();
@@ -47,9 +47,9 @@ namespace Control {
         /// <summary>
         /// Adds a waypoint and renders a line to the previous wapoint
         /// </summary>
-        public void AddWaypoint(ClickLocation clickLocation) {
+        public void AddWaypoint(Vector3 location) {
             GameObject marker;
-            var markerWrapper = CreateMarker(InactiveWaypointMarkerPrefab, clickLocation.Location, out marker);
+            var markerWrapper = CreateMarker(InactiveWaypointMarkerPrefab, location, out marker);
             waypoints.Add(markerWrapper);
 
             // Connect waypoint to previous waypoint
