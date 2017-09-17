@@ -1,0 +1,2957 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Viking_animation_walk_01
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: -12.868001}
+        inSlope: {x: 0, y: 0, z: 82.820015}
+        outSlope: {x: 0, y: 0, z: 82.820015}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -8.727}
+        inSlope: {x: 0, y: 0, z: 93.920006}
+        outSlope: {x: 0, y: 0, z: 93.920006}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.2
+        value: {x: 0, y: 0, z: 7.0260005}
+        inSlope: {x: 0, y: 0, z: 96.58499}
+        outSlope: {x: 0, y: 0, z: 96.58499}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: 15.841001}
+        inSlope: {x: 0, y: 0, z: 0.20497894}
+        outSlope: {x: 0, y: 0, z: 0.20497894}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: 0, z: 11.454}
+        inSlope: {x: 0, y: 0, z: -129.27335}
+        outSlope: {x: 0, y: 0, z: -129.27335}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: -14.167001}
+        inSlope: {x: 0, y: 0, z: -78.90834}
+        outSlope: {x: 0, y: 0, z: -78.90834}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: -12.868001}
+        inSlope: {x: 0, y: 0, z: 12.989995}
+        outSlope: {x: 0, y: 0, z: 12.989995}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: -19.867}
+        inSlope: {x: 0, y: 0, z: -71.81999}
+        outSlope: {x: 0, y: 0, z: -71.81999}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -23.458}
+        inSlope: {x: 0, y: 0, z: -1.7619972}
+        outSlope: {x: 0, y: 0, z: -1.7619972}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -6.3840003}
+        inSlope: {x: 0, y: 0, z: -57.92204}
+        outSlope: {x: 0, y: 0, z: -57.92204}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: 0, z: -15.591001}
+        inSlope: {x: 0, y: 0, z: -89.51004}
+        outSlope: {x: 0, y: 0, z: -89.51004}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: -14.823001}
+        inSlope: {x: 0, y: 0, z: -22.659992}
+        outSlope: {x: 0, y: 0, z: -22.659992}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: -19.867}
+        inSlope: {x: 0, y: 0, z: -50.439983}
+        outSlope: {x: 0, y: 0, z: -50.439983}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 19.050001}
+        inSlope: {x: 0, y: 0, z: -98.93001}
+        outSlope: {x: 0, y: 0, z: -98.93001}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.2
+        value: {x: 0, y: 0, z: -0.73600006}
+        inSlope: {x: 0, y: 0, z: -115.455}
+        outSlope: {x: 0, y: 0, z: -115.455}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -13.934001}
+        inSlope: {x: 0, y: 0, z: 16.247505}
+        outSlope: {x: 0, y: 0, z: 16.247505}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 18.961}
+        inSlope: {x: 0, y: 0, z: 82.6825}
+        outSlope: {x: 0, y: 0, z: 82.6825}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 19.050001}
+        inSlope: {x: 0, y: 0, z: 0.8900068}
+        outSlope: {x: 0, y: 0, z: 0.8900068}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 1.792}
+        inSlope: {x: 0, y: 0, z: -305.22}
+        outSlope: {x: 0, y: 0, z: -305.22}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -13.469001}
+        inSlope: {x: 0, y: 0, z: -171.792}
+        outSlope: {x: 0, y: 0, z: -171.792}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -23.060001}
+        inSlope: {x: 0, y: 0, z: 22.238}
+        outSlope: {x: 0, y: 0, z: 22.238}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 1.792}
+        inSlope: {x: 0, y: 0, z: 82.840004}
+        outSlope: {x: 0, y: 0, z: 82.840004}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 9.723333}
+        outSlope: {x: 0, y: 0, z: 9.723333}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: 2.917}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -9.723333}
+        outSlope: {x: 0, y: 0, z: -9.723333}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 3.7028573}
+        outSlope: {x: 0, y: 0, z: 3.7028573}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: 0, z: 1.296}
+        inSlope: {x: 0, y: 0, z: -0.74057114}
+        outSlope: {x: 0, y: 0, z: -0.74057114}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -5.1839995}
+        outSlope: {x: 0, y: 0, z: -5.1839995}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 7.414546}
+        inSlope: {x: 0, y: 0, z: 127.96702}
+        outSlope: {x: 0, y: 0, z: 127.96702}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: 0, z: 52.203003}
+        inSlope: {x: 0, y: 0, z: -25.593395}
+        outSlope: {x: 0, y: 0, z: -25.593395}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 7.414546}
+        inSlope: {x: 0, y: 0, z: -179.15381}
+        outSlope: {x: 0, y: 0, z: -179.15381}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 1.874184}
+        inSlope: {x: 0, y: 0, z: 15.847632}
+        outSlope: {x: 0, y: 0, z: 15.847632}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 9.798}
+        inSlope: {x: 0, y: 0, z: -31.695255}
+        outSlope: {x: 0, y: 0, z: -31.695255}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 1.874184}
+        inSlope: {x: 0, y: 0, z: -79.238144}
+        outSlope: {x: 0, y: 0, z: -79.238144}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 53.603336}
+        outSlope: {x: 0, y: 0, z: 53.603336}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: 16.081001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -53.603336}
+        outSlope: {x: 0, y: 0, z: -53.603336}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -112.86}
+        outSlope: {x: 0, y: 0, z: -112.86}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -33.858}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 112.86}
+        outSlope: {x: 0, y: 0, z: 112.86}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 86.96572}
+        outSlope: {x: 0, y: 0, z: 86.96572}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: 0, z: 30.438002}
+        inSlope: {x: 0, y: 0, z: -17.393135}
+        outSlope: {x: 0, y: 0, z: -17.393135}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -121.75199}
+        outSlope: {x: 0, y: 0, z: -121.75199}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -20.672}
+        outSlope: {x: 0, y: 0, z: -20.672}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: -10.336}
+        inSlope: {x: 0, y: 0, z: 41.343987}
+        outSlope: {x: 0, y: 0, z: 41.343987}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 103.35998}
+        outSlope: {x: 0, y: 0, z: 103.35998}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: -3.02, z: 0}
+        inSlope: {x: 0, y: -1.1999989, z: 0}
+        outSlope: {x: 0, y: -1.1999989, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: -3.08, z: 0}
+        inSlope: {x: 0, y: -0.16666654, z: 0}
+        outSlope: {x: 0, y: -0.16666654, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.2
+        value: {x: 0, y: -2.95, z: 0}
+        inSlope: {x: 0, y: -0.000000059604645, z: 0}
+        outSlope: {x: 0, y: -0.000000059604645, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.35
+        value: {x: 0, y: -3.08, z: 0}
+        inSlope: {x: 0, y: -0.000000059604645, z: 0}
+        outSlope: {x: 0, y: -0.000000059604645, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: -2.95, z: 0}
+        inSlope: {x: 0, y: 0.08333331, z: 0}
+        outSlope: {x: 0, y: 0.08333331, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0, y: -3.02, z: 0}
+        inSlope: {x: 0, y: -0.69999915, z: 0}
+        outSlope: {x: 0, y: -0.69999915, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0.12, y: -1.14, z: 0}
+        inSlope: {x: 0.60000014, y: 1.6000009, z: 0}
+        outSlope: {x: 0.60000014, y: 1.6000009, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0.15, y: -1.06, z: 0}
+        inSlope: {x: 0.44000006, y: 0.64000034, z: 0}
+        outSlope: {x: 0.44000006, y: 0.64000034, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0.22, y: -1.14, z: 0}
+        inSlope: {x: -0.010000035, y: -0.28500026, z: 0}
+        outSlope: {x: -0.010000035, y: -0.28500026, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0.16, y: -1.19, z: 0}
+        inSlope: {x: -0.34999996, y: 0.1250001, z: 0}
+        outSlope: {x: -0.34999996, y: 0.1250001, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0.12, y: -1.14, z: 0}
+        inSlope: {x: -0.3999999, y: 0.5000006, z: 0}
+        outSlope: {x: -0.3999999, y: 0.5000006, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -0.31, y: -1.11, z: 0}
+        inSlope: {x: -1.8000001, y: 0.79999924, z: 0}
+        outSlope: {x: -1.8000001, y: 0.79999924, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: -0.4, y: -1.07, z: 0}
+        inSlope: {x: -0.94, y: 0.41999984, z: 0}
+        outSlope: {x: -0.94, y: 0.41999984, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: -0.42, y: -1.06, z: 0}
+        inSlope: {x: 0.14333335, y: -0.06333323, z: 0}
+        outSlope: {x: 0.14333335, y: -0.06333323, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: -0.31, y: -1.11, z: 0}
+        inSlope: {x: 0.36666662, y: -0.1666669, z: 0}
+        outSlope: {x: 0.36666662, y: -0.1666669, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -1.38, y: -0.14, z: 0}
+        inSlope: {x: 1.400001, y: -0.83333343, z: 0}
+        outSlope: {x: 1.400001, y: -0.83333343, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: -1.31, y: -0.18166667, z: 0}
+        inSlope: {x: 0.6000002, y: -0.81111115, z: 0}
+        outSlope: {x: 0.6000002, y: -0.81111115, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.2
+        value: {x: -1.34, y: -0.3, z: 0}
+        inSlope: {x: -0.1000003, y: 0.15555558, z: 0}
+        outSlope: {x: -0.1000003, y: 0.15555558, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: -1.34, y: -0.19, z: 0}
+        inSlope: {x: -0.0666666, y: 0.6333333, z: 0}
+        outSlope: {x: -0.0666666, y: 0.6333333, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: -1.38, y: -0.14, z: 0}
+        inSlope: {x: -0.1333332, y: 0.16666666, z: 0}
+        outSlope: {x: -0.1333332, y: 0.16666666, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0.98, y: -0.19, z: 0}
+        inSlope: {x: 0, y: -0.24999999, z: 0}
+        outSlope: {x: 0, y: -0.24999999, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.2
+        value: {x: 0.98, y: -0.24, z: 0}
+        inSlope: {x: -0.11666665, y: -0.06835936, z: 0}
+        outSlope: {x: -0.11666665, y: -0.06835936, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0.91, y: -0.20601562, z: 0}
+        inSlope: {x: 0.23333323, y: 0.1367187, z: 0}
+        outSlope: {x: 0.23333323, y: 0.1367187, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: 0.98, y: -0.19, z: 0}
+        inSlope: {x: 0.69999975, y: 0.16015615, z: 0}
+        outSlope: {x: 0.69999975, y: 0.16015615, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -0.578, y: -0.962, z: 0}
+        inSlope: {x: 0.075999975, y: 0.08399999, z: 0}
+        outSlope: {x: 0.075999975, y: 0.08399999, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: -0.54, y: -0.92, z: 0}
+        inSlope: {x: -0.1519999, y: -0.16799994, z: 0}
+        outSlope: {x: -0.1519999, y: -0.16799994, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6
+        value: {x: -0.578, y: -0.962, z: 0}
+        inSlope: {x: -0.3799998, y: -0.41999987, z: 0}
+        outSlope: {x: -0.3799998, y: -0.41999987, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 73597125
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3104430112
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 345303391
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3426910466
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2089066926
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2629616918
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2089066926
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3104430112
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3426910466
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 345303391
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 583116079
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3410146337
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1199320661
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2629616918
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3150768102
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 185255754
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3900561030
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 831132352
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.6
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -3.02
+        inSlope: -1.1999989
+        outSlope: -1.1999989
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -3.08
+        inSlope: -0.16666654
+        outSlope: -0.16666654
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: -2.95
+        inSlope: -0.000000059604645
+        outSlope: -0.000000059604645
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: -3.08
+        inSlope: -0.000000059604645
+        outSlope: -0.000000059604645
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -2.95
+        inSlope: 0.08333331
+        outSlope: 0.08333331
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -3.02
+        inSlope: -0.69999915
+        outSlope: -0.69999915
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -12.868001
+        inSlope: 82.820015
+        outSlope: 82.820015
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -8.727
+        inSlope: 93.920006
+        outSlope: 93.920006
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 7.0260005
+        inSlope: 96.58499
+        outSlope: 96.58499
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 15.841001
+        inSlope: 0.20497894
+        outSlope: 0.20497894
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 11.454
+        inSlope: -129.27335
+        outSlope: -129.27335
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -14.167001
+        inSlope: -78.90834
+        outSlope: -78.90834
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -12.868001
+        inSlope: 12.989995
+        outSlope: 12.989995
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -19.867
+        inSlope: -71.81999
+        outSlope: -71.81999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -23.458
+        inSlope: -1.7619972
+        outSlope: -1.7619972
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -6.3840003
+        inSlope: -57.92204
+        outSlope: -57.92204
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: -15.591001
+        inSlope: -89.51004
+        outSlope: -89.51004
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -14.823001
+        inSlope: -22.659992
+        outSlope: -22.659992
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -19.867
+        inSlope: -50.439983
+        outSlope: -50.439983
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.12
+        inSlope: 0.60000014
+        outSlope: 0.60000014
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0.15
+        inSlope: 0.44000006
+        outSlope: 0.44000006
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0.22
+        inSlope: -0.010000035
+        outSlope: -0.010000035
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0.16
+        inSlope: -0.34999996
+        outSlope: -0.34999996
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0.12
+        inSlope: -0.3999999
+        outSlope: -0.3999999
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.14
+        inSlope: 1.6000009
+        outSlope: 1.6000009
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -1.06
+        inSlope: 0.64000034
+        outSlope: 0.64000034
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.14
+        inSlope: -0.28500026
+        outSlope: -0.28500026
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -1.19
+        inSlope: 0.1250001
+        outSlope: 0.1250001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -1.14
+        inSlope: 0.5000006
+        outSlope: 0.5000006
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 19.050001
+        inSlope: -98.93001
+        outSlope: -98.93001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: -0.73600006
+        inSlope: -115.455
+        outSlope: -115.455
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -13.934001
+        inSlope: 16.247505
+        outSlope: 16.247505
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 18.961
+        inSlope: 82.6825
+        outSlope: 82.6825
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 19.050001
+        inSlope: 0.8900068
+        outSlope: 0.8900068
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.792
+        inSlope: -305.22
+        outSlope: -305.22
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -13.469001
+        inSlope: -171.792
+        outSlope: -171.792
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -23.060001
+        inSlope: 22.238
+        outSlope: 22.238
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 1.792
+        inSlope: 82.840004
+        outSlope: 82.840004
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.31
+        inSlope: -1.8000001
+        outSlope: -1.8000001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -0.4
+        inSlope: -0.94
+        outSlope: -0.94
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -0.42
+        inSlope: 0.14333335
+        outSlope: 0.14333335
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -0.31
+        inSlope: 0.36666662
+        outSlope: 0.36666662
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.11
+        inSlope: 0.79999924
+        outSlope: 0.79999924
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -1.07
+        inSlope: 0.41999984
+        outSlope: 0.41999984
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.06
+        inSlope: -0.06333323
+        outSlope: -0.06333323
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -1.11
+        inSlope: -0.1666669
+        outSlope: -0.1666669
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.38
+        inSlope: 1.400001
+        outSlope: 1.400001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -1.31
+        inSlope: 0.6000002
+        outSlope: 0.6000002
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: -1.34
+        inSlope: -0.1000003
+        outSlope: -0.1000003
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.34
+        inSlope: -0.0666666
+        outSlope: -0.0666666
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -1.38
+        inSlope: -0.1333332
+        outSlope: -0.1333332
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.14
+        inSlope: -0.83333343
+        outSlope: -0.83333343
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -0.18166667
+        inSlope: -0.81111115
+        outSlope: -0.81111115
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: -0.3
+        inSlope: 0.15555558
+        outSlope: 0.15555558
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -0.19
+        inSlope: 0.6333333
+        outSlope: 0.6333333
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -0.14
+        inSlope: 0.16666666
+        outSlope: 0.16666666
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.98
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0.98
+        inSlope: -0.11666665
+        outSlope: -0.11666665
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0.91
+        inSlope: 0.23333323
+        outSlope: 0.23333323
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0.98
+        inSlope: 0.69999975
+        outSlope: 0.69999975
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.19
+        inSlope: -0.24999999
+        outSlope: -0.24999999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: -0.24
+        inSlope: -0.06835936
+        outSlope: -0.06835936
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.20601562
+        inSlope: 0.1367187
+        outSlope: 0.1367187
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -0.19
+        inSlope: 0.16015615
+        outSlope: 0.16015615
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 9.723333
+        outSlope: 9.723333
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 2.917
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: -9.723333
+        outSlope: -9.723333
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 3.7028573
+        outSlope: 3.7028573
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 1.296
+        inSlope: -0.74057114
+        outSlope: -0.74057114
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: -5.1839995
+        outSlope: -5.1839995
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 7.414546
+        inSlope: 127.96702
+        outSlope: 127.96702
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 52.203003
+        inSlope: -25.593395
+        outSlope: -25.593395
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 7.414546
+        inSlope: -179.15381
+        outSlope: -179.15381
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1.874184
+        inSlope: 15.847632
+        outSlope: 15.847632
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 9.798
+        inSlope: -31.695255
+        outSlope: -31.695255
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 1.874184
+        inSlope: -79.238144
+        outSlope: -79.238144
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 53.603336
+        outSlope: 53.603336
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 16.081001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: -53.603336
+        outSlope: -53.603336
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.578
+        inSlope: 0.075999975
+        outSlope: 0.075999975
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.54
+        inSlope: -0.1519999
+        outSlope: -0.1519999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -0.578
+        inSlope: -0.3799998
+        outSlope: -0.3799998
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.962
+        inSlope: 0.08399999
+        outSlope: 0.08399999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.92
+        inSlope: -0.16799994
+        outSlope: -0.16799994
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: -0.962
+        inSlope: -0.41999987
+        outSlope: -0.41999987
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -112.86
+        outSlope: -112.86
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -33.858
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 112.86
+        outSlope: 112.86
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 86.96572
+        outSlope: 86.96572
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.35
+        value: 30.438002
+        inSlope: -17.393135
+        outSlope: -17.393135
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: -121.75199
+        outSlope: -121.75199
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -20.672
+        outSlope: -20.672
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -10.336
+        inSlope: 41.343987
+        outSlope: 41.343987
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.6
+        value: 0
+        inSlope: 103.35998
+        outSlope: 103.35998
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01/Viking_01_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_leg_R_01/Viking_01_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_L_01/Viking_01_elbow_L_01/Viking_01_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Viking_01_pelvis_01/Viking_01_torso_01/Viking_01_shldr_R_01/Viking_01_elbow_R_01/Viking_01_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []

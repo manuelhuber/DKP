@@ -1,0 +1,3105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Knight_walk_01
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: -11.960001}
+        inSlope: {x: 0, y: 0, z: 123.204}
+        outSlope: {x: 0, y: 0, z: 123.204}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 0, y: 0, z: 8.574}
+        inSlope: {x: 0, y: 0, z: 101.73601}
+        outSlope: {x: 0, y: 0, z: 101.73601}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: 15.2630005}
+        inSlope: {x: 0, y: 0, z: 15.234011}
+        outSlope: {x: 0, y: 0, z: 15.234011}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: 12.773001}
+        inSlope: {x: 0, y: 0, z: -134.5886}
+        outSlope: {x: 0, y: 0, z: -134.5886}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0, y: 0, z: -12.821001}
+        inSlope: {x: 0, y: 0, z: -104.5226}
+        outSlope: {x: 0, y: 0, z: -104.5226}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: -11.960001}
+        inSlope: {x: 0, y: 0, z: 10.332}
+        outSlope: {x: 0, y: 0, z: 10.332}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: -9.613001}
+        inSlope: {x: 0, y: 0, z: -142.92}
+        outSlope: {x: 0, y: 0, z: -142.92}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -16.759}
+        inSlope: {x: 0, y: 0, z: -23.112858}
+        outSlope: {x: 0, y: 0, z: -23.112858}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 0, y: 0, z: -5.478}
+        inSlope: {x: 0, y: 0, z: 81.179146}
+        outSlope: {x: 0, y: 0, z: 81.179146}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: -0.006}
+        inSlope: {x: 0, y: 0, z: -119.877975}
+        outSlope: {x: 0, y: 0, z: -119.877975}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -15.277}
+        inSlope: {x: 0, y: 0, z: -137.38855}
+        outSlope: {x: 0, y: 0, z: -137.38855}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0, y: 0, z: -11.702001}
+        inSlope: {x: 0, y: 0, z: 27.855427}
+        outSlope: {x: 0, y: 0, z: 27.855427}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: -9.613001}
+        inSlope: {x: 0, y: 0, z: 25.067993}
+        outSlope: {x: 0, y: 0, z: 25.067993}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 15.762001}
+        inSlope: {x: 0, y: 0, z: -129.772}
+        outSlope: {x: 0, y: 0, z: -129.772}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: -16.681002}
+        inSlope: {x: 0, y: 0, z: 81.89398}
+        outSlope: {x: 0, y: 0, z: 81.89398}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -2.003}
+        inSlope: {x: 0, y: 0, z: 238.4943}
+        outSlope: {x: 0, y: 0, z: 238.4943}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0, y: 0, z: 19.397001}
+        inSlope: {x: 0, y: 0, z: 69.90431}
+        outSlope: {x: 0, y: 0, z: 69.90431}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 15.762001}
+        inSlope: {x: 0, y: 0, z: -43.62}
+        outSlope: {x: 0, y: 0, z: -43.62}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 3.5630002}
+        inSlope: {x: 0, y: 0, z: -247.60002}
+        outSlope: {x: 0, y: 0, z: -247.60002}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -8.817}
+        inSlope: {x: 0, y: 0, z: -120.74001}
+        outSlope: {x: 0, y: 0, z: -120.74001}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: -7.5930004}
+        inSlope: {x: 0, y: 0, z: -190.01996}
+        outSlope: {x: 0, y: 0, z: -190.01996}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -26.901001}
+        inSlope: {x: 0, y: 0, z: -116.91995}
+        outSlope: {x: 0, y: 0, z: -116.91995}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 3.5630002}
+        inSlope: {x: 0, y: 0, z: 152.32}
+        outSlope: {x: 0, y: 0, z: 152.32}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 40.968002}
+        outSlope: {x: 0, y: 0, z: 40.968002}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: 10.242001}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -40.968002}
+        outSlope: {x: 0, y: 0, z: -40.968002}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -37.02}
+        outSlope: {x: 0, y: 0, z: -37.02}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: -9.255}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 37.02}
+        outSlope: {x: 0, y: 0, z: 37.02}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 92.903336}
+        outSlope: {x: 0, y: 0, z: 92.903336}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: 27.871002}
+        inSlope: {x: 0, y: 0, z: -23.225845}
+        outSlope: {x: 0, y: 0, z: -23.225845}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -139.35503}
+        outSlope: {x: 0, y: 0, z: -139.35503}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -16.883333}
+        outSlope: {x: 0, y: 0, z: -16.883333}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -5.065}
+        inSlope: {x: 0, y: 0, z: 4.2208347}
+        outSlope: {x: 0, y: 0, z: 4.2208347}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 25.325003}
+        outSlope: {x: 0, y: 0, z: 25.325003}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -82.94}
+        outSlope: {x: 0, y: 0, z: -82.94}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: -4.1470003}
+        inSlope: {x: 0, y: 0, z: -22.971052}
+        outSlope: {x: 0, y: 0, z: -22.971052}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.36666667
+        value: {x: 0, y: 0, z: 7.5690002}
+        inSlope: {x: 0, y: 0, z: -9.884804}
+        outSlope: {x: 0, y: 0, z: -9.884804}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -56.767506}
+        outSlope: {x: 0, y: 0, z: -56.767506}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 63.100002}
+        outSlope: {x: 0, y: 0, z: 63.100002}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: 3.1550002}
+        inSlope: {x: 0, y: 0, z: 22.15842}
+        outSlope: {x: 0, y: 0, z: 22.15842}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.36666667
+        value: {x: 0, y: 0, z: -2.7930002}
+        inSlope: {x: 0, y: 0, z: 1.0821714}
+        outSlope: {x: 0, y: 0, z: 1.0821714}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 20.947502}
+        outSlope: {x: 0, y: 0, z: 20.947502}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -2.992}
+        outSlope: {x: 0, y: 0, z: -2.992}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0, y: 0, z: -0.748}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 2.992}
+        outSlope: {x: 0, y: 0, z: 2.992}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 13.460001}
+        outSlope: {x: 0, y: 0, z: 13.460001}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 0, z: 0.67300004}
+        inSlope: {x: 0, y: 0, z: 2.7680001}
+        outSlope: {x: 0, y: 0, z: 2.7680001}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 0, z: -1.3080001}
+        inSlope: {x: 0, y: 0, z: -0.6919999}
+        outSlope: {x: 0, y: 0, z: -0.6919999}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 6.540001}
+        outSlope: {x: 0, y: 0, z: 6.540001}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+  m_PositionCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0, y: 2.407, z: 0}
+        inSlope: {x: 0, y: -0.9400034, z: 0}
+        outSlope: {x: 0, y: -0.9400034, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0, y: 2.36, z: 0}
+        inSlope: {x: 0, y: 0.3871413, z: 0}
+        outSlope: {x: 0, y: 0.3871413, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 0, y: 2.56, z: 0}
+        inSlope: {x: 0, y: 0.107142866, z: 0}
+        outSlope: {x: 0, y: 0.107142866, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0, y: 2.36, z: 0}
+        inSlope: {x: 0, y: 0.107143104, z: 0}
+        outSlope: {x: 0, y: 0.107143104, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0, y: 2.56, z: 0}
+        inSlope: {x: 0, y: -0.060855925, z: 0}
+        outSlope: {x: 0, y: -0.060855925, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0, y: 2.407, z: 0}
+        inSlope: {x: 0, y: -1.8359983, z: 0}
+        outSlope: {x: 0, y: -1.8359983, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0.24, y: -1.05, z: 0}
+        inSlope: {x: -0.79999983, y: 1.3999987, z: 0}
+        outSlope: {x: -0.79999983, y: 1.3999987, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: 0.2, y: -0.98, z: 0}
+        inSlope: {x: -0.14285713, y: 0.44285673, z: 0}
+        outSlope: {x: -0.14285713, y: 0.44285673, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 0.26, y: -1.04, z: 0}
+        inSlope: {x: 0.25714278, y: -0.2571426, z: 0}
+        outSlope: {x: 0.25714278, y: -0.2571426, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0.26, y: -1.04, z: 0}
+        inSlope: {x: -0.24999985, y: -0.29000038, z: 0}
+        outSlope: {x: -0.24999985, y: -0.29000038, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 0.235, y: -1.069, z: 0}
+        inSlope: {x: -0.23714268, y: -0.3757146, z: 0}
+        outSlope: {x: -0.23714268, y: -0.3757146, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0.238, y: -1.089, z: 0}
+        inSlope: {x: 0.024857104, y: 0.14828596, z: 0}
+        outSlope: {x: 0.024857104, y: 0.14828596, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0.24, y: -1.05, z: 0}
+        inSlope: {x: 0.023999866, y: 0.46800035, z: 0}
+        outSlope: {x: 0.023999866, y: 0.46800035, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: 0.96, y: -0.74, z: 0}
+        inSlope: {x: 0.020000339, y: -0.6600001, z: 0}
+        outSlope: {x: 0.020000339, y: -0.6600001, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: 0.96333337, y: -0.85, z: 0}
+        inSlope: {x: 0.11000008, y: 0.15000024, z: 0}
+        outSlope: {x: 0.11000008, y: 0.15000024, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: 0.98, y: -0.77, z: 0}
+        inSlope: {x: 0.41000003, y: 0.17000017, z: 0}
+        outSlope: {x: 0.41000003, y: 0.17000017, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: 1.011, y: -0.801, z: 0}
+        inSlope: {x: 0.22047742, y: -0.34000024, z: 0}
+        outSlope: {x: 0.22047742, y: -0.34000024, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: 0.9901114, y: -0.808, z: 0}
+        inSlope: {x: -0.27019128, y: 0.37799993, z: 0}
+        outSlope: {x: -0.27019128, y: 0.37799993, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: 0.96, y: -0.74, z: 0}
+        inSlope: {x: -0.36133716, y: 0.8160001, z: 0}
+        outSlope: {x: -0.36133716, y: 0.8160001, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_R_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -0.28, y: -1.09, z: 0}
+        inSlope: {x: -0.9799999, y: 0.16000032, z: 0}
+        outSlope: {x: -0.9799999, y: 0.16000032, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: -0.329, y: -1.082, z: 0}
+        inSlope: {x: -0.54249996, y: 0.13500035, z: 0}
+        outSlope: {x: -0.54249996, y: 0.13500035, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: -0.35, y: -1.06, z: 0}
+        inSlope: {x: -0.85249996, y: 0.25499994, z: 0}
+        outSlope: {x: -0.85249996, y: 0.25499994, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: -0.43, y: -1.04, z: 0}
+        inSlope: {x: -0.42499992, y: 0.07499957, z: 0}
+        outSlope: {x: -0.42499992, y: 0.07499957, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: -0.28, y: -1.09, z: 0}
+        inSlope: {x: 0.75000006, y: -0.2500004, z: 0}
+        outSlope: {x: 0.75000006, y: -0.2500004, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: {x: -1.35, y: -0.71, z: 0}
+        inSlope: {x: 0.62000036, y: -0.27840018, z: 0}
+        outSlope: {x: 0.62000036, y: -0.27840018, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.05
+        value: {x: -1.319, y: -0.72392, z: 0}
+        inSlope: {x: 0.22842017, y: -1.0609715, z: 0}
+        outSlope: {x: 0.22842017, y: -1.0609715, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.16666667
+        value: {x: -1.3380353, y: -0.939, z: 0}
+        inSlope: {x: -0.21336806, y: -0.5077714, z: 0}
+        outSlope: {x: -0.21336806, y: -0.5077714, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.25
+        value: {x: -1.36, y: -0.87, z: 0}
+        inSlope: {x: -0.13178803, y: 2.6139998, z: 0}
+        outSlope: {x: -0.13178803, y: 2.6139998, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.3
+        value: {x: -1.36, y: -0.65, z: 0}
+        inSlope: {x: 0.00857132, y: 1.7242854, z: 0}
+        outSlope: {x: 0.00857132, y: 1.7242854, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.41666666
+        value: {x: -1.358, y: -0.761, z: 0}
+        inSlope: {x: 0.05657141, y: -0.16971442, z: 0}
+        outSlope: {x: 0.05657141, y: -0.16971442, z: 0}
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5
+        value: {x: -1.35, y: -0.71, z: 0}
+        inSlope: {x: 0.09600018, y: 0.6119999, z: 0}
+        outSlope: {x: 0.09600018, y: 0.6119999, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Knight_pelvis_01/Knight_leg_L_01
+  m_ScaleCurves: []
+  m_FloatCurves: []
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 3019334116
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3295175934
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1855000700
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3968162318
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3730256080
+      attribute: 1
+      script: {fileID: 0}
+      typeID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1855000700
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3295175934
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3730256080
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3968162318
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3538283488
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1646512972
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 3435295060
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 507602745
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4196105585
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4084566029
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 819205373
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1909612061
+      attribute: 4
+      script: {fileID: 0}
+      typeID: 4
+      customType: 14
+      isPPtrCurve: 0
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 0.5
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Knight_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 2.407
+        inSlope: -0.9400034
+        outSlope: -0.9400034
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 2.36
+        inSlope: 0.3871413
+        outSlope: 0.3871413
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 2.56
+        inSlope: 0.107142866
+        outSlope: 0.107142866
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 2.36
+        inSlope: 0.107143104
+        outSlope: 0.107143104
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 2.56
+        inSlope: -0.060855925
+        outSlope: -0.060855925
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 2.407
+        inSlope: -1.8359983
+        outSlope: -1.8359983
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Knight_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Knight_pelvis_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -11.960001
+        inSlope: 123.204
+        outSlope: 123.204
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 8.574
+        inSlope: 101.73601
+        outSlope: 101.73601
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 15.2630005
+        inSlope: 15.234011
+        outSlope: 15.234011
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 12.773001
+        inSlope: -134.5886
+        outSlope: -134.5886
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -12.821001
+        inSlope: -104.5226
+        outSlope: -104.5226
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -11.960001
+        inSlope: 10.332
+        outSlope: 10.332
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -9.613001
+        inSlope: -142.92
+        outSlope: -142.92
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -16.759
+        inSlope: -23.112858
+        outSlope: -23.112858
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -5.478
+        inSlope: 81.179146
+        outSlope: 81.179146
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -0.006
+        inSlope: -119.877975
+        outSlope: -119.877975
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -15.277
+        inSlope: -137.38855
+        outSlope: -137.38855
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -11.702001
+        inSlope: 27.855427
+        outSlope: 27.855427
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -9.613001
+        inSlope: 25.067993
+        outSlope: 25.067993
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.24
+        inSlope: -0.79999983
+        outSlope: -0.79999983
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0.2
+        inSlope: -0.14285713
+        outSlope: -0.14285713
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0.26
+        inSlope: 0.25714278
+        outSlope: 0.25714278
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0.26
+        inSlope: -0.24999985
+        outSlope: -0.24999985
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0.235
+        inSlope: -0.23714268
+        outSlope: -0.23714268
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0.238
+        inSlope: 0.024857104
+        outSlope: 0.024857104
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0.24
+        inSlope: 0.023999866
+        outSlope: 0.023999866
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.05
+        inSlope: 1.3999987
+        outSlope: 1.3999987
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -0.98
+        inSlope: 0.44285673
+        outSlope: 0.44285673
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -1.04
+        inSlope: -0.2571426
+        outSlope: -0.2571426
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -1.04
+        inSlope: -0.29000038
+        outSlope: -0.29000038
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.069
+        inSlope: -0.3757146
+        outSlope: -0.3757146
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -1.089
+        inSlope: 0.14828596
+        outSlope: 0.14828596
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -1.05
+        inSlope: 0.46800035
+        outSlope: 0.46800035
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0.96
+        inSlope: 0.020000339
+        outSlope: 0.020000339
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0.96333337
+        inSlope: 0.11000008
+        outSlope: 0.11000008
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0.98
+        inSlope: 0.41000003
+        outSlope: 0.41000003
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 1.011
+        inSlope: 0.22047742
+        outSlope: 0.22047742
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0.9901114
+        inSlope: -0.27019128
+        outSlope: -0.27019128
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0.96
+        inSlope: -0.36133716
+        outSlope: -0.36133716
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.74
+        inSlope: -0.6600001
+        outSlope: -0.6600001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -0.85
+        inSlope: 0.15000024
+        outSlope: 0.15000024
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -0.77
+        inSlope: 0.17000017
+        outSlope: 0.17000017
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -0.801
+        inSlope: -0.34000024
+        outSlope: -0.34000024
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -0.808
+        inSlope: 0.37799993
+        outSlope: 0.37799993
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.74
+        inSlope: 0.8160001
+        outSlope: 0.8160001
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 15.762001
+        inSlope: -129.772
+        outSlope: -129.772
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -16.681002
+        inSlope: 81.89398
+        outSlope: 81.89398
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -2.003
+        inSlope: 238.4943
+        outSlope: 238.4943
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 19.397001
+        inSlope: 69.90431
+        outSlope: 69.90431
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 15.762001
+        inSlope: -43.62
+        outSlope: -43.62
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 3.5630002
+        inSlope: -247.60002
+        outSlope: -247.60002
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -8.817
+        inSlope: -120.74001
+        outSlope: -120.74001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -7.5930004
+        inSlope: -190.01996
+        outSlope: -190.01996
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -26.901001
+        inSlope: -116.91995
+        outSlope: -116.91995
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 3.5630002
+        inSlope: 152.32
+        outSlope: 152.32
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.28
+        inSlope: -0.9799999
+        outSlope: -0.9799999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -0.329
+        inSlope: -0.54249996
+        outSlope: -0.54249996
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -0.35
+        inSlope: -0.85249996
+        outSlope: -0.85249996
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -0.43
+        inSlope: -0.42499992
+        outSlope: -0.42499992
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.28
+        inSlope: 0.75000006
+        outSlope: 0.75000006
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.09
+        inSlope: 0.16000032
+        outSlope: 0.16000032
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -1.082
+        inSlope: 0.13500035
+        outSlope: 0.13500035
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -1.06
+        inSlope: 0.25499994
+        outSlope: 0.25499994
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.04
+        inSlope: 0.07499957
+        outSlope: 0.07499957
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -1.09
+        inSlope: -0.2500004
+        outSlope: -0.2500004
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -1.35
+        inSlope: 0.62000036
+        outSlope: 0.62000036
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -1.319
+        inSlope: 0.22842017
+        outSlope: 0.22842017
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -1.3380353
+        inSlope: -0.21336806
+        outSlope: -0.21336806
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -1.36
+        inSlope: -0.13178803
+        outSlope: -0.13178803
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.36
+        inSlope: 0.00857132
+        outSlope: 0.00857132
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -1.358
+        inSlope: 0.05657141
+        outSlope: 0.05657141
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -1.35
+        inSlope: 0.09600018
+        outSlope: 0.09600018
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -0.71
+        inSlope: -0.27840018
+        outSlope: -0.27840018
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -0.72392
+        inSlope: -1.0609715
+        outSlope: -1.0609715
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: -0.939
+        inSlope: -0.5077714
+        outSlope: -0.5077714
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -0.87
+        inSlope: 2.6139998
+        outSlope: 2.6139998
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -0.65
+        inSlope: 1.7242854
+        outSlope: 1.7242854
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: -0.761
+        inSlope: -0.16971442
+        outSlope: -0.16971442
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: -0.71
+        inSlope: 0.6119999
+        outSlope: 0.6119999
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.16666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.41666666
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 40.968002
+        outSlope: 40.968002
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 10.242001
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: -40.968002
+        outSlope: -40.968002
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -37.02
+        outSlope: -37.02
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -9.255
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 37.02
+        outSlope: 37.02
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 92.903336
+        outSlope: 92.903336
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 27.871002
+        inSlope: -23.225845
+        outSlope: -23.225845
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: -139.35503
+        outSlope: -139.35503
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -16.883333
+        outSlope: -16.883333
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -5.065
+        inSlope: 4.2208347
+        outSlope: 4.2208347
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 25.325003
+        outSlope: 25.325003
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -82.94
+        outSlope: -82.94
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: -4.1470003
+        inSlope: -22.971052
+        outSlope: -22.971052
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: 7.5690002
+        inSlope: -9.884804
+        outSlope: -9.884804
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: -56.767506
+        outSlope: -56.767506
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 63.100002
+        outSlope: 63.100002
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 3.1550002
+        inSlope: 22.15842
+        outSlope: 22.15842
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.36666667
+        value: -2.7930002
+        inSlope: 1.0821714
+        outSlope: 1.0821714
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 20.947502
+        outSlope: 20.947502
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: -2.992
+        outSlope: -2.992
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.25
+        value: -0.748
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 2.992
+        outSlope: 2.992
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 13.460001
+        outSlope: 13.460001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.05
+        value: 0.67300004
+        inSlope: 2.7680001
+        outSlope: 2.7680001
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.3
+        value: -1.3080001
+        inSlope: -0.6919999
+        outSlope: -0.6919999
+        tangentMode: 34
+      - serializedVersion: 2
+        time: 0.5
+        value: 0
+        inSlope: 6.540001
+        outSlope: 6.540001
+        tangentMode: 34
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  m_EulerEditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_leg_R_01/Knight_boot_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_leg_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_leg_L_01/Knight_boot_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_head_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_L_01/Knight_elbow_L_01/Knight_wrist_L_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_leg_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Knight_pelvis_01/Knight_torso_01/Knight_shoulder_R_01/Knight_elbow_R_01/Knight_wrist_R_01
+    classID: 4
+    script: {fileID: 0}
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_GenerateMotionCurves: 0
+  m_Events: []
