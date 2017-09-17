@@ -16,7 +16,7 @@ MonoBehaviour:
   Modifier: 0
   Name: ShadowBlink
   Cooldown: 10
-  CooldownRemaining: -421.2291
   Distance: 10
-  MarkerPrefab: {fileID: 1659418661540198, guid: 4281a91c94f670e49a2262b6d370400d,
+  MarkerPrefab: {fileID: 100000, guid: 7b56cd9b663f23f429e131a54ec87db0, type: 2}
+  LeavePrefab: {fileID: 1511496998307470, guid: 95172804ce5a7154f9c12aacc17d6bdf,
     type: 2}
