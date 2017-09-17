@@ -150,7 +150,9 @@ namespace Control {
                     else if (attack.GetTarget() == null) currentMode = MovementMode.IDLE;
                     else waypoints.GoDirectlyTo(attack.GetTarget().gameObject.transform.position);
                     break;
-                case MovementMode.MOVE: break;
+                case MovementMode.MOVE:
+                    if (waypoints.IsIdle()) currentMode = MovementMode.IDLE;
+                    break;
                 case MovementMode.ATTACK_MOVE:
                     break;
                 case MovementMode.IDLE:

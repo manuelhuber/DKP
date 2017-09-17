@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Control;
 using Damage;
+using Damage.Common;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +27,7 @@ namespace Raid {
 
         private void Awake() {
             folder = new GameObject {name = "PCs"};
-            SpawnHero(Heroes[0], PcCount);
+            Heroes.ForEach(h => SpawnHero(h, 1));
         }
 
         private void SpawnHero(Hero hero, int amount) {

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Control;
 using UnityEngine;
 using Util;
 
@@ -14,6 +15,7 @@ namespace Damage.Range {
 
         private Damageable nearestTarget;
         private float nextAttackPossible;
+        private Animator animator;
 
         public override void AttackNearestTarget() {
             if (CurrentTarget != null || !(nextAttackPossible < Time.time)) return;
@@ -40,9 +42,25 @@ namespace Damage.Range {
         }
 
         private void Shoot() {
+            animator.SetTrigger("Attack");
             var projectile = Instantiate(ProjectilePrefab, gameObject.transform.position,
                 gameObject.transform.rotation);
             projectile.GetComponent<Projectile>().SetTarget(CurrentTarget.gameObject);
+        }
+
+        private bool IsInLineOfSight(GameObject target) {
+            RaycastHit hit;
+            if (!PositionUtil.RayFromTo(gameObject, target, out hit)) return false;
+            return hit.transform.gameObject == target;
+        }
+
+        private bool IsInRange(Component target) {
+            return target != null &&
+                   PositionUtil.BeelineDistance(gameObject.transform.position, target.transform.position) <= Range;
+        }
+
+        private void Start() {
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag);
         }
 
         private void Update() {
@@ -62,17 +80,6 @@ namespace Damage.Range {
             }
             Shoot();
             nextAttackPossible = Time.time + AttackInterval;
-        }
-
-        private bool IsInLineOfSight(GameObject target) {
-            RaycastHit hit;
-            if (!PositionUtil.RayFromTo(gameObject, target, out hit)) return false;
-            return hit.transform.gameObject == target;
-        }
-
-        private bool IsInRange(Component target) {
-            return target != null &&
-                   PositionUtil.BeelineDistance(gameObject.transform.position, target.transform.position) <= Range;
         }
     }
 }
