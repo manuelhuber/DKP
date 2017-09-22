@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Damage;
 using DKPCamera;
@@ -50,10 +49,14 @@ namespace Control {
         private FocusOnObject cameraController;
 
         /// <summary>
-        /// item 1 = hotkey pressed
-        /// item 2 = time at which hotkey was pressed
+        /// Last controllgroup hotkey pressed
         /// </summary>
-        private Tuple<int, float> doubleTap = new Tuple<int, float>(0, 0);
+        private int doubleTapGroup;
+
+        /// <summary>
+        /// Time at which last controllgroup hotkey was pressed
+        /// </summary>
+        private float doubleTapTime;
 
 
         private void Start() {
@@ -126,12 +129,13 @@ namespace Control {
                 if (ValidDoubleTap(i)) {
                     cameraController.FocusOn(ControlGroups[i][0].gameObject);
                 }
-                doubleTap = new Tuple<int, float>(i, Time.time);
+                doubleTapGroup = i;
+                doubleTapTime = Time.time;
             }
         }
 
         private bool ValidDoubleTap(int i) {
-            return doubleTap.Item1 == i && (doubleTap.Item2 + DoubleTapTime) > Time.time;
+            return doubleTapGroup == i && (doubleTapTime + DoubleTapTime) > Time.time;
         }
 
         private void DefaultLeftClickDown() {
