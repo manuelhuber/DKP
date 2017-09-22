@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Abilities.Scripts;
 using Damage;
-using Spells;
 using UnityEngine;
 using Util;
 
