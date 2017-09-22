@@ -18,5 +18,8 @@ MonoBehaviour:
   Cooldown: 0
   EnterPortalPrefab: {fileID: 1459791855920822, guid: 4a6d2b930ffb6fa438f400b8fc706555,
     type: 2}
+  ExitPortalPrefab: {fileID: 1459791855920822, guid: 46caa258509c2e04c8112dc54bd4822d,
+    type: 2}
   CastingDistance: 10
   PortalDistance: 20
+  Duration: 10

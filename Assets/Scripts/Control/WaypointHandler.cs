@@ -42,6 +42,7 @@ namespace Control {
 
         public void DestroyCurrentWaypoint() {
             Destroy(currentDestination);
+            currentDestination = null;
         }
 
         /// <summary>
@@ -85,11 +86,28 @@ namespace Control {
             currentDestinationLineRenderer.enabled = value;
         }
 
+        /// <summary>
+        /// Ports the player to the given destination
+        /// </summary>
+        /// <param name="dest">
+        /// This needs to be a valid navMeshPosition!
+        /// </param>
+        /// <param name="clearCurrentWaypointRange">
+        /// If the current waypoint is within this distance it will be 
+        /// </param>
+        public void Warp(Vector3 dest, float clearCurrentWaypointRange = 5) {
+            if (agent.remainingDistance < clearCurrentWaypointRange) GoToNextWaypoint();
+            agent.Warp(dest);
+            if (currentDestination == null) return;
+            agent.SetDestination(currentDestination.transform.position);
+        }
+
 
         /// <summary>
         /// Makes the next waypoint the current destination
         /// </summary>
         private void GoToNextWaypoint() {
+            DestroyCurrentWaypoint();
             if (waypoints.Count <= 0) return;
             var next = waypoints[0];
             var nextPosition = next.transform.position;
@@ -140,7 +158,6 @@ namespace Control {
             var arrived = agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
             if (!arrived) return;
 
-            DestroyCurrentWaypoint();
             agent.ResetPath();
             GoToNextWaypoint();
         }
