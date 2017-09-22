@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityScripts:
-  - {fileID: 11400000, guid: e16b8456fec87f24b97774ceb7680adc, type: 2}
+  - {fileID: 11400000, guid: 25cbfcf4b7f55c74896c8b04eb78fe9b, type: 2}
   - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}
 --- !u!114 &114973841972244484
 MonoBehaviour:

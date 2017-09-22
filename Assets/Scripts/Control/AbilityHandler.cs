@@ -37,7 +37,9 @@ namespace Control {
         }
 
         public bool OnLeftClickUp(ClickLocation click) {
-            if (!active || activeAbility == null || !activeAbility.Ability.OnLeftClickUp(click)) return false;
+            if (!active || activeAbility == null) return false;
+            var abilityDone = activeAbility.Ability.OnLeftClickUp(click);
+            if (!abilityDone) return true;
             activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
             activeAbility = null;
             return true;

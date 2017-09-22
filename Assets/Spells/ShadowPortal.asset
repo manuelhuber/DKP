@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac3160cb7624f06973bf5785c3d15be, type: 3}
+  m_Name: ShadowPortal
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 0}
+  Hotkey: 113
+  Modifier: 0
+  Name: Asd
+  Cooldown: 0
+  EnterPortalPrefab: {fileID: 1459791855920822, guid: 4a6d2b930ffb6fa438f400b8fc706555,
+    type: 2}
+  CastingDistance: 10
+  PortalDistance: 20

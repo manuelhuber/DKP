@@ -1,5 +1,4 @@
 ﻿using Control;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 using Util;
@@ -18,8 +17,7 @@ namespace Spells {
         public override bool OnActivation(GameObject c) {
             caster = c;
             leaveMarker = Instantiate(LeavePrefab, caster.transform);
-            marker = Instantiate(MarkerPrefab);
-            marker.transform.SetParent(caster.transform, false);
+            marker = Instantiate(MarkerPrefab, caster.transform, false);
             marker.transform.position = WarpLocation();
             return false;
         }
@@ -56,17 +54,7 @@ namespace Spells {
         }
 
         private Vector3 WarpLocation() {
-            GameObject go;
-            Vector3 location;
-            PositionUtil.GetClickLocation(out go, out location, 0);
-            var currentPosition = caster.transform.position;
-            var direction = location - currentPosition;
-            var velocity = direction / direction.magnitude;
-            var actualMovement = direction.magnitude < Distance ? direction : velocity * Distance;
-            var newPosition = currentPosition + actualMovement;
-            NavMeshHit navMeshHit;
-            NavMesh.SamplePosition(newPosition, out navMeshHit, 100, -1);
-            return navMeshHit.position;
+            return PositionUtil.GetValidNavMeshPosition(caster.transform.position, Distance);
         }
     }
 }

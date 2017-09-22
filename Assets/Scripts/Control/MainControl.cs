@@ -57,7 +57,7 @@ namespace Control {
 
             GameObject target;
             Vector3 terrainHit;
-            if (!PositionUtil.GetClickLocation(out target, out terrainHit, ClickableLayers)) return;
+            if (!PositionUtil.GetCursorLocation(out target, out terrainHit, ClickableLayers)) return;
 
             var click = new ClickLocation {Target = target, Location = terrainHit};
             if (rightClick) {

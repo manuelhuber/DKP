@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace Util {
     public static class PositionUtil {
@@ -54,7 +55,7 @@ namespace Util {
         /// the first terrain hit
         /// </summary>
         /// <returns>true if terrain has been hit</returns>
-        public static bool GetClickLocation(out GameObject target, out Vector3 terrainHit,
+        public static bool GetCursorLocation(out GameObject target, out Vector3 terrainHit,
             LayerMask clickable) {
             terrainHit = new Vector3();
             target = null;
@@ -68,6 +69,32 @@ namespace Util {
                 target = hit.transform.gameObject;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Gets a valid navMesh position, from the starting position towards the cursor position up to the maximum 
+        /// distance.
+        /// If distance = infinity it will simply finds the valid navMesh position nearest to the cursor position   
+        /// </summary>
+        /// <param name="startingPos">
+        /// The location from where to calculate the distance
+        /// </param>
+        /// <param name="maxDistance">
+        /// The maximum distance that the position can be away from the starting position
+        /// </param>
+        /// <returns></returns>
+        public static Vector3 GetValidNavMeshPosition(Vector3 startingPos, float maxDistance) {
+            GameObject go;
+            Vector3 location;
+            GetCursorLocation(out go, out location, 0);
+            var currentPosition = startingPos;
+            var direction = location - currentPosition;
+            var velocity = direction / direction.magnitude;
+            var actualMovement = direction.magnitude < maxDistance ? direction : velocity * maxDistance;
+            var newPosition = currentPosition + actualMovement;
+            NavMeshHit navMeshHit;
+            NavMesh.SamplePosition(newPosition, out navMeshHit, 100, -1);
+            return navMeshHit.position;
         }
 
         public static int GetTerrainLayerMask() {

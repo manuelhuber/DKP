@@ -31,21 +31,20 @@ namespace Control {
         /// </summary>
         /// <param name="click"></param>
         /// <returns>
-        /// true if this action consumes the click 
+        /// true if this ability is done 
         /// </returns>
         public virtual bool OnLeftClickDown(ClickLocation click) {
             return false;
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="click"></param>
         /// <returns>
-        /// true if this action consumes the click 
+        /// true if this ability is done 
         /// </returns>
         public virtual bool OnLeftClickUp(ClickLocation click) {
-            return false;
+            return true;
         }
 
         public virtual void OnCancel() {
