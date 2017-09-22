@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Damage;
 using DKPCamera;
@@ -14,6 +15,10 @@ namespace Control {
     public class MainControl : MonoBehaviour {
         public Color SelectionBorderColor;
         public Color SelectionFillColor;
+
+        [Tooltip("Maximum time in seconds between same hotkey strokes to count as a double tap")]
+        public double DoubleTapTime = 1;
+
 
         /// <summary>
         /// All layers that should be clickable - either to be selected or be the target of clicks
@@ -38,10 +43,18 @@ namespace Control {
         private bool isSelecting;
         private Vector3 selectionStart;
 
+
         /// <summary>
         /// A script to focus the camera on an object
         /// </summary>
         private FocusOnObject cameraController;
+
+        /// <summary>
+        /// item 1 = hotkey pressed
+        /// item 2 = time at which hotkey was pressed
+        /// </summary>
+        private Tuple<int, float> doubleTap = new Tuple<int, float>(0, 0);
+
 
         private void Start() {
             cameraController = GetComponent<FocusOnObject>();
@@ -110,7 +123,15 @@ namespace Control {
                 if (!Input.GetButtonUp("Select " + i)) continue;
                 DeselectCurrentSelection();
                 AddToSelection(ControlGroups[i], true);
+                if (ValidDoubleTap(i)) {
+                    cameraController.FocusOn(ControlGroups[i][0].gameObject);
+                }
+                doubleTap = new Tuple<int, float>(i, Time.time);
             }
+        }
+
+        private bool ValidDoubleTap(int i) {
+            return doubleTap.Item1 == i && (doubleTap.Item2 + DoubleTapTime) > Time.time;
         }
 
         private void DefaultLeftClickDown() {
