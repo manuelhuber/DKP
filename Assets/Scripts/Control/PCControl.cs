@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Damage;
 using DKPSettings;
 using UnityEngine;

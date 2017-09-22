@@ -2,6 +2,5 @@
 
 namespace Raid {
     public class CharacterBuilder : ScriptableObject {
-        
     }
 }
