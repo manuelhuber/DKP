@@ -6,11 +6,6 @@ using UnityEngine.AI;
 using Util;
 
 namespace Control {
-    internal class Waypoint {
-        public GameObject Target;
-        public bool IsMobile;
-    }
-
     public class WaypointHandler : MonoBehaviour {
         [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
         public GameObject ActiveWaypointMarkerPrefab;

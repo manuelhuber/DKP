@@ -2,10 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Control;
 using UnityEngine;
 using UnityEngine.UI;
-using Util;
 
 [Serializable]
 public class DamageInterceptor {
@@ -26,7 +24,6 @@ namespace Damage {
         private int hitpoints;
         private bool dead;
         private readonly List<DamageInterceptor> damageInterceptors = new List<DamageInterceptor>();
-        private Animator animator;
 
         private int Hitpoints {
             get { return hitpoints; }
@@ -121,7 +118,6 @@ namespace Damage {
             var healthbar = GetComponentInChildren<Slider>();
             healthbar.maxValue = MaxHitpoints;
             healthbar.value = Hitpoints;
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag);
         }
     }
 }
