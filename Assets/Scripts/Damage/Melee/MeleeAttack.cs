@@ -31,7 +31,7 @@ namespace Damage.Melee {
 
         public override void AttackNearestTarget() {
             if (withinRange.Count < 1) return;
-            CurrentTarget = withinRange[0].GetComponent<Damageable>();
+            CurrentTarget = withinRange[0];
         }
 
         protected virtual void DealDamage() {

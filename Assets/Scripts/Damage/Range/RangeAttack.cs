@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Control;
+using Raid;
 using UnityEngine;
 using Util;
 
@@ -23,10 +24,7 @@ namespace Damage.Range {
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject);
             if (findNewTarget) {
-                var target = FindObjectsOfType<Damageable>()
-                    .Select(o => o.GetComponent<Team>())
-                    .Where(t => t != null && !t.SameTeam(gameObject))
-                    .Select(t => t.gameObject)
+                var target = TargetManager.GetEnemies(GetComponent<Team>().TeamId)
                     .Where(IsInLineOfSight)
                     .Aggregate((GameObject) null, (nearest, next) => {
                         var oldDistance = nearest == null

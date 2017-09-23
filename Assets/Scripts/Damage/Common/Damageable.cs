@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Raid;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -99,6 +100,7 @@ namespace Damage {
         /// </summary>
         protected virtual void Die() {
             dead = true;
+            TargetManager.RemoveTarget(gameObject);
         }
 
         private IEnumerator RemoveInterceptorAfterTime(DamageInterceptor interceptor, float duration) {
@@ -115,9 +117,8 @@ namespace Damage {
         /// </summary>
         protected virtual void Start() {
             canvas = GetComponentInChildren<Canvas>().gameObject;
-            var healthbar = GetComponentInChildren<Slider>();
-            healthbar.maxValue = MaxHitpoints;
-            healthbar.value = Hitpoints;
+            AddHealthbar(GetComponentInChildren<Slider>());
+            TargetManager.AddTarget(gameObject);
         }
     }
 }
