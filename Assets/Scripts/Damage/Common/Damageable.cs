@@ -72,6 +72,7 @@ namespace Damage {
         public void Revive(int amount, float vulnerabilityDuartion) {
             if (!dead) return;
             dead = false;
+            TargetManager.AddTarget(gameObject);
             ModifyHitpoints(amount > 0 ? amount : MaxHitpoints);
             var immune = new DamageInterceptor {
                 Interceptor = (int x) => 0,
