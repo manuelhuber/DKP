@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace XX_EditorScripts {
     public static class ScriptableObjectCreator {
@@ -9,7 +11,7 @@ namespace XX_EditorScripts {
             foreach (Object o in Selection.objects) {
                 if (o is MonoScript) {
                     MonoScript script = (MonoScript) o;
-                    System.Type type = script.GetClass();
+                    Type type = script.GetClass();
                     if (type.IsSubclassOf(typeof(ScriptableObject))) {
                         CreateAsset(type);
                     }
@@ -22,7 +24,7 @@ namespace XX_EditorScripts {
             foreach (Object o in Selection.objects) {
                 if (o is MonoScript) {
                     MonoScript script = (MonoScript) o;
-                    System.Type type = script.GetClass();
+                    Type type = script.GetClass();
                     if (type.IsSubclassOf(typeof(ScriptableObject))) {
                         return true;
                     }
@@ -31,7 +33,7 @@ namespace XX_EditorScripts {
             return false;
         }
 
-        private static void CreateAsset(System.Type type) {
+        private static void CreateAsset(Type type) {
             var asset = ScriptableObject.CreateInstance(type);
             string path = AssetDatabase.GetAssetPath(Selection.activeObject);
             if (path == "") {

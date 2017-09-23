@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Control;
 using Damage.Common;
-using Raid;
-using Raid.Builders;
+using PCs.Scripts;
 using UI;
+using UI.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Control;
+using Damage.Common;
 using UnityEngine;
 using Util;
 

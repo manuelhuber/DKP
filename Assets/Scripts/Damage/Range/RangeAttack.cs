@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Control;
+using Damage.Common;
 using Raid;
 using UnityEngine;
 using Util;

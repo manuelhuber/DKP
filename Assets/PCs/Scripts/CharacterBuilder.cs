@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using Control;
 using Damage;
+using Damage.Common;
 using Damage.Melee;
 using Damage.Range;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Raid.Builders {
+namespace PCs.Scripts {
     public enum AttackType {
         Melee,
         Ranged

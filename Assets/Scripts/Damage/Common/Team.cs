@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Damage {
+namespace Damage.Common {
     public class Team : MonoBehaviour {
         public int TeamId;
 

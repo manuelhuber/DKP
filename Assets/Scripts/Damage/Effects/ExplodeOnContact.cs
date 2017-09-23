@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Damage.Common;
+using UnityEngine;
 
 namespace Damage.Effects {
     public class ExplodeOnContact : Effect {

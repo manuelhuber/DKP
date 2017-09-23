@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Damage.Effects;
+using Damage.Common;
 using UnityEngine;
 
-namespace Damage {
+namespace Damage.Effects {
     public class AreaOfEffect : Effect {
         public int Amount;
         public float Intervall;

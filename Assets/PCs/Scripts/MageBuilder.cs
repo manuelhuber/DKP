@@ -1,6 +1,4 @@
-﻿using Raid.Builders;
-
-namespace Raid {
+﻿namespace PCs.Scripts {
     public class MageBuilder : CharacterBuilder {
     }
 }

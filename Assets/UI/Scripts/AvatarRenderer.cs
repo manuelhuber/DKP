@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Util;
 
-namespace UI {
+namespace UI.Scripts {
     public class AvatarRenderer : MonoBehaviour {
         public float SpaceBetweenAvatars = 10;
 

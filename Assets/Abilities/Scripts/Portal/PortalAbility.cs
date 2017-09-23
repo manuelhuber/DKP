@@ -32,13 +32,12 @@ namespace Abilities.Scripts.Portal {
                 enterPortalSet = true;
                 exitPortal = Instantiate(ExitPortalPrefab);
                 return false;
-            } else {
-                var enterScript = enterPortal.AddComponent<EnterPortal>();
-                enterScript.Exit = exitPortal;
-                Destroy(enterPortal, Duration);
-                Destroy(exitPortal, Duration);
-                return true;
             }
+            var enterScript = enterPortal.AddComponent<EnterPortal>();
+            enterScript.Exit = exitPortal;
+            Destroy(enterPortal, Duration);
+            Destroy(exitPortal, Duration);
+            return true;
         }
 
         public override void OnCancel() {

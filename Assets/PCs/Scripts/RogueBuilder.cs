@@ -1,8 +1,4 @@
-﻿using Damage.Melee;
-using Raid.Builders;
-using UnityEngine;
-
-namespace Raid {
+﻿namespace PCs.Scripts {
     public class RogueBuilder : CharacterBuilder {
     }
 }

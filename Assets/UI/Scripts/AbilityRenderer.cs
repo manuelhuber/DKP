@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Util;
 
-namespace UI {
+namespace UI.Scripts {
     public class AbilityRenderer : MonoBehaviour {
         public GameObject AbilityPrefab;
 

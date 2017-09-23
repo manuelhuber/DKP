@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Damage {
+namespace Damage.Common {
     public abstract class Attack : MonoBehaviour {
         public float AttackInterval;
         public virtual float Range { set; get; }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace UI {
+namespace UI.Scripts {
     public class RaidUi {
         public static GameObject GetCanvas() {
             return GameObject.FindGameObjectWithTag("Canvas");
