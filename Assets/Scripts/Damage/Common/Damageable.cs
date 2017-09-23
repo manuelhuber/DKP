@@ -5,6 +5,7 @@ using System.Linq;
 using Damage.Common;
 using Raid;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 [Serializable]
@@ -34,7 +35,7 @@ namespace Damage {
         private int hitpoints;
         private bool dead;
         private readonly List<DamageInterceptor> damageInterceptors = new List<DamageInterceptor>();
-        private int maxHitpoints = 100;
+        [SerializeField] private int maxHitpoints = 100;
 
         private int Hitpoints {
             get { return hitpoints; }
@@ -80,6 +81,7 @@ namespace Damage {
                 Order = 1
             };
             AddDamageInterceptorWithDuration(immune, vulnerabilityDuartion);
+            ToggleCommonComponents(true);
         }
 
         public void ModifyHitpoints(int initialAmount) {
@@ -111,12 +113,20 @@ namespace Damage {
         /// </summary>
         protected virtual void Die() {
             dead = true;
+            ToggleCommonComponents(false);
             TargetManager.RemoveTarget(gameObject);
         }
 
         private IEnumerator RemoveInterceptorAfterTime(DamageInterceptor interceptor, float duration) {
             yield return new WaitForSeconds(duration);
             RemoveDamageInterceptor(interceptor);
+        }
+
+        private void ToggleCommonComponents(bool value) {
+            var agent = GetComponent<NavMeshAgent>();
+            if (agent != null) agent.enabled = value;
+            var attack = GetComponent<Attack>();
+            if (attack != null) attack.enabled = value;
         }
 
         private void Awake() {
