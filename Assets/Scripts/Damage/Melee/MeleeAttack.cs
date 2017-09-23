@@ -28,6 +28,7 @@ namespace Damage.Melee {
         private readonly List<Damageable> withinRange = new List<Damageable>();
         private Animator animator;
         private CapsuleCollider rangeCollider;
+        private Team team;
 
         public override void AttackNearestTarget() {
             if (withinRange.Count < 1) return;
@@ -77,6 +78,7 @@ namespace Damage.Melee {
 
         private void Start() {
             animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag);
+            team = GetComponent<Team>();
         }
 
         private void Update() {
@@ -91,7 +93,7 @@ namespace Damage.Melee {
 
         private void OnTriggerEnter(Collider other) {
             var dmg = other.gameObject.GetComponent<Damageable>();
-            if (dmg == null || GetComponent<Team>().SameTeam(dmg.gameObject)) return;
+            if (dmg == null || team.SameTeam(dmg.gameObject)) return;
             withinRange.Add(dmg);
         }
 
