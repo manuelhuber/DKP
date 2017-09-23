@@ -2,6 +2,7 @@
 using System.Linq;
 using Abilities.Scripts;
 using Damage;
+using Damage.Melee;
 using UnityEngine;
 using Util;
 
@@ -14,15 +15,13 @@ namespace Boss.Zylindron {
         public float VulnerabilityRange = 50;
 
         private float nextFire;
-
-        private void Awake() {
-            nextFire = FireInterval;
-        }
+        private MeleeAttack melee;
 
         private void Update() {
+            melee.AttackNearestTarget();
             if (!(nextFire < Time.time)) return;
             SpawnFire();
-            nextFire += FireInterval;
+            nextFire = Time.time + FireInterval;
         }
 
         private void SpawnFire() {
@@ -49,6 +48,14 @@ namespace Boss.Zylindron {
 
         private bool WithinDistance(GameObject target, float distance) {
             return PositionUtil.BeelineDistance(transform.position, target.transform.position) < distance;
+        }
+
+        private void Awake() {
+            nextFire = FireInterval;
+        }
+
+        private void Start() {
+            melee = GetComponent<MeleeAttack>();
         }
     }
 }
