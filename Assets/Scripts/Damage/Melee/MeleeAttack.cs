@@ -59,12 +59,13 @@ namespace Damage.Melee {
 
             var scale = gameObject.transform.localScale;
             // The radius of the half-sphere that's on top & bottom of the capsule
+            // I had to pull out pen'n'paper and draw some stuff to figure this out!
             var sphereRadius = 2 * Math.Max(scale.x, scale.z) * radius;
-            var actHeight = scale.y * 2 + sphereRadius;
-            var colHeight = actHeight / scale.y;
+            var actualHeight = scale.y * 2 + sphereRadius;
+            var colliderHeight = actualHeight / scale.y;
 
             rangeCollider.radius = (float) radius;
-            rangeCollider.height = (float) colHeight;
+            rangeCollider.height = (float) colliderHeight;
         }
 
         #region UnityLifecycle
