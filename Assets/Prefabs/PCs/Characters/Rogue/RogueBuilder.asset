@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d446cf3287146dc4ca41256b93f3834e, type: 3}
   m_Name: RogueBuilder
   m_EditorClassIdentifier: 
-  Hitpoints: 100
+  Hitpoints: 150
   Speed: 5
   Abilities:
   - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}

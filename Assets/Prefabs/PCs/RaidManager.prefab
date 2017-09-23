@@ -63,7 +63,7 @@ MonoBehaviour:
     - {fileID: 1000011821036864, guid: 5b210609803658e488f512fc13a6163e, type: 2}
     AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
       type: 2}
-  - Builder: {fileID: 11400000, guid: 2d1480b2a2874e04783ad9c96515258f, type: 2}
+  - Builder: {fileID: 11400000, guid: d01fdcad8656e9f4993c3d29a35597a4, type: 2}
     OutfitPrefabs:
     - {fileID: 1000010338393104, guid: d8cce58c17035694fb97a5ec11539c20, type: 2}
     - {fileID: 1000011633381418, guid: d9816ff333fc7294d833389a250b9391, type: 2}
