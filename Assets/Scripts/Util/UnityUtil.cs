@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -21,6 +22,11 @@ namespace Util {
             pos.y = y;
             transform.anchoredPosition = pos;
             return transform;
+        }
+
+        public static IEnumerator DoAfterDelay(Action action, float delay) {
+            yield return new WaitForSeconds(delay);
+            action();
         }
     }
 }

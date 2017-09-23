@@ -3,7 +3,6 @@ using UnityEngine;
 using Util;
 
 namespace Abilities.Scripts.Portal {
-    [CreateAssetMenu(menuName = "Spells/Portal")]
     public class PortalAbility : Ability {
         public GameObject EnterPortalPrefab;
         public GameObject ExitPortalPrefab;

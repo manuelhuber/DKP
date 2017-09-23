@@ -7,6 +7,8 @@ using Util;
 
 namespace Damage.Melee {
     public class MeleeAttack : Attack {
+        [Tooltip("Positive numbers heal, negative numbers deal damage")] public int AttackDamage;
+
         public override float Range {
             get { return range; }
             set {
@@ -16,24 +18,28 @@ namespace Damage.Melee {
         }
 
         public override bool InRange {
-            get { return CurrentTarget != null && withinRange.Contains(CurrentTarget); }
+            get { return CurrentTarget != null && WithinRange.Contains(CurrentTarget); }
         }
 
-
-        [Tooltip("Positive numbers heal, negative numbers deal damage")] public int AttackDamage;
+        public readonly List<Damageable> WithinRange = new List<Damageable>();
 
         private float nextAttackPossible;
         private Action<MeleeAttack> doDealDamage = MeleeAttackVariants.SingleTargetDamage;
-
-        private readonly List<Damageable> withinRange = new List<Damageable>();
         private Animator animator;
         private CapsuleCollider rangeCollider;
         private Team team;
         [SerializeField] private float range;
 
+        public void ChangeAttackForDuration(Action<MeleeAttack> attack, float duration) {
+            doDealDamage = attack;
+            StartCoroutine(UnityUtil.DoAfterDelay(
+                () => doDealDamage = MeleeAttackVariants.SingleTargetDamage
+                , duration));
+        }
+
         public override void AttackNearestTarget() {
-            if (withinRange.Count < 1) return;
-            CurrentTarget = withinRange[0];
+            if (WithinRange.Count < 1) return;
+            CurrentTarget = WithinRange[0];
         }
 
         protected virtual void DealDamage() {
@@ -87,6 +93,7 @@ namespace Damage.Melee {
         private void Update() {
             if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
             if (CurrentTarget.IsDead()) {
+                WithinRange.Remove(CurrentTarget);
                 CurrentTarget = null;
                 return;
             }
@@ -97,13 +104,13 @@ namespace Damage.Melee {
         private void OnTriggerEnter(Collider other) {
             var dmg = other.gameObject.GetComponent<Damageable>();
             if (dmg == null || team.SameTeam(dmg.gameObject)) return;
-            withinRange.Add(dmg);
+            WithinRange.Add(dmg);
         }
 
         private void OnTriggerExit(Collider other) {
             var dmg = other.gameObject.GetComponent<Damageable>();
             if (dmg == null) return;
-            withinRange.Remove(dmg);
+            WithinRange.Remove(dmg);
         }
 
         #endregion

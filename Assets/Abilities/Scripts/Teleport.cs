@@ -4,7 +4,6 @@ using UnityEngine.AI;
 using Util;
 
 namespace Abilities.Scripts {
-    [CreateAssetMenu(menuName = "Spells/Teleport")]
     public class Teleport : Ability {
         public float Distance;
         public GameObject MarkerPrefab;

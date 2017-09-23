@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Damage.Common;
@@ -7,6 +6,7 @@ using Raid;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Util;
 
 [Serializable]
 public class DamageInterceptor {
@@ -60,8 +60,8 @@ namespace Damage {
 
         public void AddDamageInterceptorWithDuration(DamageInterceptor interceptor, float duration) {
             damageInterceptors.Add(interceptor);
-            StartCoroutine(RemoveInterceptorAfterTime(interceptor, duration));
-        }
+            StartCoroutine(UnityUtil.DoAfterDelay(() => RemoveDamageInterceptor(interceptor), duration));
+    }
 
         public void RemoveDamageInterceptor(DamageInterceptor interceptor) {
             damageInterceptors.Remove(interceptor);
@@ -115,11 +115,6 @@ namespace Damage {
             dead = true;
             ToggleCommonComponents(false);
             TargetManager.RemoveTarget(gameObject);
-        }
-
-        private IEnumerator RemoveInterceptorAfterTime(DamageInterceptor interceptor, float duration) {
-            yield return new WaitForSeconds(duration);
-            RemoveDamageInterceptor(interceptor);
         }
 
         private void ToggleCommonComponents(bool value) {

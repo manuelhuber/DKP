@@ -7,7 +7,6 @@ using UnityEngine;
 using Util;
 
 namespace Abilities.Scripts {
-    [CreateAssetMenu(menuName = "Spells/AoEUnderSelf")]
     public class AoEUnderSelf : Ability {
         public AreaOfEffect AoEPrefab;
 
