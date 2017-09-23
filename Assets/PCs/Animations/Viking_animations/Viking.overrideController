@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Viking
+  m_Controller: {fileID: 9100000, guid: 3f91ccc83710e0140844bbc6f2ff40a4, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 1005dfb1994dd4d4c9407b61173a0890, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3db39ed9dd96a904bad376d07bf532b7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 64a73d86c86da4e47acf1b4bbe74fb16, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e3d415bc236e18241b50698f274a5796, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 098d1e18518ac694781ec1970c91f242, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 696a20b235873844a95c9b2cf078767f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aad299f6b933d8142b7e1babdae36d4e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4f0e18ce46c6d5349b8cd4475a5944a3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 865c140a357820b40a1ca2a46ff9903b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0d7bcc4561fa923428e4d4b845603d31, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a3dbadbb5ff405843843db913e3d2bc7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d473a49f13b78f44e880730451e4bee2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d9a36b3b8f4a74e4bb2cc9ca162ad2aa, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dca6324e689ec4745882c47cca2a836a, type: 2}

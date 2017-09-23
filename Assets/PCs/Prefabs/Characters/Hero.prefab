@@ -55,13 +55,13 @@ GameObject:
   - component: {fileID: 4453432351636662}
   - component: {fileID: 33318311867537174}
   - component: {fileID: 136701342910858720}
+  - component: {fileID: 54040992945076918}
   - component: {fileID: 23626710833148428}
   - component: {fileID: 195513872409997622}
   - component: {fileID: 114841566532092066}
   - component: {fileID: 114675147121179588}
   - component: {fileID: 114798815986694532}
   - component: {fileID: 114391780195156588}
-  - component: {fileID: 54040992945076918}
   - component: {fileID: 114496589825862078}
   m_Layer: 0
   m_Name: Hero
@@ -243,6 +243,7 @@ MonoBehaviour:
   CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
     type: 2}
   CanvasOffsetTop: 2.5
+  maxHitpoints: 100
 --- !u!114 &114496589825862078
 MonoBehaviour:
   m_ObjectHideFlags: 1

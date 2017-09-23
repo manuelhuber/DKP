@@ -19,15 +19,17 @@ namespace Damage.Melee {
             get { return CurrentTarget != null && withinRange.Contains(CurrentTarget); }
         }
 
+
         [Tooltip("Positive numbers heal, negative numbers deal damage")] public int AttackDamage;
 
         private float nextAttackPossible;
+        private Action<MeleeAttack> doDealDamage = MeleeAttackVariants.SingleTargetDamage;
 
         private readonly List<Damageable> withinRange = new List<Damageable>();
         private Animator animator;
         private CapsuleCollider rangeCollider;
         private Team team;
-        private float range;
+        [SerializeField] private float range;
 
         public override void AttackNearestTarget() {
             if (withinRange.Count < 1) return;
@@ -35,7 +37,7 @@ namespace Damage.Melee {
         }
 
         protected virtual void DealDamage() {
-            CurrentTarget.ModifyHitpoints(AttackDamage);
+            doDealDamage(this);
             if (animator == null) return;
             animator.SetTrigger("Attack");
         }
@@ -74,6 +76,7 @@ namespace Damage.Melee {
         private void Awake() {
             CreateColliderForCylinder();
             UpdateCollider();
+            doDealDamage = MeleeAttackVariants.SingleTargetDamage;
         }
 
         private void Start() {

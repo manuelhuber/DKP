@@ -301,9 +301,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013336691986}
   - component: {fileID: 95000010410506056}
+  - component: {fileID: 114360806820313126}
   m_Layer: 0
   m_Name: Viking_03
-  m_TagString: Untagged
+  m_TagString: PlayerAnimation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -880,7 +881,7 @@ Transform:
   m_GameObject: {fileID: 1000012314090256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4000014234360296}
   m_Father: {fileID: 0}
@@ -966,7 +967,7 @@ Animator:
   m_GameObject: {fileID: 1000012314090256}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 32c39a3b5c173f44e8dc71ab15b8c74d, type: 2}
+  m_Controller: {fileID: 22100000, guid: b45d2ab94f149ff4c86687a4c705c162, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -974,6 +975,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114360806820313126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012314090256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0c3a566a1806244b23a2eb7c6fc62f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  AutoInit: 1
+  FlipX: 0
 --- !u!212 &212000010101773422
 SpriteRenderer:
   m_ObjectHideFlags: 1
