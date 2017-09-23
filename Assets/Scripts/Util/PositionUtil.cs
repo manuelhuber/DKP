@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace Util {
@@ -100,6 +101,26 @@ namespace Util {
         public static int GetTerrainLayerMask() {
             // bitshift is necessary to actually get the layer number 
             return 1 << LayerMask.NameToLayer("Terrain");
+        }
+
+        /// <summary>
+        /// Neat wrapper for use in Aggregate functions
+        /// Returns the gameobject that's closes to the given position (beeline distance)
+        /// </summary>
+        public static Func<GameObject, GameObject, GameObject> FindNearest(Vector3 pos) {
+            return (a, b) => NearestGameObject(a, b, pos);
+        }
+
+        /// <summary>
+        /// Returns the gameobject that's closes to the given position (beeline distance)
+        /// </summary>
+        public static GameObject NearestGameObject(GameObject one, GameObject two, Vector3 position) {
+            var oldDistance = one == null
+                ? double.PositiveInfinity
+                : BeelineDistance(one.transform.position, position);
+            var newDistance =
+                BeelineDistance(two.transform.position, position);
+            return oldDistance < newDistance ? one : two;
         }
     }
 }

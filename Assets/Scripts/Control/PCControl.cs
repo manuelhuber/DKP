@@ -1,5 +1,6 @@
 ﻿using System;
 using Damage;
+using Damage.Common;
 using DKPSettings;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,16 +8,16 @@ using Util;
 
 namespace Control {
     internal enum MovementMode {
-        IDLE,
+        Idle,
 
         // The character moves to the specified location
-        MOVE,
+        Move,
 
         // The character moves to the specified location and stops to attack any enemies in range
-        ATTACK_MOVE,
+        AttackMove,
 
         // The character moves to and follows the specified enemy to attack
-        ATTACK
+        Attack
     }
 
     [RequireComponent(typeof(NavMeshAgent))]
@@ -73,7 +74,7 @@ namespace Control {
         public override bool OnRightClick(ClickLocation click) {
             if (isDead) return false;
             Damageable damageable;
-            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.ATTACK : MovementMode.MOVE;
+            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : MovementMode.Move;
             if (attack.SetTarget(damageable)) {
                 waypoints.Stop();
                 return true;
@@ -144,17 +145,17 @@ namespace Control {
             if (isDead) CheckForRevive();
             CheckForDeath();
             switch (currentMode) {
-                case MovementMode.ATTACK:
+                case MovementMode.Attack:
                     if (attack.InRange) waypoints.Stop();
-                    else if (attack.GetTarget() == null) currentMode = MovementMode.IDLE;
+                    else if (attack.GetTarget() == null) currentMode = MovementMode.Idle;
                     else waypoints.GoDirectlyTo(attack.GetTarget().gameObject.transform.position);
                     break;
-                case MovementMode.MOVE:
-                    if (waypoints.IsIdle()) currentMode = MovementMode.IDLE;
+                case MovementMode.Move:
+                    if (waypoints.IsIdle()) currentMode = MovementMode.Idle;
                     break;
-                case MovementMode.ATTACK_MOVE:
+                case MovementMode.AttackMove:
                     break;
-                case MovementMode.IDLE:
+                case MovementMode.Idle:
                     attack.AttackNearestTarget();
                     break;
                 default:

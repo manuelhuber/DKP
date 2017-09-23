@@ -25,14 +25,7 @@ namespace Damage.Range {
             if (findNewTarget) {
                 var target = TargetManager.GetEnemies(GetComponent<Team>().TeamId)
                     .Where(IsInLineOfSight)
-                    .Aggregate((GameObject) null, (nearest, next) => {
-                        var oldDistance = nearest == null
-                            ? double.PositiveInfinity
-                            : PositionUtil.BeelineDistance(nearest.transform.position, gameObject.transform.position);
-                        var newDistance =
-                            PositionUtil.BeelineDistance(next.transform.position, gameObject.transform.position);
-                        return oldDistance < newDistance ? nearest : next;
-                    });
+                    .Aggregate(null, PositionUtil.FindNearest(gameObject.transform.position));
                 if (target != null) nearestTarget = target.GetComponent<Damageable>();
             }
             CurrentTarget = nearestTarget;

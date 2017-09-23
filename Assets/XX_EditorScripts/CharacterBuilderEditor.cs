@@ -16,7 +16,6 @@ namespace XX_EditorScripts {
                 builder.ProjectilePrefab = (GameObject) EditorGUILayout.ObjectField("Projectile Prefab",
                     builder.ProjectilePrefab, typeof(GameObject), true);
             }
-//            }
         }
     }
 }
