@@ -6,7 +6,7 @@ using Util;
 
 namespace Damage.Melee {
     public class MeleeAttack : Attack {
-        public float Range {
+        public override float Range {
             get { return range; }
             set {
                 range = value;
@@ -18,10 +18,7 @@ namespace Damage.Melee {
             get { return CurrentTarget != null && withinRange.Contains(CurrentTarget); }
         }
 
-        public float AttackInterval;
         [Tooltip("Positive numbers heal, negative numbers deal damage")] public int AttackDamage;
-
-        [SerializeField] private float range;
 
         private float nextAttackPossible;
 
@@ -29,6 +26,7 @@ namespace Damage.Melee {
         private Animator animator;
         private CapsuleCollider rangeCollider;
         private Team team;
+        private float range;
 
         public override void AttackNearestTarget() {
             if (withinRange.Count < 1) return;

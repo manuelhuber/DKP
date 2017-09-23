@@ -15,16 +15,25 @@ public class DamageInterceptor {
 namespace Damage {
     [RequireComponent(typeof(Team))]
     public class Damageable : MonoBehaviour {
-        public int MaxHitpoints = 100;
         public GameObject HealthbarPrefab;
         public GameObject CombatTextPrefab;
         public float CanvasOffsetTop;
+
+        public int MaxHitpoints {
+            get { return maxHitpoints; }
+            set {
+                var dif = value - maxHitpoints;
+                maxHitpoints = value;
+                hitpoints += dif;
+            }
+        }
 
         private GameObject canvas;
         private readonly List<Slider> healthbars = new List<Slider>();
         private int hitpoints;
         private bool dead;
         private readonly List<DamageInterceptor> damageInterceptors = new List<DamageInterceptor>();
+        private int maxHitpoints = 100;
 
         private int Hitpoints {
             get { return hitpoints; }

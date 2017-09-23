@@ -2,6 +2,9 @@
 
 namespace Damage {
     public abstract class Attack : MonoBehaviour {
+        public float AttackInterval;
+        public virtual float Range { set; get; }
+
         public virtual bool InRange {
             get { return false; }
         }

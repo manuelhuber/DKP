@@ -6,8 +6,6 @@ using Util;
 
 namespace Damage.Range {
     public class RangeAttack : Attack {
-        public float Range;
-        public float AttackInterval;
         public GameObject ProjectilePrefab;
 
         public override bool InRange {

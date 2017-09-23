@@ -51,8 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431b5208f1f5fdc48aa519c2e8fd5fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HeroPrefab: {fileID: 1208260604254884, guid: d5ca5d6c3c7051a4c9ae5cbde02ed3a0, type: 2}
   Heroes:
-  - Prefab: {fileID: 1845831905401064, guid: 08b11c6be14a2364e9bbdf7a2f947032, type: 2}
+  - Builder: {fileID: 11400000, guid: 2d1480b2a2874e04783ad9c96515258f, type: 2}
     OutfitPrefabs:
     - {fileID: 1000010208881502, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 2}
     - {fileID: 1000013301305156, guid: 7ac6bdc2e4b5e47468b8b460ca863a5f, type: 2}
@@ -62,7 +63,7 @@ MonoBehaviour:
     - {fileID: 1000011821036864, guid: 5b210609803658e488f512fc13a6163e, type: 2}
     AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
       type: 2}
-  - Prefab: {fileID: 1130054452129196, guid: dfb782c06c55a974eb26e1dc6367e088, type: 2}
+  - Builder: {fileID: 11400000, guid: 2d1480b2a2874e04783ad9c96515258f, type: 2}
     OutfitPrefabs:
     - {fileID: 1000010338393104, guid: d8cce58c17035694fb97a5ec11539c20, type: 2}
     - {fileID: 1000011633381418, guid: d9816ff333fc7294d833389a250b9391, type: 2}

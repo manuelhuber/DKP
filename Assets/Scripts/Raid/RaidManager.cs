@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Control;
 using Damage.Common;
+using Raid;
+using Raid.Builders;
 using UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,13 +11,14 @@ using Random = UnityEngine.Random;
 
 [Serializable]
 public class Hero {
-    public GameObject Prefab;
+    public CharacterBuilder Builder;
     public List<GameObject> OutfitPrefabs;
     public GameObject AvatarPrefab;
 }
 
 namespace Raid {
     public class RaidManager : MonoBehaviour {
+        public GameObject HeroPrefab;
         public List<Hero> Heroes;
         public Transform SpawnPoint;
         public int PcCount = 5;
@@ -30,7 +33,6 @@ namespace Raid {
         }
 
         private void SpawnHero(Hero hero, int amount) {
-            var prefab = hero.Prefab;
             var outfits = hero.OutfitPrefabs;
             var avatarRenderer = RaidUi.GetAvatarRenderer();
             var mainControl = FindObjectOfType<MainControl>();
@@ -39,7 +41,8 @@ namespace Raid {
                 Slider hp;
                 avatarRenderer.InitializeAvater(hero.AvatarPrefab, out hp, Names[Random.Range(0, Names.Count)]);
                 var spawn = SpawnPoint.transform.position + GetModification();
-                var heroInstance = Instantiate(prefab, spawn, Quaternion.identity);
+                var heroInstance = Instantiate(HeroPrefab, spawn, Quaternion.identity);
+                heroInstance = hero.Builder.MakeHero(heroInstance);
                 heroInstance.transform.SetParent(folder.transform);
                 heroInstance.GetComponent<PlayerHealth>().AddHealthbar(hp);
                 var outfit = Instantiate(outfits[Random.Range(0, outfits.Count)], heroInstance.transform);
