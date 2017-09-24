@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64245c640db008f4a8bcb53e4529d7b2, type: 3}
   m_Name: VikingBuilder
   m_EditorClassIdentifier: 
-  Hitpoints: 150
+  Hitpoints: 200
   Speed: 4
-  Abilities: []
+  Abilities:
+  - {fileID: 11400000, guid: eafd79bdb6c00054e90898342b691c14, type: 2}
   AttackType: 0
   AttackRange: 1.5
   AttackIntervall: 1

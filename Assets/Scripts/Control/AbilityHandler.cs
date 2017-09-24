@@ -46,28 +46,42 @@ namespace Control {
         }
 
         private void Update() {
-            abilities.Where(a => a.RemainingCooldown > 0).ToList()
-                .ForEach(ability =>
-                    ability.RemainingCooldown = Math.Max(ability.RemainingCooldown - Time.deltaTime, 0));
+            ReduceCooldowns();
             if (!active) return;
             if (activeAbility != null) activeAbility.Ability.OnUpdate();
+
+            // Check cancel
             if (Input.GetKey(KeyCode.Escape) && activeAbility != null) {
                 activeAbility.Ability.OnCancel();
                 activeAbility = null;
             }
-            // Check user input to activate abliity
+
+            var newActiveAbility = CheckAbilityActivation();
+            if (newActiveAbility == null) return;
+            // cancel previous active ability 
+            if (activeAbility != null) activeAbility.Ability.OnCancel();
+            activeAbility = newActiveAbility;
+
+            if (!activeAbility.Ability.OnActivation(gameObject)) return;
+            // If the ability is done after hotkey press set cooldown and be done
+            activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
+            activeAbility = null;
+        }
+
+        private ActiveAbility CheckAbilityActivation() {
             ActiveAbility newActiveAbility = null;
             abilities.ForEach(ability => {
                 var mod = ability.Ability.Modifier == 0 || Input.GetKey(ability.Ability.Modifier);
-                if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKey(ability.Ability.Hotkey)) return;
+                if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKeyDown(ability.Ability.Hotkey)) return;
                 newActiveAbility = ability;
             });
-            if (newActiveAbility == null) return;
-            if (activeAbility != null) activeAbility.Ability.OnCancel();
-            activeAbility = newActiveAbility;
-            if (!activeAbility.Ability.OnActivation(gameObject)) return;
-            activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
-            activeAbility = null;
+            return newActiveAbility;
+        }
+
+        private void ReduceCooldowns() {
+            abilities.Where(a => a.RemainingCooldown > 0).ToList()
+                .ForEach(ability =>
+                    ability.RemainingCooldown = Math.Max(ability.RemainingCooldown - Time.deltaTime, 0));
         }
 
         private void Start() {

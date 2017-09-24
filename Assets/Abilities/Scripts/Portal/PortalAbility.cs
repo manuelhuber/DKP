@@ -23,6 +23,7 @@ namespace Abilities.Scripts.Portal {
             caster = c;
             enterPortal = Instantiate(EnterPortalPrefab);
             enterPortal.transform.position = EnterPortalPosition();
+            exitPortal = null;
             return false;
         }
 
@@ -46,10 +47,6 @@ namespace Abilities.Scripts.Portal {
         }
 
         public override void OnUpdate() {
-            if (caster == null) {
-                if (enterPortal != null) Destroy(enterPortal);
-                return;
-            }
             if (!enterPortalSet && enterPortal != null) enterPortal.transform.position = EnterPortalPosition();
             else if (enterPortalSet && exitPortal != null) exitPortal.transform.position = ExitPortalPosition();
         }

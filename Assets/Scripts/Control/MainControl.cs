@@ -72,10 +72,8 @@ namespace Control {
             if (!rightClick && !leftClickDown && !leftClickUp) return;
 
             GameObject target;
-            Vector3 terrainHit;
-            if (!PositionUtil.GetCursorLocation(out target, out terrainHit, ClickableLayers)) return;
-
-            var click = new ClickLocation {Target = target, Location = terrainHit};
+            ClickLocation click;
+            if (!GetClickLocation(out target, out click)) return;
             if (rightClick) {
                 // Currently there is no default behaviour for right clicks so just call the handlers
                 if (Input.GetKey(Hotkeys.AddModifier)) {
@@ -92,6 +90,15 @@ namespace Control {
                     DefaultLeftClickUp(target);
                 } else isSelecting = false;
             }
+        }
+
+        public bool GetClickLocation(out GameObject target, out ClickLocation click) {
+            click = new ClickLocation();
+            Vector3 terrainHit;
+            if (!PositionUtil.GetCursorLocation(out target, out terrainHit, ClickableLayers)) return false;
+
+            click = new ClickLocation {Target = target, Location = terrainHit};
+            return true;
         }
 
         private void HandleHotkeys() {

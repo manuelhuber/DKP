@@ -987,6 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Camera: {fileID: 0}
   AutoInit: 1
+  FlipX: 0
 --- !u!212 &212000010478373412
 SpriteRenderer:
   m_ObjectHideFlags: 1
