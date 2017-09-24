@@ -92,6 +92,11 @@ namespace Damage.Melee {
 
         private void Update() {
             if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
+            
+            if (!CurrentTarget.Targetable) {
+                CurrentTarget = null;
+                return;
+            }
             DealDamage();
             nextAttackPossible = Time.time + AttackInterval;
         }

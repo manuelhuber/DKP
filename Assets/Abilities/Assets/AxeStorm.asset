@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: AxeStorm
   m_EditorClassIdentifier: 
   Icon: {fileID: 0}
-  Hotkey: 113
-  Modifier: 0
-  Name: 
+  Name: Axestorm
   Cooldown: 20
   Duration: 10
+  Effect: {fileID: 1234274649833954, guid: f24cb29031b2b0e4d867cc9972749b06, type: 2}
