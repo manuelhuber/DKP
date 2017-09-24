@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UI;
 using UI.Scripts;
 using UnityEngine;
 
 namespace Control {
     public class AbilityHandler : MonoBehaviour {
         public List<Ability> AbilityScripts;
+        public List<Hotkey> Hotkeys;
 
         private List<ActiveAbility> abilities = new List<ActiveAbility>();
 
@@ -71,8 +71,9 @@ namespace Control {
         private ActiveAbility CheckAbilityActivation() {
             ActiveAbility newActiveAbility = null;
             abilities.ForEach(ability => {
-                var mod = ability.Ability.Modifier == 0 || Input.GetKey(ability.Ability.Modifier);
-                if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKeyDown(ability.Ability.Hotkey)) return;
+                var hotkey = ability.Hotkey;
+                var mod = Input.GetButton("Ability Modifier") == ability.Hotkey.Modifier;
+                if (!(ability.RemainingCooldown <= 0) || !mod || !Input.GetKeyDown(hotkey.HotkKeyCode)) return;
                 newActiveAbility = ability;
             });
             return newActiveAbility;
@@ -86,9 +87,15 @@ namespace Control {
 
         private void Start() {
             abilityRenderer = RaidUi.GetAbilityRenderer();
-            abilities = AbilityScripts.Select(a => new ActiveAbility {
-                Ability = a,
-                RemainingCooldown = 0
+            var i = 0;
+            abilities = AbilityScripts.Select(a => {
+                var hotkey = Hotkeys[i];
+                i++;
+                return new ActiveAbility {
+                    Ability = a,
+                    RemainingCooldown = 0,
+                    Hotkey = hotkey
+                };
             }).ToList();
         }
     }

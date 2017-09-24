@@ -18,19 +18,19 @@ namespace UI.Scripts {
             renderedAbilities.Clear();
             abilities = abs;
             if (abs == null) return;
-            abs.ForEach(aa => DisplayAbility(aa.Ability));
+            abs.ForEach(DisplayAbility);
         }
 
-        public void DisplayAbility(Ability ab) {
-            var ability = Instantiate(AbilityPrefab, folder);
-            ability.GetComponentInChildren<Image>().sprite = ab.Icon;
-            var hotkey = UnityUtil.FindComponentInChildrenWithTag<Text>(ability, "HotkeyText");
-            hotkey.text = ab.Hotkey.ToString();
+        public void DisplayAbility(ActiveAbility ability) {
+            var abilityIcon = Instantiate(AbilityPrefab, folder);
+            abilityIcon.GetComponentInChildren<Image>().sprite = ability.Ability.Icon;
+            var hotkey = UnityUtil.FindComponentInChildrenWithTag<Text>(abilityIcon, "HotkeyText");
+            hotkey.text = ability.Hotkey.ToString();
 
-            var rect = ability.GetComponent<RectTransform>();
+            var rect = abilityIcon.GetComponent<RectTransform>();
             var offsetX = renderedAbilities.Count * (rect.rect.height + 10);
             UnityUtil.SetAnchoredPosition(rect, offsetX, 0);
-            renderedAbilities.Add(ability);
+            renderedAbilities.Add(abilityIcon);
         }
 
         private void Start() {
