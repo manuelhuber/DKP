@@ -42,6 +42,14 @@ namespace Util {
             return true;
         }
 
+//        public static bool CanSeeAnyCorner(GameObject looker, GameObject target) {
+//            RaycastHit hit;
+//            RayFromTo(looker, target, out hit);
+//        }
+//
+//        public static bool HasLoS(GameObject from, GameObject to) {
+//        }
+
         public static bool RayFromTo(GameObject from, GameObject to, out RaycastHit hit) {
             return RayFromTo(from.transform.position, to.transform.position, out hit);
         }
@@ -49,6 +57,11 @@ namespace Util {
         public static bool RayFromTo(Vector3 from, Vector3 to, out RaycastHit hit) {
             var ray = new Ray(from, to - from);
             return Physics.Raycast(ray, out hit);
+        }
+
+        public static bool RayFromToHitOnlyTerrain(Vector3 from, Vector3 to, out RaycastHit hit) {
+            var ray = new Ray(from, to - from);
+            return Physics.Raycast(ray, out hit, GetTerrainLayerMask());
         }
 
         /// <summary>

@@ -16,6 +16,7 @@ namespace Damage.Range {
         private Damageable nearestTarget;
         private float nextAttackPossible;
         private Animator animator;
+        private Damageable status;
 
         public override void AttackNearestTarget() {
             if (CurrentTarget != null || !(nextAttackPossible < Time.time)) return;
@@ -40,13 +41,17 @@ namespace Damage.Range {
 
         private bool IsInLineOfSight(GameObject target) {
             RaycastHit hit;
-            if (!PositionUtil.RayFromTo(gameObject, target, out hit)) return false;
-            return hit.transform.gameObject == target;
+            return PositionUtil.RayFromToHitOnlyTerrain(gameObject.transform.position, target.transform.position,
+                out hit);
         }
 
         private bool IsInRange(Component target) {
             return target != null &&
                    PositionUtil.BeelineDistance(gameObject.transform.position, target.transform.position) <= Range;
+        }
+
+        private void Awake() {
+            status = GetComponent<Damageable>();
         }
 
         private void Start() {
@@ -59,13 +64,8 @@ namespace Damage.Range {
                 CurrentTarget = null;
                 return;
             }
-            RaycastHit hit;
-            if (!PositionUtil.RayFromTo(gameObject, CurrentTarget.gameObject, out hit)) return;
-            if (hit.transform.gameObject != CurrentTarget.gameObject) {
-                var status = GetComponent<Damageable>();
-                if (status != null) {
-                    status.DisplayText("No Line of Sight");
-                }
+            if (!IsInLineOfSight(CurrentTarget.gameObject)) {
+                status.DisplayText("No Line of Sight");
                 return;
             }
             Shoot();
