@@ -101,11 +101,8 @@ namespace Util {
             GameObject go;
             Vector3 location;
             GetCursorLocation(out go, out location, 0);
-            var currentPosition = startingPos;
-            var direction = location - currentPosition;
-            var velocity = direction / direction.magnitude;
-            var actualMovement = direction.magnitude < maxDistance ? direction : velocity * maxDistance;
-            var newPosition = currentPosition + actualMovement;
+            var direction = location - startingPos;
+            var newPosition = startingPos + Vector3.ClampMagnitude(direction, maxDistance);
             NavMeshHit navMeshHit;
             NavMesh.SamplePosition(newPosition, out navMeshHit, 100, -1);
             return navMeshHit.position;
