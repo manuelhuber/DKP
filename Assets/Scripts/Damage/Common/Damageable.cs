@@ -21,6 +21,10 @@ namespace Damage {
         public GameObject CombatTextPrefab;
         public float CanvasOffsetTop;
 
+        public bool Targetable {
+            get { return !IsDead(); }
+        }
+
         public int MaxHitpoints {
             get { return maxHitpoints; }
             set {
@@ -61,7 +65,7 @@ namespace Damage {
         public void AddDamageInterceptorWithDuration(DamageInterceptor interceptor, float duration) {
             damageInterceptors.Add(interceptor);
             StartCoroutine(UnityUtil.DoAfterDelay(() => RemoveDamageInterceptor(interceptor), duration));
-    }
+        }
 
         public void RemoveDamageInterceptor(DamageInterceptor interceptor) {
             damageInterceptors.Remove(interceptor);

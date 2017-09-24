@@ -19,10 +19,12 @@ namespace Damage.Range {
         private Damageable status;
 
         public override void AttackNearestTarget() {
-            if (CurrentTarget != null || !(nextAttackPossible < Time.time)) return;
+            var alreadGotAValidTarget = CurrentTarget != null && CurrentTarget.Targetable;
+            if (alreadGotAValidTarget || !(nextAttackPossible < Time.time)) return;
             var findNewTarget = nearestTarget == null
                                 || !IsInRange(nearestTarget)
-                                || !IsInLineOfSight(nearestTarget.gameObject);
+                                || !IsInLineOfSight(nearestTarget.gameObject)
+                                || !nearestTarget.Targetable;
             if (findNewTarget) {
                 var target = TargetManager.GetEnemies(GetComponent<Team>().TeamId)
                     .Where(IsInLineOfSight)

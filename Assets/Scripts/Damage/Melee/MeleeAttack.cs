@@ -39,7 +39,7 @@ namespace Damage.Melee {
 
         public override void AttackNearestTarget() {
             if (WithinRange.Count < 1) return;
-            CurrentTarget = WithinRange[0];
+            CurrentTarget = WithinRange.Find(d => d.Targetable);
         }
 
         protected virtual void DealDamage() {
@@ -92,11 +92,6 @@ namespace Damage.Melee {
 
         private void Update() {
             if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
-            if (CurrentTarget.IsDead()) {
-                WithinRange.Remove(CurrentTarget);
-                CurrentTarget = null;
-                return;
-            }
             DealDamage();
             nextAttackPossible = Time.time + AttackInterval;
         }
