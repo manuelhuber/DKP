@@ -75,7 +75,8 @@ namespace Control {
             if (isDead) return false;
             Damageable damageable;
             currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : MovementMode.Move;
-            if (attack.SetTarget(damageable)) {
+            var setTarget = damageable == null || damageable.Targetable;
+            if (setTarget && attack.SetTarget(damageable)) {
                 waypoints.Stop();
                 return true;
             }
@@ -112,7 +113,7 @@ namespace Control {
             var team = target.GetComponent<Team>();
             if (team == null || team.TeamId == gameObject.GetComponent<Team>().TeamId) return false;
             damageable = target.gameObject.GetComponent<Damageable>();
-            return damageable != null;
+            return damageable != null && damageable.Targetable;
         }
 
         private void ToggleSelectionCircle(bool foo, bool focus) {
