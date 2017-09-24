@@ -19,7 +19,6 @@ namespace Damage {
     public class Damageable : MonoBehaviour {
         public GameObject HealthbarPrefab;
         public GameObject CombatTextPrefab;
-        public float CanvasOffsetTop;
 
         public bool Targetable {
             get { return !IsDead(); }

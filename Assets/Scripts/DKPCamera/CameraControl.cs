@@ -19,7 +19,7 @@ namespace DKPCamera {
         // UPDATE
         //
 
-        void Update() {
+        private void Update() {
             // Get the left mouse button
             if (Input.GetMouseButtonDown(0)) {
                 // Get mouse origin
@@ -48,7 +48,7 @@ namespace DKPCamera {
 
             // Rotate camera along X and Y axis
             if (isRotating) {
-                Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+                var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
                 transform.RotateAround(transform.position, transform.right, -pos.y * TurnSpeed);
                 transform.RotateAround(transform.position, Vector3.up, pos.x * TurnSpeed);
@@ -56,17 +56,17 @@ namespace DKPCamera {
 
             // Move the camera on it's XY plane
             if (isPanning) {
-                Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+                var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-                Vector3 move = new Vector3(pos.x * PanSpeed, pos.y * PanSpeed, 0);
+                var move = new Vector3(pos.x * PanSpeed, pos.y * PanSpeed, 0);
                 transform.Translate(move, Space.Self);
             }
 
             // Move the camera linearly along Z axis
             if (isZooming) {
-                Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
+                var pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - mouseOrigin);
 
-                Vector3 move = pos.y * ZoomSpeed * transform.forward;
+                var move = pos.y * ZoomSpeed * transform.forward;
                 transform.Translate(move, Space.World);
             }
         }

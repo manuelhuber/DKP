@@ -57,7 +57,7 @@ namespace Control {
             currentDestinationLineRenderer.enabled = true;
         }
 
-        private GameObject CreateMarker(GameObject prefab, Vector3 location, out GameObject marker) {
+        private static GameObject CreateMarker(GameObject prefab, Vector3 location, out GameObject marker) {
             var markerWrapper = new GameObject("Waypoint");
             markerWrapper.transform.position = location;
             var markerLocation = location;
