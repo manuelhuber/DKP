@@ -7,11 +7,10 @@ namespace UI.Scripts {
         public float SpaceBetweenAvatars = 10;
 
         private int avatarCount;
-        private Transform folder;
 
         public void InitializeAvater(GameObject prefab, out Slider healthbar, string avaterName) {
             var avatar = Instantiate(prefab);
-            avatar.transform.SetParent(folder);
+            avatar.transform.SetParent(RaidUi.GetAvatarFolder().transform);
             var rectTransform = UiUtil.RectTransfromAnchorTopLeft(avatar.GetComponent<RectTransform>());
 
             // calculate position based on number of avatars
@@ -27,8 +26,5 @@ namespace UI.Scripts {
             avatarCount++;
         }
 
-        private void Awake() {
-            folder = GameObject.FindWithTag("AvatarFolder").transform;
-        }
     }
 }

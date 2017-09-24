@@ -83,6 +83,26 @@ MonoBehaviour:
     - {fileID: 1000013053996948, guid: 32a4e4deddc36d9409ff299cb9b18943, type: 2}
     AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
       type: 2}
+  - Builder: {fileID: 11400000, guid: 6d319b6b28717bf42ba9280e55d90a63, type: 2}
+    OutfitPrefabs:
+    - {fileID: 1000010638986400, guid: 434f9610199032349a2f8fe90cffd40d, type: 2}
+    - {fileID: 1000010951896574, guid: 59f9ee7bcde043b4d9fa4a763dcd1b78, type: 2}
+    - {fileID: 1000013700213492, guid: 857b4bda9dc4faf409b16a13064b56d2, type: 2}
+    - {fileID: 1000011302971722, guid: 782df674bc2399e439067ae4bedbc7f5, type: 2}
+    - {fileID: 1000011595402594, guid: b58bc14ce258c634f93f58d3408e39b9, type: 2}
+    - {fileID: 1000010096313096, guid: 517c20b449b18894d923c60628268f7c, type: 2}
+    AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
+      type: 2}
+  - Builder: {fileID: 11400000, guid: fc3a8ae568e1eec44be2e488b230daec, type: 2}
+    OutfitPrefabs:
+    - {fileID: 1000010510856168, guid: 1725a95fccdac6547be4968cc0237b76, type: 2}
+    - {fileID: 1000014096710116, guid: 4de241baa96c499458d1ed06600056b9, type: 2}
+    - {fileID: 1000014224690884, guid: 517610f328c573a43b02bd4c98432ac6, type: 2}
+    - {fileID: 1000011799224492, guid: cbf6a0bd67168544792933a3a4e7b520, type: 2}
+    - {fileID: 1000013789390872, guid: 2c26d89d86b1755489a2b1c641992472, type: 2}
+    - {fileID: 1000012659542526, guid: 89e4df4de6a03304e86bdbe1dc36eb3e, type: 2}
+    AvatarPrefab: {fileID: 1610457903240122, guid: 4bdf6a7a944c97946bd3aa4c42ab264d,
+      type: 2}
   SpawnPoint: {fileID: 0}
   PcCount: 5
   Names:

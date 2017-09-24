@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d446cf3287146dc4ca41256b93f3834e, type: 3}
+  m_Name: RogueBuilder
+  m_EditorClassIdentifier: 
+  Hitpoints: 150
+  Speed: 5
+  Abilities:
+  - {fileID: 11400000, guid: 71e052758ad9c684f8a6dc230efe7ec3, type: 2}
+  - {fileID: 11400000, guid: 25cbfcf4b7f55c74896c8b04eb78fe9b, type: 2}
+  AttackType: 0
+  AttackRange: 1
+  AttackIntervall: 1.5
+  AttackDamage: -10
+  ProjectilePrefab: {fileID: 0}

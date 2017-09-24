@@ -2,8 +2,18 @@
 
 namespace UI.Scripts {
     public class RaidUi {
+        private static GameObject _avatarFolder;
+
+
         public static GameObject GetCanvas() {
             return GameObject.FindGameObjectWithTag("Canvas");
+        }
+
+        public static GameObject GetAvatarFolder() {
+            if (_avatarFolder == null) {
+                _avatarFolder = GameObject.FindGameObjectWithTag("AvatarFolder");
+            }
+            return _avatarFolder;
         }
 
         public static AvatarRenderer GetAvatarRenderer() {
