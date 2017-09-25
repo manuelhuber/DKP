@@ -79,6 +79,7 @@ namespace Control {
             });
             if (currentDestinationLineRenderer == null) return;
             currentDestinationLineRenderer.enabled = value;
+            UpdateCurrentWaypointLine();
         }
 
         /// <summary>
