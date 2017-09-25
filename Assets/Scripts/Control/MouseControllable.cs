@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Control {
@@ -73,5 +74,7 @@ namespace Control {
         public virtual bool OnRightShiftClick(ClickLocation click) {
             return false;
         }
+
+        public abstract void OnButton(String buttonName);
     }
 }

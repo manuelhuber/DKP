@@ -90,6 +90,15 @@ namespace Control {
             return false;
         }
 
+        public override void OnButton(string buttonName) {
+            switch (buttonName) {
+                case "Stop":
+                    waypoints.Stop();
+                    break;
+                default: return;
+            }
+        }
+
         private void CheckForDeath() {
             if (!health.IsDead()) return;
             waypoints.Stop();

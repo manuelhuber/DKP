@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Damage;
 using DKPCamera;
@@ -14,6 +15,7 @@ namespace Control {
     public class MainControl : MonoBehaviour {
         public Color SelectionBorderColor;
         public Color SelectionFillColor;
+        public string[] ButtonNames;
 
         [Tooltip("Maximum time in seconds between same hotkey strokes to count as a double tap")]
         public double DoubleTapTime = 1;
@@ -59,39 +61,6 @@ namespace Control {
         private float doubleTapTime;
 
 
-        private void Start() {
-            cameraController = GetComponent<FocusOnObject>();
-        }
-
-        private void Update() {
-            HandleHotkeys();
-
-            var rightClick = Input.GetMouseButtonUp(1);
-            var leftClickDown = Input.GetMouseButtonDown(0);
-            var leftClickUp = Input.GetMouseButtonUp(0);
-            if (!rightClick && !leftClickDown && !leftClickUp) return;
-
-            GameObject target;
-            ClickLocation click;
-            if (!GetClickLocation(out target, out click)) return;
-            if (rightClick) {
-                // Currently there is no default behaviour for right clicks so just call the handlers
-                if (Input.GetKey(Hotkeys.AddModifier)) {
-                    selected.ForEach(o => o.OnRightShiftClick(click));
-                } else {
-                    selected.ForEach(c => c.OnRightClick(click));
-                }
-            } else if (leftClickDown) {
-                if (focusedSelected == null || !focusedSelected.OnLeftClickDown(click)) {
-                    DefaultLeftClickDown();
-                }
-            } else if (leftClickUp) {
-                if (focusedSelected == null || !focusedSelected.OnLeftClickUp(click)) {
-                    DefaultLeftClickUp(target);
-                } else isSelecting = false;
-            }
-        }
-
         public bool GetClickLocation(out GameObject target, out ClickLocation click) {
             click = new ClickLocation();
             Vector3 terrainHit;
@@ -102,6 +71,7 @@ namespace Control {
         }
 
         private void HandleHotkeys() {
+            // Remove selection
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 if (isSelecting) {
                     isSelecting = false;
@@ -109,9 +79,19 @@ namespace Control {
                     DeselectCurrentSelection();
                 }
             }
+
+            foreach (var buttonName in ButtonNames) {
+                if (Input.GetButton(buttonName)) {
+                    selected.ForEach(controllable => controllable.OnButton(buttonName));
+                }
+            }
+
+            // Center Camera
             if (Input.GetKey(Hotkeys.CenterCamera) && focusedSelected != null) {
                 cameraController.FocusOn(focusedSelected.transform.gameObject);
             }
+
+            // Tab selection
             if (Input.GetKeyDown(Hotkeys.NextSelection) && selected.Count > 1) {
                 var oldIndex = selected.IndexOf(focusedSelected);
                 var newIndex = oldIndex + 1;
@@ -119,12 +99,16 @@ namespace Control {
                 focusedSelected = selected[newIndex == selected.Count ? 0 : newIndex];
                 focusedSelected.OnFocusSelect();
             }
+
+            // Revive TODO: remove ingame
             if (Input.GetKeyDown(KeyCode.Keypad0)) {
                 selected.ForEach(controllable => {
                     var health = controllable.transform.gameObject.GetComponent<Damageable>();
                     if (health != null) health.Revive(0, 2);
                 });
             }
+
+            // Control Groups
             if (Input.GetButtonUp("Select All")) {
                 DeselectCurrentSelection();
                 AddToSelection(FindObjectsOfType<MouseControllable>().ToList(), true);
@@ -214,6 +198,10 @@ namespace Control {
             controllable.OnSelect();
         }
 
+        private void Start() {
+            cameraController = GetComponent<FocusOnObject>();
+        }
+
         /// <summary>
         /// Draw the selection rectangle
         /// </summary>
@@ -221,6 +209,35 @@ namespace Control {
             if (!isSelecting) return;
             var rect = ScreenUtil.GetScreenRect(selectionStart, Input.mousePosition);
             DrawUtil.DrawScreenBorderedRect(rect, 2, SelectionBorderColor, SelectionFillColor);
+        }
+
+        private void Update() {
+            HandleHotkeys();
+
+            var rightClick = Input.GetMouseButtonUp(1);
+            var leftClickDown = Input.GetMouseButtonDown(0);
+            var leftClickUp = Input.GetMouseButtonUp(0);
+            if (!rightClick && !leftClickDown && !leftClickUp) return;
+
+            GameObject target;
+            ClickLocation click;
+            if (!GetClickLocation(out target, out click)) return;
+            if (rightClick) {
+                // Currently there is no default behaviour for right clicks so just call the handlers
+                if (Input.GetKey(Hotkeys.AddModifier)) {
+                    selected.ForEach(o => o.OnRightShiftClick(click));
+                } else {
+                    selected.ForEach(c => c.OnRightClick(click));
+                }
+            } else if (leftClickDown) {
+                if (focusedSelected == null || !focusedSelected.OnLeftClickDown(click)) {
+                    DefaultLeftClickDown();
+                }
+            } else if (leftClickUp) {
+                if (focusedSelected == null || !focusedSelected.OnLeftClickUp(click)) {
+                    DefaultLeftClickUp(target);
+                } else isSelecting = false;
+            }
         }
     }
 }
