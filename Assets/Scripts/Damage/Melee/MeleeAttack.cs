@@ -21,20 +21,29 @@ namespace Damage.Melee {
             get { return CurrentTarget != null && WithinRange.Contains(CurrentTarget); }
         }
 
+        public Action<MeleeAttack> DefaultAttack {
+            get { return defaultAttack; }
+            set {
+                var old = defaultAttack;
+                defaultAttack = value;
+                // If the current attack is the old default update to new default
+                if (meleeAttack == old) meleeAttack = value;
+            }
+        }
+
         public readonly List<Damageable> WithinRange = new List<Damageable>();
+        private Action<MeleeAttack> defaultAttack = MeleeAttackVariants.SingleTargetDamage;
 
         private float nextAttackPossible;
-        private Action<MeleeAttack> doDealDamage = MeleeAttackVariants.SingleTargetDamage;
+        private Action<MeleeAttack> meleeAttack;
         private Animator animator;
         private CapsuleCollider rangeCollider;
         private Team team;
         [SerializeField] private float range;
 
         public void ChangeAttackForDuration(Action<MeleeAttack> attack, float duration) {
-            doDealDamage = attack;
-            StartCoroutine(UnityUtil.DoAfterDelay(
-                () => doDealDamage = MeleeAttackVariants.SingleTargetDamage
-                , duration));
+            meleeAttack = attack;
+            StartCoroutine(UnityUtil.DoAfterDelay(() => meleeAttack = DefaultAttack, duration));
         }
 
         public override void AttackNearestTarget() {
@@ -43,7 +52,7 @@ namespace Damage.Melee {
         }
 
         protected virtual void DealDamage() {
-            doDealDamage(this);
+            meleeAttack(this);
             if (animator == null) return;
             animator.SetTrigger("Attack");
         }
@@ -63,6 +72,7 @@ namespace Damage.Melee {
         }
 
         private void UpdateCollider() {
+            if (rangeCollider == null) CreateColliderForCylinder();
             // radius=0.5 means the collider has the same diameter as the object. The range is from the edge of the unit.
             var radius = Range + 0.5;
 
@@ -82,7 +92,7 @@ namespace Damage.Melee {
         private void Awake() {
             CreateColliderForCylinder();
             UpdateCollider();
-            doDealDamage = MeleeAttackVariants.SingleTargetDamage;
+            meleeAttack = DefaultAttack;
         }
 
         private void Start() {

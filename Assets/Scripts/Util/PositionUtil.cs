@@ -132,5 +132,10 @@ namespace Util {
                 BeelineDistance(two.transform.position, position);
             return oldDistance < newDistance ? one : two;
         }
+
+        public static bool Facing(Transform facer, Transform target) {
+            var toTarget = (target.position - facer.position).normalized;
+            return Vector3.Dot(toTarget, facer.forward) > 0;
+        }
     }
 }
