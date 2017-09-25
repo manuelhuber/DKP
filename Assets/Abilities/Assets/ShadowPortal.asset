@@ -11,9 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac3160cb7624f06973bf5785c3d15be, type: 3}
   m_Name: ShadowPortal
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Hotkey: 113
-  Modifier: 0
+  Icon: {fileID: 21300000, guid: c69998f725b4c80418650be9b423790f, type: 3}
   Name: Asd
   Cooldown: 0
   EnterPortalPrefab: {fileID: 1459791855920822, guid: 4a6d2b930ffb6fa438f400b8fc706555,

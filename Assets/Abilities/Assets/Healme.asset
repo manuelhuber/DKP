@@ -11,9 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5802e38e2c664a418ec936a851528e93, type: 3}
   m_Name: Healme
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: d7458eb21b48e504f8e3b4fd606b98e9, type: 3}
-  Hotkey: 113
-  Modifier: 0
+  Icon: {fileID: 21300000, guid: 02f4deec7a2de304eb54919a4cf08c5f, type: 3}
   Name: Healme
   Cooldown: 20
   AoEPrefab: {fileID: 114896490596620016, guid: c3786c7d646d97f4db71a2870d4c86d6,

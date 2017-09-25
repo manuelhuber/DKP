@@ -11,9 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e5afd9197443f3b2132ef286bf22ed, type: 3}
   m_Name: ShadowBlink
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: e29a6a06ac73e6748a2afe18daa096c0, type: 3}
-  Hotkey: 101
-  Modifier: 0
+  Icon: {fileID: 21300000, guid: dc81111ec28eca642a01b3ffb230ed75, type: 3}
   Name: ShadowBlink
   Cooldown: 10
   Distance: 10

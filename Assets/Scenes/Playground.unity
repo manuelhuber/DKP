@@ -1312,6 +1312,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223537463461470522, guid: c706eb3908139104bb0b5ea4e5a8036a,
+        type: 2}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698734534919076, guid: c706eb3908139104bb0b5ea4e5a8036a,
+        type: 2}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698734534919076, guid: c706eb3908139104bb0b5ea4e5a8036a,
+        type: 2}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698734534919076, guid: c706eb3908139104bb0b5ea4e5a8036a,
+        type: 2}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c706eb3908139104bb0b5ea4e5a8036a, type: 2}
   m_IsPrefabParent: 0

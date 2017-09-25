@@ -25,6 +25,5 @@ namespace UI.Scripts {
 
             avatarCount++;
         }
-
     }
 }
