@@ -17,7 +17,7 @@ namespace Enemy {
         private void Update() {
             if (NotActive()) return;
             if (nextEnemyCheck <= Time.time) {
-                attack.SetTarget(TargetManager.GetEnemies(team.TeamId)
+                attack.SetTarget(TargetManager.GetEnemies(team)
                     .Aggregate(null, PositionUtil.FindNearest(gameObject.transform.position))
                     .GetComponent<Damageable>());
 

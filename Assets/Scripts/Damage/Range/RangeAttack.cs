@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Control;
 using Damage.Common;
 using Raid;
@@ -17,6 +18,7 @@ namespace Damage.Range {
         private float nextAttackPossible;
         private Animator animator;
         private Damageable status;
+        private Team team;
 
         public override void AttackNearestTarget() {
             var alreadGotAValidTarget = CurrentTarget != null && CurrentTarget.Targetable;
@@ -26,7 +28,7 @@ namespace Damage.Range {
                                 || !IsInLineOfSight(nearestTarget.gameObject)
                                 || !nearestTarget.Targetable;
             if (findNewTarget) {
-                var target = TargetManager.GetEnemies(GetComponent<Team>().TeamId)
+                var target = TargetManager.GetEnemies(team)
                     .Where(IsInLineOfSight)
                     .Aggregate(null, PositionUtil.FindNearest(gameObject.transform.position));
                 if (target != null) nearestTarget = target.GetComponent<Damageable>();
@@ -38,7 +40,9 @@ namespace Damage.Range {
             animator.SetTrigger("Attack");
             var projectile = Instantiate(ProjectilePrefab, gameObject.transform.position,
                 gameObject.transform.rotation);
-            projectile.GetComponent<Projectile>().SetTarget(CurrentTarget.gameObject);
+            var script = projectile.GetComponent<Projectile>();
+            script.SetTarget(CurrentTarget.gameObject);
+            script.AffectedTeams = TargetManager.GetEnemyIds(team);
         }
 
         private bool IsInLineOfSight(GameObject target) {
@@ -54,6 +58,7 @@ namespace Damage.Range {
 
         private void Awake() {
             status = GetComponent<Damageable>();
+            team = GetComponent<Team>();
         }
 
         private void Start() {

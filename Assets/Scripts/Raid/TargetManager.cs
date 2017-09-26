@@ -20,14 +20,21 @@ namespace Raid {
             Targets.Remove(gameObject.GetComponent<Team>());
         }
 
-        public static List<GameObject> GetEnemies(int teamId) {
-            return Targets.Where(team => team.TeamId != teamId)
+        public static List<GameObject> GetEnemies(Team team) {
+            return Targets.Where(other => other.TeamId != team.TeamId)
                 .Select(t => t.gameObject).ToList();
         }
 
-        public static List<GameObject> GetAllies(int teamId) {
-            return Targets.Where(team => team.TeamId == teamId)
+        public static List<GameObject> GetAllies(Team team) {
+            return Targets.Where(other => other.TeamId == team.TeamId)
                 .Select(t => t.gameObject).ToList();
+        }
+
+        public static List<int> GetEnemyIds(Team team) {
+            // this is just hard coded for now. Not sure how many teams there ever will be?
+            var allTeams = new List<int> {0, 1, 2, 3, 4, 5};
+            allTeams.Remove(team.TeamId);
+            return allTeams;
         }
     }
 }

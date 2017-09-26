@@ -50,8 +50,18 @@ namespace Util {
 //        public static bool HasLoS(GameObject from, GameObject to) {
 //        }
 
+
+        public static RaycastHit[] RayAllFromTo(GameObject from, GameObject to, float range) {
+            return RayAllFromTo(from.transform.position, to.transform.position, range);
+        }
+
         public static bool RayFromTo(GameObject from, GameObject to, out RaycastHit hit) {
             return RayFromTo(from.transform.position, to.transform.position, out hit);
+        }
+
+        public static RaycastHit[] RayAllFromTo(Vector3 from, Vector3 to, float range) {
+            var ray = new Ray(from, to - from);
+            return Physics.RaycastAll(ray, range);
         }
 
         public static bool RayFromTo(Vector3 from, Vector3 to, out RaycastHit hit) {
