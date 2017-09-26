@@ -260,10 +260,10 @@ MonoBehaviour:
     Modifier: 0
   - HotkKeyCode: 113
     Modifier: 1
-  - HotkKeyCode: 0
+  - HotkKeyCode: 101
     Modifier: 0
-  - HotkKeyCode: 0
-    Modifier: 0
+  - HotkKeyCode: 101
+    Modifier: 1
 --- !u!114 &114675147121179588
 MonoBehaviour:
   m_ObjectHideFlags: 1
