@@ -5,6 +5,7 @@ using Damage;
 using DKPCamera;
 using DKPSettings;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Util;
 
 namespace Control {
@@ -64,7 +65,8 @@ namespace Control {
         public bool GetClickLocation(out GameObject target, out ClickLocation click) {
             click = new ClickLocation();
             Vector3 terrainHit;
-            if (!PositionUtil.GetCursorLocation(out target, out terrainHit, ClickableLayers)) return false;
+            if (!PositionUtil.GetCursorLocation(out target, out terrainHit, ClickableLayers)
+                || EventSystem.current.IsPointerOverGameObject()) return false;
 
             click = new ClickLocation {Target = target, Location = terrainHit};
             return true;
