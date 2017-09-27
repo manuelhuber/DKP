@@ -14,5 +14,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 02f4deec7a2de304eb54919a4cf08c5f, type: 3}
   Name: Healme
   Cooldown: 20
+  Tooltip: Test {{Cooldown}}
+  Foo: foo
   AoEPrefab: {fileID: 114896490596620016, guid: c3786c7d646d97f4db71a2870d4c86d6,
     type: 2}

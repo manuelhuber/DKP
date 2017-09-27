@@ -1342,6 +1342,10 @@ Prefab:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 1798372420847452, guid: c706eb3908139104bb0b5ea4e5a8036a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c706eb3908139104bb0b5ea4e5a8036a, type: 2}
   m_IsPrefabParent: 0

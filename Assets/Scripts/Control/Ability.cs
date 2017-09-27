@@ -34,6 +34,7 @@ namespace Control {
         [Header("Hotkey")] public Sprite Icon;
         [Space] [Header("Ability")] public string Name;
         public float Cooldown;
+        public string Tooltip;
 
         /// <summary>
         /// 

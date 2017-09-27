@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: ShadowPortal
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 895118e94c1d84f42a0b7f8d321a12c6, type: 3}
-  Name: Asd
-  Cooldown: 0
+  Name: Nether Portal
+  Cooldown: 30
+  Tooltip: Create an entrance and exit portal that teleports all units that enter
+    for {{Duration}} seconds.
   EnterPortalPrefab: {fileID: 1459791855920822, guid: 4a6d2b930ffb6fa438f400b8fc706555,
     type: 2}
   ExitPortalPrefab: {fileID: 1459791855920822, guid: 46caa258509c2e04c8112dc54bd4822d,

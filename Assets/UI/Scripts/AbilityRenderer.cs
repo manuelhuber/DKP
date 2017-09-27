@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Control;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,43 +11,26 @@ namespace UI.Scripts {
         public GameObject AbilityPrefab;
 
         private readonly List<GameObject> renderedAbilities = new List<GameObject>();
-        private List<ActiveAbility> abilities;
         private Transform folder;
 
         public void DisplayAbilities(List<ActiveAbility> abs) {
             renderedAbilities.ForEach(Destroy);
             renderedAbilities.Clear();
-            abilities = abs;
             if (abs == null) return;
             abs.ForEach(DisplayAbility);
         }
 
         public void DisplayAbility(ActiveAbility ability) {
-            var abilityIcon = Instantiate(AbilityPrefab, folder);
-            abilityIcon.GetComponentInChildren<Image>().sprite = ability.Ability.Icon;
-            var hotkey = UnityUtil.FindComponentInChildrenWithTag<Text>(abilityIcon, "HotkeyText");
-            hotkey.text = ability.Hotkey.ToString();
-
-            var rect = abilityIcon.GetComponent<RectTransform>();
+            var abilityUi = Instantiate(AbilityPrefab, folder);
+            var rect = abilityUi.GetComponent<RectTransform>();
+            abilityUi.GetComponent<RenderAbility>().Render(ability);
             var offsetX = renderedAbilities.Count * (rect.rect.height + 10);
             UnityUtil.SetAnchoredPosition(rect, offsetX, 0);
-            renderedAbilities.Add(abilityIcon);
+            renderedAbilities.Add(abilityUi);
         }
 
         private void Start() {
             folder = GameObject.FindWithTag("AbilityFolder").transform;
-        }
-
-
-        private void Update() {
-            var i = 0;
-            if (abilities == null) return;
-            abilities.ForEach(ability => {
-                var cooldown = Math.Round(ability.RemainingCooldown, 1, MidpointRounding.AwayFromZero);
-                UnityUtil.FindComponentInChildrenWithTag<Text>(renderedAbilities[i], "CooldownText").text =
-                    cooldown > 0 ? cooldown.ToString("n1") : "";
-                i++;
-            });
         }
     }
 }
