@@ -42,6 +42,8 @@ namespace Control {
 
         private MovementMode currentMode;
 
+        private bool nextClickIsAttackMove;
+
         #region MouseControl
 
         public override void OnSelect() {
@@ -74,13 +76,15 @@ namespace Control {
         public override bool OnRightClick(ClickLocation click) {
             if (isDead) return false;
             Damageable damageable;
-            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : MovementMode.Move;
+            var move = nextClickIsAttackMove ? MovementMode.AttackMove : MovementMode.Move;
+            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : move;
             var setTarget = damageable == null || damageable.Targetable;
             if (setTarget && attack.SetTarget(damageable)) {
                 waypoints.Stop();
                 return true;
             }
-            waypoints.GoDirectlyTo(click.Location);
+            waypoints.GoDirectlyTo(click.Location, nextClickIsAttackMove);
+            nextClickIsAttackMove = false;
             return false;
         }
 
@@ -94,6 +98,9 @@ namespace Control {
             switch (buttonName) {
                 case "Stop":
                     waypoints.Stop();
+                    break;
+                case "Attack Move":
+                    nextClickIsAttackMove = true;
                     break;
                 default: return;
             }
@@ -161,9 +168,12 @@ namespace Control {
                     else waypoints.GoDirectlyTo(attack.GetTarget().gameObject.transform.position);
                     break;
                 case MovementMode.Move:
+                    if (agent.enabled) agent.isStopped = false;
                     if (waypoints.IsIdle()) currentMode = MovementMode.Idle;
                     break;
                 case MovementMode.AttackMove:
+                    if (agent.enabled) agent.isStopped = attack.AttackNearestTarget();
+                    if (waypoints.IsIdle()) currentMode = MovementMode.Idle;
                     break;
                 case MovementMode.Idle:
                     attack.AttackNearestTarget();

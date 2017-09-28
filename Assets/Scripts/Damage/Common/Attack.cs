@@ -27,6 +27,6 @@ namespace Damage.Common {
             return CurrentTarget;
         }
 
-        public abstract void AttackNearestTarget();
+        public abstract bool AttackNearestTarget();
     }
 }

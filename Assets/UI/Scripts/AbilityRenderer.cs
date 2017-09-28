@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using Control;
 using UnityEngine;
-using UnityEngine.UI;
 using Util;
 
 namespace UI.Scripts {

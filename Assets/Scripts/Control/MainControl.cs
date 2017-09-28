@@ -102,7 +102,7 @@ namespace Control {
                 focusedSelected.OnFocusSelect();
             }
 
-            // Revive TODO: remove ingame
+            // Revive TODO: remove
             if (Input.GetKeyDown(KeyCode.Keypad0)) {
                 selected.ForEach(controllable => {
                     var health = controllable.transform.gameObject.GetComponent<Damageable>();

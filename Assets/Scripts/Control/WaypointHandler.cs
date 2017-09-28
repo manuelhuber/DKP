@@ -7,8 +7,8 @@ using Util;
 
 namespace Control {
     public class WaypointHandler : MonoBehaviour {
-        [Header("Waypoints")] public GameObject InactiveWaypointMarkerPrefab;
-        public GameObject ActiveWaypointMarkerPrefab;
+        [Header("Waypoints")] public GameObject MoveWaypointMarkerPrefab;
+        public GameObject AttackWaypointMarkerPrefab;
         public Color WaypointLineColor;
         public float WaypointLineWidth;
         public Animator Animator;
@@ -29,10 +29,10 @@ namespace Control {
             agent.ResetPath();
         }
 
-        public void GoDirectlyTo(Vector3 location) {
+        public void GoDirectlyTo(Vector3 location, bool attackMove = false) {
             ClearWaypoints();
             AddWaypoint(location);
-            GoToNextWaypoint();
+            GoToNextWaypoint(attackMove);
         }
 
         public void DestroyCurrentWaypoint() {
@@ -45,7 +45,7 @@ namespace Control {
         /// </summary>
         public void AddWaypoint(Vector3 location) {
             GameObject marker;
-            var markerWrapper = CreateMarker(InactiveWaypointMarkerPrefab, location, out marker);
+            var markerWrapper = CreateMarker(MoveWaypointMarkerPrefab, location, out marker);
             waypoints.Add(markerWrapper);
 
             // Connect waypoint to previous waypoint
@@ -102,14 +102,15 @@ namespace Control {
         /// <summary>
         /// Makes the next waypoint the current destination
         /// </summary>
-        private void GoToNextWaypoint() {
+        private void GoToNextWaypoint(bool attackMove = false) {
             DestroyCurrentWaypoint();
             if (waypoints.Count <= 0) return;
             var next = waypoints[0];
             var nextPosition = next.transform.position;
             agent.SetDestination(nextPosition);
             GameObject foo;
-            currentDestination = CreateMarker(ActiveWaypointMarkerPrefab, nextPosition, out foo);
+            var prefab = attackMove ? AttackWaypointMarkerPrefab : MoveWaypointMarkerPrefab;
+            currentDestination = CreateMarker(prefab, nextPosition, out foo);
             var showLine = currentDestinationLineRenderer == null || currentDestinationLineRenderer.enabled;
             currentDestinationLineRenderer = foo.GetComponent<LineRenderer>();
             if (currentDestinationLineRenderer) {

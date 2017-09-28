@@ -20,9 +20,9 @@ namespace Damage.Range {
         private Damageable status;
         private Team team;
 
-        public override void AttackNearestTarget() {
+        public override bool AttackNearestTarget() {
             var alreadGotAValidTarget = CurrentTarget != null && CurrentTarget.Targetable;
-            if (alreadGotAValidTarget || !(nextAttackPossible < Time.time)) return;
+            if (alreadGotAValidTarget || !(nextAttackPossible < Time.time)) return InRange;
             var findNewTarget = nearestTarget == null
                                 || !IsInRange(nearestTarget)
                                 || !IsInLineOfSight(nearestTarget.gameObject)
@@ -34,6 +34,7 @@ namespace Damage.Range {
                 if (target != null) nearestTarget = target.GetComponent<Damageable>();
             }
             CurrentTarget = nearestTarget;
+            return InRange;
         }
 
         private void Shoot() {

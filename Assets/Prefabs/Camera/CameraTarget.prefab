@@ -244,6 +244,7 @@ MonoBehaviour:
   SelectionFillColor: {r: 1, g: 1, b: 1, a: 0.166}
   ButtonNames:
   - Stop
+  - Attack Move
   DoubleTapTime: 1
   ClickableLayers:
     serializedVersion: 2

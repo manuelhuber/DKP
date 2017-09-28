@@ -46,9 +46,10 @@ namespace Damage.Melee {
             StartCoroutine(UnityUtil.DoAfterDelay(() => meleeAttack = DefaultAttack, duration));
         }
 
-        public override void AttackNearestTarget() {
-            if (WithinRange.Count < 1) return;
+        public override bool AttackNearestTarget() {
+            if (WithinRange.Count < 1) return false;
             CurrentTarget = WithinRange.Find(d => d.Targetable);
+            return InRange;
         }
 
         protected virtual void DealDamage() {
