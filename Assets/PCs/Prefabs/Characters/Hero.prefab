@@ -275,9 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbdedf1af91f4034b0bcdf5b226c14ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
+  MoveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: abcaeb28f78dda942bc99933fdb868fd,
     type: 2}
-  ActiveWaypointMarkerPrefab: {fileID: 1164089754727880, guid: 428390a77a4809b4caa7cf78dc22fb15,
+  AttackWaypointMarkerPrefab: {fileID: 1164089754727880, guid: 428390a77a4809b4caa7cf78dc22fb15,
     type: 2}
   WaypointLineColor: {r: 0.2598884, g: 0.9191176, b: 0, a: 0}
   WaypointLineWidth: 0.05
