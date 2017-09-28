@@ -365,12 +365,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daccdcc3a5fabfa469ffaa6aa8896566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHitpoints: 1000
   HealthbarPrefab: {fileID: 1246064743388898, guid: 0d98b5ac00905194887bef3bc4a6187f,
     type: 2}
   CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
     type: 2}
-  CanvasOffsetTop: 2
+  maxHitpoints: 200
 --- !u!208 &208751857075933680
 NavMeshObstacle:
   m_ObjectHideFlags: 1
