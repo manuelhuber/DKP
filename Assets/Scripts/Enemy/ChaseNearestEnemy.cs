@@ -8,7 +8,7 @@ using Util;
 
 namespace Enemy {
     public class ChaseNearestEnemy : MonoBehaviour {
-        [Tooltip("The time in s between checking for nearer enemies ")] public float ReevaluateInterval = 2;
+        [Tooltip("The time in seconds between checking for nearer enemies ")] public float ReevaluateInterval = 1;
         private NavMeshAgent agent;
         private Attack attack;
         private Team team;
