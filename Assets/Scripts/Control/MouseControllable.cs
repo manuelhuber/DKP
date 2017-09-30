@@ -75,6 +75,6 @@ namespace Control {
             return false;
         }
 
-        public abstract void OnButton(String buttonName);
+        public abstract void OnButton(string buttonName, ClickLocation mouseLocation);
     }
 }

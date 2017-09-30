@@ -72,7 +72,7 @@ namespace Control {
             return true;
         }
 
-        private void HandleHotkeys() {
+        private void HandleHotkeys(ClickLocation click) {
             // Remove selection
             if (Input.GetKeyDown(KeyCode.Escape)) {
                 if (isSelecting) {
@@ -83,8 +83,8 @@ namespace Control {
             }
 
             foreach (var buttonName in ButtonNames) {
-                if (Input.GetButton(buttonName)) {
-                    selected.ForEach(controllable => controllable.OnButton(buttonName));
+                if (Input.GetButtonDown(buttonName)) {
+                    selected.ForEach(controllable => controllable.OnButton(buttonName, click));
                 }
             }
 
@@ -214,16 +214,16 @@ namespace Control {
         }
 
         private void Update() {
-            HandleHotkeys();
+            GameObject target;
+            ClickLocation click;
+            GetClickLocation(out target, out click);
+            HandleHotkeys(click);
 
             var rightClick = Input.GetMouseButtonUp(1);
             var leftClickDown = Input.GetMouseButtonDown(0);
             var leftClickUp = Input.GetMouseButtonUp(0);
             if (!rightClick && !leftClickDown && !leftClickUp) return;
 
-            GameObject target;
-            ClickLocation click;
-            if (!GetClickLocation(out target, out click)) return;
             if (rightClick) {
                 // Currently there is no default behaviour for right clicks so just call the handlers
                 if (Input.GetKey(Hotkeys.AddModifier)) {

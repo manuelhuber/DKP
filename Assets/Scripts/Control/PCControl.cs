@@ -42,8 +42,6 @@ namespace Control {
 
         private MovementMode currentMode;
 
-        private bool nextClickIsAttackMove;
-
         #region MouseControl
 
         public override void OnSelect() {
@@ -76,15 +74,13 @@ namespace Control {
         public override bool OnRightClick(ClickLocation click) {
             if (isDead) return false;
             Damageable damageable;
-            var move = nextClickIsAttackMove ? MovementMode.AttackMove : MovementMode.Move;
-            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : move;
+            currentMode = TargetAttackable(click.Target, out damageable) ? MovementMode.Attack : MovementMode.Move;
             var setTarget = damageable == null || damageable.Targetable;
             if (setTarget && attack.SetTarget(damageable)) {
                 waypoints.Stop();
                 return true;
             }
-            waypoints.GoDirectlyTo(click.Location, nextClickIsAttackMove);
-            nextClickIsAttackMove = false;
+            waypoints.GoDirectlyTo(click.Location);
             return false;
         }
 
@@ -94,13 +90,14 @@ namespace Control {
             return false;
         }
 
-        public override void OnButton(string buttonName) {
+        public override void OnButton(string buttonName, ClickLocation mouseLocation) {
             switch (buttonName) {
                 case "Stop":
                     waypoints.Stop();
                     break;
                 case "Attack Move":
-                    nextClickIsAttackMove = true;
+                    currentMode = MovementMode.AttackMove;
+                    waypoints.GoDirectlyTo(mouseLocation.Location, true);
                     break;
                 default: return;
             }
