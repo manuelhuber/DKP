@@ -28,7 +28,7 @@ namespace Damage.Range {
                                 || !IsInLineOfSight(nearestTarget.gameObject)
                                 || !nearestTarget.Targetable;
             if (findNewTarget) {
-                var target = TargetManager.GetEnemies(team)
+                var target = TargetManager.Instance.GetEnemies(team)
                     .Where(o => {
                         var dmg = o.GetComponent<Damageable>();
                         return dmg != null && dmg.Targetable;
@@ -47,7 +47,7 @@ namespace Damage.Range {
                 gameObject.transform.rotation);
             var script = projectile.GetComponent<Projectile>();
             script.SetTarget(CurrentTarget.gameObject);
-            script.AffectedTeams = TargetManager.GetEnemyIds(team);
+            script.AffectedTeams = TargetManager.Instance.GetEnemyIds(team);
         }
 
         private bool IsInLineOfSight(GameObject target) {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Damage.Common;
+using Generic;
 using Raid;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using Util;
 
 [Serializable]
 public class DamageInterceptor {
@@ -16,12 +16,14 @@ public class DamageInterceptor {
 
 namespace Damage {
     [RequireComponent(typeof(Team))]
-    public class Damageable : MonoBehaviour {
+    public class Damageable : DkpMonoBehaviour {
         public GameObject HealthbarPrefab;
         public GameObject CombatTextPrefab;
+        public bool Untargetable;
+
 
         public bool Targetable {
-            get { return !IsDead(); }
+            get { return !IsDead() && !Untargetable; }
         }
 
         public int MaxHitpoints {
@@ -45,6 +47,11 @@ namespace Damage {
             set { hitpoints = Mathf.Min(value, MaxHitpoints); }
         }
 
+        public void MakeUntargetableFor(float duration) {
+            Untargetable = true;
+            DoAfterDelay(() => Untargetable = false, duration);
+        }
+
         public void DisplayText(string text) {
             var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
             textObject.GetComponent<Text>().text = text;
@@ -63,7 +70,7 @@ namespace Damage {
 
         public void AddDamageInterceptorWithDuration(DamageInterceptor interceptor, float duration) {
             damageInterceptors.Add(interceptor);
-            StartCoroutine(UnityUtil.DoAfterDelay(() => RemoveDamageInterceptor(interceptor), duration));
+            DoAfterDelay(() => RemoveDamageInterceptor(interceptor), duration);
         }
 
         public void RemoveDamageInterceptor(DamageInterceptor interceptor) {
@@ -77,7 +84,7 @@ namespace Damage {
         public void Revive(int amount, float vulnerabilityDuartion) {
             if (!dead) return;
             dead = false;
-            TargetManager.AddTarget(gameObject);
+            TargetManager.Instance.AddTarget(gameObject);
             ModifyHitpoints(amount > 0 ? amount : MaxHitpoints);
             var immune = new DamageInterceptor {
                 Interceptor = (int x) => 0,
@@ -117,7 +124,7 @@ namespace Damage {
         protected virtual void Die() {
             dead = true;
             ToggleCommonComponents(false);
-            TargetManager.RemoveTarget(gameObject);
+            TargetManager.Instance.RemoveTarget(gameObject);
         }
 
         private void ToggleCommonComponents(bool value) {
@@ -137,7 +144,7 @@ namespace Damage {
         protected virtual void Start() {
             canvas = GetComponentInChildren<Canvas>().gameObject;
             AddHealthbar(GetComponentInChildren<Slider>());
-            TargetManager.AddTarget(gameObject);
+            TargetManager.Instance.AddTarget(gameObject);
         }
     }
 }
