@@ -9,10 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 661a445d4b7e43049a24291fea5845c7, type: 3}
-  m_Name: Vanish
+  m_Name: SmokeBomb
   m_EditorClassIdentifier: 
-  Icon: {fileID: 0}
-  Name: Vanish
-  Cooldown: 10
+  Icon: {fileID: 21300000, guid: f8ec6f1264d53f447982907b0b375267, type: 3}
+  Name: Smoke Bomb
+  Cooldown: 15
   Tooltip: Makes you untargetable for {{Duration}} seconds.
   Duration: 5
+  HealingAmount: 50
+  EffectPrefab: {fileID: 1889786680281242, guid: 514e68d9d3b1d41428a468f00504d380,
+    type: 2}
+  EffectDuration: 2

@@ -15,7 +15,7 @@ MonoBehaviour:
   Speed: 3.5
   Abilities: []
   AttackType: 0
-  AttackRange: 2
-  AttackIntervall: 2
+  AttackRange: 1
+  AttackIntervall: 1.5
   AttackDamage: -20
   ProjectilePrefab: {fileID: 0}
