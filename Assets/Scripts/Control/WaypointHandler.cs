@@ -18,6 +18,7 @@ namespace Control {
         private LineRenderer currentDestinationLineRenderer;
         private readonly List<GameObject> waypoints = new List<GameObject>();
         private Billboarding billboarding;
+        private bool displayWaypoints;
 
         public bool IsIdle() {
             return waypoints.Count < 1 && !agent.hasPath;
@@ -54,7 +55,6 @@ namespace Control {
             var lineRenderer = marker.GetComponent<LineRenderer>();
             lineRenderer.SetPosition(0, waypoints[waypoints.Count - 1].transform.position);
             lineRenderer.SetPosition(1, previousWaypoint.transform.position);
-            currentDestinationLineRenderer.enabled = true;
         }
 
         private static GameObject CreateMarker(GameObject prefab, Vector3 location, out GameObject marker) {
@@ -72,6 +72,7 @@ namespace Control {
         }
 
         public void ToggleWaypointRenderer(bool value) {
+            displayWaypoints = value;
             waypoints.ForEach(o => {
                 o.SetActive(value);
                 var line = o.GetComponentInChildren<LineRenderer>();
@@ -111,13 +112,12 @@ namespace Control {
             GameObject foo;
             var prefab = attackMove ? AttackWaypointMarkerPrefab : MoveWaypointMarkerPrefab;
             currentDestination = CreateMarker(prefab, nextPosition, out foo);
-            var showLine = currentDestinationLineRenderer == null || currentDestinationLineRenderer.enabled;
             currentDestinationLineRenderer = foo.GetComponent<LineRenderer>();
             if (currentDestinationLineRenderer) {
                 currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
             }
-            currentDestinationLineRenderer.enabled = showLine;
+            currentDestinationLineRenderer.enabled = displayWaypoints;
 
             Destroy(next);
             waypoints.Remove(next);
