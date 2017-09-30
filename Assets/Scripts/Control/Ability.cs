@@ -37,19 +37,24 @@ namespace Control {
         public string Tooltip;
 
         /// <summary>
-        /// 
+        /// Gets called when the player presses the associated hotkey
         /// </summary>
+        /// <param name="caster">
+        /// The game object of the caster
+        /// </param>
         /// <returns>
         /// true if this ability is done after this function call 
         /// </returns>
-        public virtual bool OnActivation(GameObject c) {
+        public virtual bool OnActivation(GameObject caster) {
             return true;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="click"></param>
+        /// <param name="click">
+        /// The click that caused the event
+        /// </param>
         /// <returns>
         /// true if this ability is done 
         /// </returns>
@@ -59,7 +64,9 @@ namespace Control {
 
         /// <summary>
         /// </summary>
-        /// <param name="click"></param>
+        /// <param name="click">
+        /// The click that caused the event
+        /// </param>
         /// <returns>
         /// true if this ability is done 
         /// </returns>
