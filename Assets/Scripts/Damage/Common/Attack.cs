@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using Generic;
 
 namespace Damage.Common {
-    public abstract class Attack : MonoBehaviour {
+    public abstract class Attack : DkpMonoBehaviour {
         public float AttackInterval;
         public virtual float Range { set; get; }
 

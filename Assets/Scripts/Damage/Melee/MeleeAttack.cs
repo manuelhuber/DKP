@@ -43,7 +43,7 @@ namespace Damage.Melee {
 
         public void ChangeAttackForDuration(Action<MeleeAttack> attack, float duration) {
             meleeAttack = attack;
-            StartCoroutine(UnityUtil.DoAfterDelay(() => meleeAttack = DefaultAttack, duration));
+            DoAfterDelay(() => meleeAttack = DefaultAttack, duration);
         }
 
         public override bool AttackNearestTarget() {
