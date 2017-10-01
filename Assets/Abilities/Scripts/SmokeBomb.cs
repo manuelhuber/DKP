@@ -11,7 +11,7 @@ namespace Abilities.Scripts {
         public float EffectDuration;
 
         public override SpellTargetingType IndicatorType {
-            get { return SpellTargetingType.Self; }
+            get { return SpellTargetingType.None; }
         }
 
         public override bool OnActivation(GameObject caster) {

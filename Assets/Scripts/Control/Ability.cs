@@ -33,13 +33,12 @@ namespace Control {
     // TODO: the lifecycle model is not great - there is some hardcoded stuff in the abilty handler and some convetion
     // that have to be upheld (like an ability can't only use the leftClickDown without consuming the clickUp aswell)
     public abstract class Ability : ScriptableObject {
-        [Header("Hotkey")] public Sprite Icon;
-        [Space] [Header("Ability")] public string Name;
-        public float Cooldown;
-        public string Tooltip;
+        [Header("Infos")] public Sprite Icon;
+        public string Name;
+        [TextArea] public string Tooltip;
         public abstract SpellTargetingType IndicatorType { get; }
-
-        public SpellTargeting SpellTargeting;
+        [Header("Targeting")] public SpellTargeting SpellTargeting;
+        [Header("Ability")] public float Cooldown;
 
         /// <summary>
         /// Gets called when the player presses the associated hotkey

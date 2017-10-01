@@ -9,7 +9,8 @@ using Util;
 namespace Editor {
     internal enum PropertyType {
         Float,
-        Object
+        Object,
+        Text
     }
 
     internal class SpellTargetProperty {
@@ -41,19 +42,13 @@ namespace Editor {
         };
 
         public override float GetPropertyHeight(SerializedProperty prop, GUIContent label) {
-            var lines = prop.isExpanded ? _count + 2 : 1;
+            var lines = prop.isExpanded ? _count : 1;
             return EditorGUIUtility.singleLineHeight * lines;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
             var parent = property.serializedObject.targetObject as Ability;
             if (parent == null) return;
-
-            var foldoutPos = new Rect(position) {height = EditorGUIUtility.singleLineHeight};
-            property.isExpanded = EditorGUI.Foldout(foldoutPos, property.isExpanded, label);
-            if (!property.isExpanded) return;
-
-            EditorGUI.indentLevel++;
 
             _count = 0;
             switch (parent.IndicatorType) {
@@ -66,16 +61,19 @@ namespace Editor {
                     break;
                 case SpellTargetingType.Line:
                     break;
+                case SpellTargetingType.None:
+                    DrawProperty(
+                        new SpellTargetProperty {Key = "This ability has no targeting", Type = PropertyType.Text},
+                        position, property);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-
-            EditorGUI.indentLevel--;
         }
 
         private static void DrawProperty(SpellTargetProperty internalProp, Rect position, SerializedProperty parent) {
             var pos = new Rect(position);
-            pos.y += ++_count * EditorGUIUtility.singleLineHeight;
+            pos.y += _count++ * EditorGUIUtility.singleLineHeight;
             pos.height = EditorGUIUtility.singleLineHeight;
             var prop = parent.FindPropertyRelative(internalProp.Key);
             switch (internalProp.Type) {
@@ -84,6 +82,9 @@ namespace Editor {
                     break;
                 case PropertyType.Object:
                     ObjectField(pos, prop);
+                    break;
+                case PropertyType.Text:
+                    GUI.Label(pos, internalProp.Key);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
