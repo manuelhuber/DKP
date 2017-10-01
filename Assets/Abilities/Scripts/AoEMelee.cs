@@ -7,6 +7,10 @@ namespace Abilities.Scripts {
         public float Duration = 10;
         public GameObject Effect;
 
+        public override RangeIndicatorType IndicatorType {
+            get { return RangeIndicatorType.Self; }
+        }
+
         public override bool OnActivation(GameObject c) {
             var melee = c.GetComponent<MeleeAttack>();
             if (melee == null) return true;

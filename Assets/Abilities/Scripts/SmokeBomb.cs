@@ -10,6 +10,10 @@ namespace Abilities.Scripts {
         public GameObject EffectPrefab;
         public float EffectDuration;
 
+        public override RangeIndicatorType IndicatorType {
+            get { return RangeIndicatorType.Self; }
+        }
+
         public override bool OnActivation(GameObject caster) {
             var damageable = caster.GetComponent<Damageable>();
             damageable.MakeUntargetableFor(Duration);

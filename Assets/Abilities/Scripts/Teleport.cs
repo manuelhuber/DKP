@@ -13,6 +13,10 @@ namespace Abilities.Scripts {
         private GameObject marker;
         private GameObject leaveMarker;
 
+        public override RangeIndicatorType IndicatorType {
+            get { return RangeIndicatorType.Point; }
+        }
+
         public override bool OnActivation(GameObject c) {
             caster = c;
             leaveMarker = Instantiate(LeavePrefab, caster.transform);

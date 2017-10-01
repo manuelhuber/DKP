@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Control {
@@ -35,6 +36,9 @@ namespace Control {
         [Space] [Header("Ability")] public string Name;
         public float Cooldown;
         public string Tooltip;
+        public abstract RangeIndicatorType IndicatorType { get; }
+        
+        public DkpRangeIndicator DkpRangeIndicator;
 
         /// <summary>
         /// Gets called when the player presses the associated hotkey

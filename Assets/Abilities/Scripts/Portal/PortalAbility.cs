@@ -18,6 +18,10 @@ namespace Abilities.Scripts.Portal {
         // 2 = setting exit portal
         private bool enterPortalSet;
 
+        public override RangeIndicatorType IndicatorType {
+            get { return RangeIndicatorType.TwoPoints; }
+        }
+
         public override bool OnActivation(GameObject c) {
             enterPortalSet = false;
             caster = c;

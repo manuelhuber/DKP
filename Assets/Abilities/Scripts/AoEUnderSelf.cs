@@ -10,6 +10,10 @@ namespace Abilities.Scripts {
     public class AoEUnderSelf : Ability {
         public AreaOfEffect AoEPrefab;
 
+        public override RangeIndicatorType IndicatorType {
+            get { return RangeIndicatorType.Self; }
+        }
+
         public override bool OnActivation(GameObject c) {
             Vector3 hitOnTerrain;
             PositionUtil.ProjectOnTerrainFromPosition(c.transform.position, out hitOnTerrain);
