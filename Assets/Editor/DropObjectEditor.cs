@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace XX_EditorScripts {
+namespace Editor {
     public class DropObjectsEditor : EditorWindow {
         public RaycastHit Hit;
         public float YOffset;
@@ -10,7 +10,7 @@ namespace XX_EditorScripts {
         public Vector3 UpVector = new Vector3(0, 90, 0);
 
         [MenuItem("Window/Drop Object")] // add menu item
-        private static void Awake() {
+        private void Awake() {
             GetWindow<DropObjectsEditor>().Show(); // Get existing open window or if none, make a new one
         }
 

@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace XX_EditorScripts {
+namespace Editor {
     public static class ScriptableObjectCreator {
         [MenuItem("Assets/Create/Instance")]
         public static void CreateInstance() {

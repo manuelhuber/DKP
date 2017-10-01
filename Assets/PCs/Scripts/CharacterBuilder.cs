@@ -18,9 +18,9 @@ namespace PCs.Scripts {
         public float Speed;
         public List<Ability> Abilities;
 
-        public AttackType AttackType;
-        public float AttackRange;
-        public float AttackIntervall;
+        [HideInInspector] public AttackType AttackType;
+        [HideInInspector] public float AttackRange;
+        [HideInInspector] public float AttackIntervall;
         [HideInInspector] public int AttackDamage;
         [HideInInspector] public GameObject ProjectilePrefab;
 
