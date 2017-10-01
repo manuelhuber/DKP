@@ -48,9 +48,9 @@ namespace Abilities.Indicators.Scripts.Components {
 
         public void RefreshIndicators() {
 // Create a list of all the splats available to the manager
-            SpellIndicators = GetComponentsInChildren<SpellIndicator>();
-            StatusIndicators = GetComponentsInChildren<StatusIndicator>();
-            RangeIndicators = GetComponentsInChildren<RangeIndicator>();
+            SpellIndicators = GetComponentsInChildren<SpellIndicator>(true);
+            StatusIndicators = GetComponentsInChildren<StatusIndicator>(true);
+            RangeIndicators = GetComponentsInChildren<RangeIndicator>(true);
 
             // Make sure each Splat has a reference to its Manager
             SpellIndicators.ToList().ForEach(x => x.Manager = this);

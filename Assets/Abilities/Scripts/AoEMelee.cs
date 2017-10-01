@@ -1,6 +1,7 @@
 ﻿using Control;
 using Damage.Melee;
 using UnityEngine;
+using Util;
 
 namespace Abilities.Scripts {
     public class AoEMelee : Ability {
@@ -14,7 +15,10 @@ namespace Abilities.Scripts {
         public override bool OnActivation(GameObject c) {
             var melee = c.GetComponent<MeleeAttack>();
             if (melee == null) return true;
+            SpellTargeting.Range = melee.Range;
+            ActivateRangeIndicator(c);
             melee.ChangeAttackForDuration(AttackEverything, Duration);
+            melee.DoAfterDelay(() => CancelTargeting(c), Duration);
             return true;
         }
 

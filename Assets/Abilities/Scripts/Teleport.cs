@@ -15,7 +15,7 @@ namespace Abilities.Scripts {
         }
 
         public override bool OnActivation(GameObject c) {
-            PointTarget(c);
+            ActivatePointTarget(c);
             casterMarker = Instantiate(LeavePrefab, c.transform);
             return false;
         }
@@ -28,13 +28,13 @@ namespace Abilities.Scripts {
             var waypoints = caster.GetComponent<WaypointHandler>();
             if (waypoints != null) waypoints.DestroyCurrentWaypoint();
 
-            CancelTargeting(SpellTargeting.TargetPrefab, caster);
+            CancelTargeting(caster);
 
             return true;
         }
 
         public override void OnCancel(GameObject caster) {
-            CancelTargeting(SpellTargeting.TargetPrefab, caster);
+            CancelTargeting(caster);
             Destroy(casterMarker);
         }
 

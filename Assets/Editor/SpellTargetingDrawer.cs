@@ -20,6 +20,8 @@ namespace Editor {
 
     [CustomPropertyDrawer(typeof(SpellTargeting))]
     public class SpellTargetingDrawer : PropertyDrawer {
+        private static float padding = 2;
+
         private static readonly SpellTargetProperty TargetPrefab =
             new SpellTargetProperty {Key = "TargetPrefab", Type = PropertyType.Object};
 
@@ -41,9 +43,13 @@ namespace Editor {
             Range,
         };
 
+        private static readonly List<SpellTargetProperty> SelfAttributes = new List<SpellTargetProperty> {
+            RangePrefab,
+            Range,
+        };
+
         public override float GetPropertyHeight(SerializedProperty prop, GUIContent label) {
-            var lines = prop.isExpanded ? _count : 1;
-            return EditorGUIUtility.singleLineHeight * lines;
+            return (EditorGUIUtility.singleLineHeight + padding) * _count;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
@@ -53,6 +59,7 @@ namespace Editor {
             _count = 0;
             switch (parent.IndicatorType) {
                 case SpellTargetingType.Self:
+                    SelfAttributes.ForEach(att => DrawProperty(att, position, property));
                     break;
                 case SpellTargetingType.Point:
                     PointAttributes.ForEach(att => DrawProperty(att, position, property));
@@ -73,7 +80,7 @@ namespace Editor {
 
         private static void DrawProperty(SpellTargetProperty internalProp, Rect position, SerializedProperty parent) {
             var pos = new Rect(position);
-            pos.y += _count++ * EditorGUIUtility.singleLineHeight;
+            pos.y += _count++ * (EditorGUIUtility.singleLineHeight + padding);
             pos.height = EditorGUIUtility.singleLineHeight;
             var prop = parent.FindPropertyRelative(internalProp.Key);
             switch (internalProp.Type) {

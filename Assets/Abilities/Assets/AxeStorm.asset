@@ -13,11 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: dd3edafb3bcaaef40b17fa10b40d9919, type: 3}
   Name: Axestorm
-  Cooldown: 20
   Tooltip: Your melee attacks hit all enemies within range for {{Duration}} seconds.
-  DkpRangeIndicator:
-    IndicatorPrefab: {fileID: 0}
-    IndicatorSize: 0
-    Range: 0
-  Duration: 10
+  SpellTargeting:
+    TargetPrefab: {fileID: 0}
+    TargetSize: 0
+    RangePrefab: {fileID: 178182, guid: 93627fbdd94f74340831c5b44c9bcb8d, type: 2}
+    Range: 1
+  Cooldown: 1
+  Duration: 2
   Effect: {fileID: 1234274649833954, guid: f24cb29031b2b0e4d867cc9972749b06, type: 2}

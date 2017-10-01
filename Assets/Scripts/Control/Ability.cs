@@ -41,6 +41,21 @@ namespace Control {
         [Header("Ability")] public float Cooldown;
 
         /// <summary>
+        /// Easy access to range
+        /// </summary>
+        public float Range {
+            get { return SpellTargeting.Range; }
+        }
+
+        private string TargetName {
+            get { return name + "Target"; }
+        }
+
+        private string RangeName {
+            get { return name + "Range"; }
+        }
+
+        /// <summary>
         /// Gets called when the player presses the associated hotkey
         /// </summary>
         /// <param name="caster">
@@ -84,34 +99,71 @@ namespace Control {
         public virtual void OnUpdate(GameObject caster) {
         }
 
-        protected void PointTarget(GameObject caster) {
+        protected void ActivatePointTarget(GameObject caster) {
             var splat = caster.GetComponentInChildren<SplatManager>();
-            var pointName = name + "Point";
-            if (splat.SelectSpellIndicator(pointName) != null) return;
-            var marker = Instantiate(SpellTargeting.TargetPrefab, splat.gameObject.transform);
-            marker.name = pointName;
-            var point = marker.GetComponent<Point>();
-            point.Range = SpellTargeting.Range;
-            point.RangeIndicator = GetRangeIndicator(caster);
-            point.Scale = SpellTargeting.TargetSize;
-            splat.RefreshIndicators();
-            splat.SelectSpellIndicator(pointName);
+            DoActivateTargetIndicator(splat);
         }
 
-        protected void CancelTargeting(GameObject prefab, GameObject caster) {
+        protected void ActivateRange(GameObject caster) {
             var splat = caster.GetComponentInChildren<SplatManager>();
+            DoActivateRange(splat);
+        }
+
+        protected void CancelTargeting(GameObject caster) {
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            DoCancelTargeting(splat, caster);
+        }
+
+        protected void ActivateRangeIndicator(GameObject caster) {
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            DoActivateRange(splat);
+        }
+
+        private void DoActivateTargetIndicator(SplatManager splat) {
+            var point = GetTargetIndicator(splat);
+            point.RangeIndicator = DoGetRangeIndicator(splat);
+            splat.RefreshIndicators();
+            splat.SelectSpellIndicator(TargetName);
+        }
+
+        private void DoActivateRange(SplatManager splat) {
+            DoGetRangeIndicator(splat);
+            splat.RefreshIndicators();
+            splat.SelectRangeIndicator(RangeName);
+        }
+
+        private void DoCancelTargeting(SplatManager splat, GameObject caster) {
             splat.CancelSpellIndicator();
             splat.CancelRangeIndicator();
             splat.CancelStatusIndicator();
         }
 
-        protected RangeIndicator GetRangeIndicator(GameObject caster) {
-            var splat = caster.GetComponentInChildren<SplatManager>();
-            var rangeName = name + "Range";
-            var range = splat.GetRangeIndicator(rangeName);
+        /// <summary>
+        /// Returns the existing target indicator or creates one - the splat manager is not updated!
+        /// </summary>
+        private SpellIndicator GetTargetIndicator(SplatManager splat) {
+            var spellIndicator = splat.GetSpellIndicator(TargetName);
+            if (spellIndicator != null) return spellIndicator;
+
+            // Create new one
+            var marker = Instantiate(SpellTargeting.TargetPrefab, splat.gameObject.transform);
+            marker.name = TargetName;
+            spellIndicator = marker.GetComponent<SpellIndicator>();
+            spellIndicator.Range = SpellTargeting.Range;
+            spellIndicator.Scale = SpellTargeting.TargetSize;
+            return spellIndicator;
+        }
+
+        /// <summary>
+        /// Returns the existing range indicator or creates one - the splat manager is not updated!
+        /// </summary>
+        private RangeIndicator DoGetRangeIndicator(SplatManager splat) {
+            var range = splat.GetRangeIndicator(RangeName);
             if (range != null) return range;
+
+            // Create new one
             var rangeObject = Instantiate(SpellTargeting.RangePrefab, splat.gameObject.transform);
-            rangeObject.name = rangeName;
+            rangeObject.name = RangeName;
             range = rangeObject.GetComponent<RangeIndicator>();
             range.Scale = SpellTargeting.Range;
             return range;
