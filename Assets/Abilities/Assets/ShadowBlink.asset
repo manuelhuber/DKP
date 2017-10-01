@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 564140a737f71e148ad11bf5ec7f5f6b, type: 3}
   Name: Shadow Step
-  Cooldown: 10
+  Cooldown: 1
   Tooltip: Teleports you up to {{DkpRangeIndicator.Range}} meter.
   SpellTargeting:
-    IndicatorPrefab: {fileID: 167794, guid: e8d038476a8dad643b8e87791868999b, type: 2}
-    RangePrefab: {fileID: 0}
-    IndicatorSize: 0
-    Range: 1
+    TargetPrefab: {fileID: 118330, guid: b2ee7a54062d06848b6e1eefd07adea3, type: 2}
+    TargetSize: 1
+    RangePrefab: {fileID: 178182, guid: 3bddd2c8dcf208d45b1e1e06c5aec4ec, type: 2}
+    Range: 10
   LeavePrefab: {fileID: 1511496998307470, guid: 95172804ce5a7154f9c12aacc17d6bdf,
     type: 2}
