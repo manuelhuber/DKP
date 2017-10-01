@@ -38,6 +38,7 @@ namespace Abilities.Scripts.Portal {
                 enterPortal.AddComponent<EnterPortal>().Exit = exitPortal;
                 Destroy(enterPortal, Duration);
                 Destroy(exitPortal, Duration);
+                CancelTargeting(caster);
                 return true;
             }
         }

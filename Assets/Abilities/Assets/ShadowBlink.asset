@@ -16,7 +16,7 @@ MonoBehaviour:
   Tooltip: Teleports you up to {{Range}} meter.
   SpellTargeting:
     TargetPrefab: {fileID: 118330, guid: b2ee7a54062d06848b6e1eefd07adea3, type: 2}
-    TargetSize: 1
+    TargetSize: 2
     RangePrefab: {fileID: 178182, guid: 3bddd2c8dcf208d45b1e1e06c5aec4ec, type: 2}
     Range: 10
   Cooldown: 1
