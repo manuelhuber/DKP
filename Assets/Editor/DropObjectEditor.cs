@@ -10,7 +10,7 @@ namespace Editor {
         public Vector3 UpVector = new Vector3(0, 90, 0);
 
         [MenuItem("Window/Drop Object")] // add menu item
-        private void Awake() {
+        private static void Awake() {
             GetWindow<DropObjectsEditor>().Show(); // Get existing open window or if none, make a new one
         }
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Werewolf.StatusIndicators.Components;
 using System.Collections.Generic;
+using Abilities.Indicators.Scripts.Components;
 using UnityEngine.UI;
 
 namespace Werewolf.StatusIndicators.Demo {

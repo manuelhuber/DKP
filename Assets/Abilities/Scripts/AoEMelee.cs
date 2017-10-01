@@ -7,8 +7,8 @@ namespace Abilities.Scripts {
         public float Duration = 10;
         public GameObject Effect;
 
-        public override RangeIndicatorType IndicatorType {
-            get { return RangeIndicatorType.Self; }
+        public override SpellTargetingType IndicatorType {
+            get { return SpellTargetingType.Self; }
         }
 
         public override bool OnActivation(GameObject c) {

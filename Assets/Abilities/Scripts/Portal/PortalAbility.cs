@@ -10,28 +10,24 @@ namespace Abilities.Scripts.Portal {
         public float PortalDistance;
         public float Duration;
 
-        private GameObject caster;
         private GameObject enterPortal;
         private GameObject exitPortal;
 
-        // 1 = setting enter portal
-        // 2 = setting exit portal
         private bool enterPortalSet;
 
-        public override RangeIndicatorType IndicatorType {
-            get { return RangeIndicatorType.TwoPoints; }
+        public override SpellTargetingType IndicatorType {
+            get { return SpellTargetingType.TwoPoints; }
         }
 
         public override bool OnActivation(GameObject c) {
             enterPortalSet = false;
-            caster = c;
             enterPortal = Instantiate(EnterPortalPrefab);
-            enterPortal.transform.position = EnterPortalPosition();
+            enterPortal.transform.position = EnterPortalPosition(c);
             exitPortal = null;
             return false;
         }
 
-        public override bool OnLeftClickUp(ClickLocation click) {
+        public override bool OnLeftClickUp(ClickLocation click, GameObject caster) {
             if (!enterPortalSet) {
                 enterPortalSet = true;
                 exitPortal = Instantiate(ExitPortalPrefab);
@@ -44,23 +40,22 @@ namespace Abilities.Scripts.Portal {
             return true;
         }
 
-        public override void OnCancel() {
+        public override void OnCancel(GameObject caster) {
             Destroy(enterPortal);
             Destroy(exitPortal);
-            caster = null;
         }
 
-        public override void OnUpdate() {
-            if (!enterPortalSet && enterPortal != null) enterPortal.transform.position = EnterPortalPosition();
-            else if (enterPortalSet && exitPortal != null) exitPortal.transform.position = ExitPortalPosition();
+        public override void OnUpdate(GameObject caster) {
+            if (!enterPortalSet && enterPortal != null) enterPortal.transform.position = EnterPortalPosition(caster);
+            else if (enterPortalSet && exitPortal != null) exitPortal.transform.position = ExitPortalPosition(caster);
         }
 
-        public Vector3 EnterPortalPosition() {
-            return PositionUtil.GetValidNavMeshPosition(caster.transform.position, CastingDistance);
+        public Vector3 EnterPortalPosition(GameObject caster) {
+            return PositionUtil.GetValidNavMeshPositionFromCursor(caster.transform.position, CastingDistance);
         }
 
-        public Vector3 ExitPortalPosition() {
-            return PositionUtil.GetValidNavMeshPosition(enterPortal.transform.position, PortalDistance);
+        public Vector3 ExitPortalPosition(GameObject caster) {
+            return PositionUtil.GetValidNavMeshPositionFromCursor(enterPortal.transform.position, PortalDistance);
         }
     }
 }

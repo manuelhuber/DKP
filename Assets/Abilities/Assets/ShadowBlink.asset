@@ -14,8 +14,11 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 564140a737f71e148ad11bf5ec7f5f6b, type: 3}
   Name: Shadow Step
   Cooldown: 10
-  Tooltip: Teleports you up to {{Distance}} meter.
-  Distance: 10
-  MarkerPrefab: {fileID: 100000, guid: 7b56cd9b663f23f429e131a54ec87db0, type: 2}
+  Tooltip: Teleports you up to {{DkpRangeIndicator.Range}} meter.
+  SpellTargeting:
+    IndicatorPrefab: {fileID: 167794, guid: e8d038476a8dad643b8e87791868999b, type: 2}
+    RangePrefab: {fileID: 0}
+    IndicatorSize: 0
+    Range: 1
   LeavePrefab: {fileID: 1511496998307470, guid: 95172804ce5a7154f9c12aacc17d6bdf,
     type: 2}

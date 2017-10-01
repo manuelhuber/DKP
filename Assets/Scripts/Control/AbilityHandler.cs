@@ -16,7 +16,7 @@ namespace Control {
             set {
                 abilityRenderer.DisplayAbilities(value ? abilities : null);
                 if (!value) {
-                    if (activeAbility != null) activeAbility.Ability.OnCancel();
+                    if (activeAbility != null) activeAbility.Ability.OnCancel(gameObject);
                     activeAbility = null;
                 }
                 active = value;
@@ -31,14 +31,14 @@ namespace Control {
             // Not active or no active ability -> do nothing
             if (!active || activeAbility == null) return false;
             // By convention the ability can't end on a click down
-            activeAbility.Ability.OnLeftClickDown(click);
+            activeAbility.Ability.OnLeftClickDown(click, gameObject);
             // if there's an active ability always return true to prevent the selection-box from startin
             return true;
         }
 
         public bool OnLeftClickUp(ClickLocation click) {
             if (!active || activeAbility == null) return false;
-            var abilityDone = activeAbility.Ability.OnLeftClickUp(click);
+            var abilityDone = activeAbility.Ability.OnLeftClickUp(click, gameObject);
             if (!abilityDone) return true;
             activeAbility.RemainingCooldown = activeAbility.Ability.Cooldown;
             activeAbility = null;
@@ -48,18 +48,18 @@ namespace Control {
         private void Update() {
             ReduceCooldowns();
             if (!active) return;
-            if (activeAbility != null) activeAbility.Ability.OnUpdate();
+            if (activeAbility != null) activeAbility.Ability.OnUpdate(gameObject);
 
             // Check cancel
             if (Input.GetKey(KeyCode.Escape) && activeAbility != null) {
-                activeAbility.Ability.OnCancel();
+                activeAbility.Ability.OnCancel(gameObject);
                 activeAbility = null;
             }
 
             var newActiveAbility = CheckAbilityActivation();
             if (newActiveAbility == null) return;
             // cancel previous active ability 
-            if (activeAbility != null) activeAbility.Ability.OnCancel();
+            if (activeAbility != null) activeAbility.Ability.OnCancel(gameObject);
             activeAbility = newActiveAbility;
 
             if (!activeAbility.Ability.OnActivation(gameObject)) return;

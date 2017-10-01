@@ -1,63 +1,54 @@
-﻿using Control;
+﻿using Abilities.Indicators.Scripts.Components;
+using Control;
 using UnityEngine;
 using UnityEngine.AI;
 using Util;
+using Werewolf.StatusIndicators.Components;
 
 namespace Abilities.Scripts {
     public class Teleport : Ability {
-        public float Distance;
-        public GameObject MarkerPrefab;
         public GameObject LeavePrefab;
 
-        private GameObject caster;
-        private GameObject marker;
-        private GameObject leaveMarker;
+        private GameObject casterMarker;
 
-        public override RangeIndicatorType IndicatorType {
-            get { return RangeIndicatorType.Point; }
+        public override SpellTargetingType IndicatorType {
+            get { return SpellTargetingType.Point; }
         }
 
         public override bool OnActivation(GameObject c) {
-            caster = c;
-            leaveMarker = Instantiate(LeavePrefab, caster.transform);
-            marker = Instantiate(MarkerPrefab, caster.transform, false);
-            marker.transform.position = WarpLocation();
+            PointTarget(c);
+            casterMarker = Instantiate(LeavePrefab, c.transform);
             return false;
         }
 
-        public override void OnUpdate() {
-            if (caster == null) {
-                if (marker != null) Destroy(marker);
-                return;
-            }
-            if (marker != null) marker.transform.position = WarpLocation();
-        }
+        public override bool OnLeftClickUp(ClickLocation click, GameObject caster) {
+            DestroyCasterMarkerAnimated();
 
-        public override bool OnLeftClickUp(ClickLocation click) {
-            if (caster == null) return false;
-            var agent = caster.GetComponent<NavMeshAgent>();
-            if (agent == null) return false;
-            leaveMarker.transform.SetParent(null, true);
-            agent.Warp(WarpLocation());
-            Destroy(marker);
-            leaveMarker.GetComponent<Animator>().SetTrigger("Die");
-            Destroy(leaveMarker, 0.5f);
+            caster.GetComponent<NavMeshAgent>().Warp(WarpLocation(caster));
 
             var waypoints = caster.GetComponent<WaypointHandler>();
-            if (waypoints != null) {
-                waypoints.DestroyCurrentWaypoint();
-            }
+            if (waypoints != null) waypoints.DestroyCurrentWaypoint();
+
+            CancelTargeting(SpellTargeting.TargetPrefab, caster);
+
             return true;
         }
 
-        public override void OnCancel() {
-            Destroy(marker);
-            Destroy(leaveMarker);
-            caster = null;
+        public override void OnCancel(GameObject caster) {
+            CancelTargeting(SpellTargeting.TargetPrefab, caster);
+            Destroy(casterMarker);
         }
 
-        private Vector3 WarpLocation() {
-            return PositionUtil.GetValidNavMeshPosition(caster.transform.position, Distance);
+        private static Vector3 WarpLocation(GameObject caster) {
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            var warpLocation = PositionUtil.ClosesNavMeshPosition(splat.GetSpellCursorPosition());
+            return warpLocation;
+        }
+
+        private void DestroyCasterMarkerAnimated() {
+            casterMarker.transform.SetParent(null, true);
+            casterMarker.GetComponent<Animator>().SetTrigger("Die");
+            Destroy(casterMarker, 0.5f);
         }
     }
 }

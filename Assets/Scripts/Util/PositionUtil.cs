@@ -107,7 +107,7 @@ namespace Util {
         /// The maximum distance that the position can be away from the starting position
         /// </param>
         /// <returns></returns>
-        public static Vector3 GetValidNavMeshPosition(Vector3 startingPos, float maxDistance) {
+        public static Vector3 GetValidNavMeshPositionFromCursor(Vector3 startingPos, float maxDistance) {
             GameObject go;
             Vector3 location;
             GetCursorLocation(out go, out location, 0);
@@ -115,6 +115,12 @@ namespace Util {
             var newPosition = startingPos + Vector3.ClampMagnitude(direction, maxDistance);
             NavMeshHit navMeshHit;
             NavMesh.SamplePosition(newPosition, out navMeshHit, 100, -1);
+            return navMeshHit.position;
+        }
+
+        public static Vector3 ClosesNavMeshPosition(Vector3 pos) {
+            NavMeshHit navMeshHit;
+            NavMesh.SamplePosition(pos, out navMeshHit, 100, -1);
             return navMeshHit.position;
         }
 

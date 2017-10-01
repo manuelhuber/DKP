@@ -3,6 +3,7 @@ using Werewolf.StatusIndicators.Components;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Collections;
+using Abilities.Indicators.Scripts.Components;
 
 namespace Werewolf.StatusIndicators.Demo {
 	public class CharacterDemo1 : MonoBehaviour {

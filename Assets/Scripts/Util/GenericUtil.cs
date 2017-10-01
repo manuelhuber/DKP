@@ -1,4 +1,7 @@
-﻿namespace Util {
+﻿using System;
+using System.Linq.Expressions;
+
+namespace Util {
     public static class GenericUtil {
         public static object GetPropValue(this object obj, string name) {
             foreach (var part in name.Split('.')) {

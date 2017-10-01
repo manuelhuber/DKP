@@ -1,6 +1,8 @@
 using System;
+using Abilities.Indicators.Scripts.Components;
 using UnityEditor;
 using UnityEngine;
+using Werewolf.StatusIndicators.Components;
 
 namespace Control {
     /// <summary>
@@ -36,9 +38,9 @@ namespace Control {
         [Space] [Header("Ability")] public string Name;
         public float Cooldown;
         public string Tooltip;
-        public abstract RangeIndicatorType IndicatorType { get; }
-        
-        public DkpRangeIndicator DkpRangeIndicator;
+        public abstract SpellTargetingType IndicatorType { get; }
+
+        public SpellTargeting SpellTargeting;
 
         /// <summary>
         /// Gets called when the player presses the associated hotkey
@@ -62,7 +64,7 @@ namespace Control {
         /// <returns>
         /// true if this ability is done 
         /// </returns>
-        public virtual bool OnLeftClickDown(ClickLocation click) {
+        public virtual bool OnLeftClickDown(ClickLocation click, GameObject caster) {
             return false;
         }
 
@@ -74,14 +76,33 @@ namespace Control {
         /// <returns>
         /// true if this ability is done 
         /// </returns>
-        public virtual bool OnLeftClickUp(ClickLocation click) {
+        public virtual bool OnLeftClickUp(ClickLocation click, GameObject caster) {
             return true;
         }
 
-        public virtual void OnCancel() {
+        public virtual void OnCancel(GameObject caster) {
         }
 
-        public virtual void OnUpdate() {
+        public virtual void OnUpdate(GameObject caster) {
+        }
+
+        protected void PointTarget(GameObject caster) {
+            var prefab = SpellTargeting.TargetPrefab;
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            if (splat.SelectSpellIndicator(name)) return;
+            var marker = Instantiate(prefab, splat.gameObject.transform);
+            marker.name = name;
+            var iuIndicator = marker.GetComponent<SpellIndicator>();
+            iuIndicator.Range = SpellTargeting.Range;
+            splat.RefreshIndicators();
+            splat.SelectSpellIndicator(name);
+        }
+
+        protected void CancelTargeting(GameObject prefab, GameObject caster) {
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            splat.CancelSpellIndicator();
+            splat.CancelRangeIndicator();
+            splat.CancelStatusIndicator();
         }
     }
 }
