@@ -112,13 +112,14 @@ namespace Control {
             abilities.enabled = false;
         }
 
-        private void CheckForRevive() {
+        private bool CheckForRevive() {
             isDead = health.IsDead();
-            if (isDead) return;
+            if (isDead) return false;
             agent.enabled = true;
             attack.enabled = true;
             animator.SetTrigger("Revive");
             abilities.enabled = true;
+            return true;
         }
 
         private bool TargetAttackable(GameObject target, out Damageable damageable) {
@@ -156,7 +157,7 @@ namespace Control {
         }
 
         private void Update() {
-            if (isDead) CheckForRevive();
+            if (isDead && !CheckForRevive()) return;
             CheckForDeath();
             switch (currentMode) {
                 case MovementMode.Attack:
