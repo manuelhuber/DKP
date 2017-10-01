@@ -3,7 +3,6 @@ using Control;
 using UnityEngine;
 using UnityEngine.AI;
 using Util;
-using Werewolf.StatusIndicators.Components;
 
 namespace Abilities.Scripts {
     public class Teleport : Ability {

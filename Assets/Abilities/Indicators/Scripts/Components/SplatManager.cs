@@ -87,10 +87,10 @@ namespace Abilities.Indicators.Scripts.Components {
         /// <summary>
         /// Select and make visible the Spell Indicator given by name.
         /// </summary>
-        public bool SelectSpellIndicator(string splatName) {
+        public SpellIndicator SelectSpellIndicator(string splatName) {
             CancelSpellIndicator();
-            SpellIndicator indicator = GetSpellIndicator(splatName);
-            if (indicator == null) return false;
+            var indicator = GetSpellIndicator(splatName);
+            if (indicator == null) return null;
 
             if (indicator.RangeIndicator != null) {
                 indicator.RangeIndicator.gameObject.SetActive(true);
@@ -100,29 +100,29 @@ namespace Abilities.Indicators.Scripts.Components {
             indicator.gameObject.SetActive(true);
             indicator.OnShow();
             CurrentSpellIndicator = indicator;
-            return true;
+            return CurrentSpellIndicator;
         }
 
         /// <summary>
         /// Select and make visible the Status Indicator given by name.
         /// </summary>
-        public bool SelectStatusIndicator(string splatName) {
+        public StatusIndicator SelectStatusIndicator(string splatName) {
             CancelStatusIndicator();
-            StatusIndicator indicator = GetStatusIndicator(splatName);
-            if (indicator == null) return false;
+            var indicator = GetStatusIndicator(splatName);
+            if (indicator == null) return null;
             indicator.gameObject.SetActive(true);
             indicator.OnShow();
             CurrentStatusIndicator = indicator;
-            return true;
+            return CurrentStatusIndicator;
         }
 
         /// <summary>
         /// Select and make visible the Range Indicator given by name.
         /// </summary>
-        public bool SelectRangeIndicator(string splatName) {
+        public RangeIndicator SelectRangeIndicator(string splatName) {
             CancelRangeIndicator();
-            RangeIndicator indicator = GetRangeIndicator(splatName);
-            if (indicator == null) return false;
+            var indicator = GetRangeIndicator(splatName);
+            if (indicator == null) return null;
 
             // If current spell indicator uses same Range indicator then cancel it.
             if (CurrentSpellIndicator != null && CurrentSpellIndicator.RangeIndicator == indicator) {
@@ -132,7 +132,7 @@ namespace Abilities.Indicators.Scripts.Components {
             indicator.gameObject.SetActive(true);
             indicator.OnShow();
             CurrentRangeIndicator = indicator;
-            return true;
+            return CurrentRangeIndicator;
         }
 
         /// <summary>

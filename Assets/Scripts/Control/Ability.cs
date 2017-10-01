@@ -1,6 +1,5 @@
 using System;
 using Abilities.Indicators.Scripts.Components;
-using UnityEditor;
 using UnityEngine;
 using Werewolf.StatusIndicators.Components;
 
@@ -87,15 +86,17 @@ namespace Control {
         }
 
         protected void PointTarget(GameObject caster) {
-            var prefab = SpellTargeting.TargetPrefab;
             var splat = caster.GetComponentInChildren<SplatManager>();
-            if (splat.SelectSpellIndicator(name)) return;
-            var marker = Instantiate(prefab, splat.gameObject.transform);
-            marker.name = name;
-            var iuIndicator = marker.GetComponent<SpellIndicator>();
-            iuIndicator.Range = SpellTargeting.Range;
+            var pointName = name + "Point";
+            if (splat.SelectSpellIndicator(pointName) != null) return;
+            var marker = Instantiate(SpellTargeting.TargetPrefab, splat.gameObject.transform);
+            marker.name = pointName;
+            var point = marker.GetComponent<Point>();
+            point.Range = SpellTargeting.Range;
+            point.RangeIndicator = GetRangeIndicator(caster);
+            point.Scale = SpellTargeting.TargetSize;
             splat.RefreshIndicators();
-            splat.SelectSpellIndicator(name);
+            splat.SelectSpellIndicator(pointName);
         }
 
         protected void CancelTargeting(GameObject prefab, GameObject caster) {
@@ -103,6 +104,18 @@ namespace Control {
             splat.CancelSpellIndicator();
             splat.CancelRangeIndicator();
             splat.CancelStatusIndicator();
+        }
+
+        protected RangeIndicator GetRangeIndicator(GameObject caster) {
+            var splat = caster.GetComponentInChildren<SplatManager>();
+            var rangeName = name + "Range";
+            var range = splat.GetRangeIndicator(rangeName);
+            if (range != null) return range;
+            var rangeObject = Instantiate(SpellTargeting.RangePrefab, splat.gameObject.transform);
+            rangeObject.name = rangeName;
+            range = rangeObject.GetComponent<RangeIndicator>();
+            range.Scale = SpellTargeting.Range;
+            return range;
         }
     }
 }
