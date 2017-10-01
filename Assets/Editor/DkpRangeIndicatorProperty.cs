@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using Control;
 using UnityEditor;
 using UnityEngine;
+using Util;
 
 namespace Editor {
     [CustomPropertyDrawer(typeof(DkpRangeIndicator))]
     public class DkpRangeIndicatorProperty : PropertyDrawer {
         private const string IndicatorPrefab = "IndicatorPrefab";
         private const string Range = "Range";
+        private const string IndicatorSize = "IndicatorSize";
         private static int _count;
 
         private static readonly List<string> PointAttributes = new List<string> {
+            Range,
             IndicatorPrefab,
-            Range
+            IndicatorSize
         };
 
         public override float GetPropertyHeight(SerializedProperty prop, GUIContent label) {
@@ -26,16 +29,15 @@ namespace Editor {
             var parent = property.serializedObject.targetObject as Ability;
             if (parent == null) return;
 
-            property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, label);
+            var foldoutPos = new Rect(position) {height = EditorGUIUtility.singleLineHeight};
+            property.isExpanded = EditorGUI.Foldout(foldoutPos, property.isExpanded, label);
             if (!property.isExpanded) return;
 
-            EditorGUI.BeginProperty(position, label, property);
             EditorGUI.indentLevel++;
 
             _count = 0;
             switch (parent.IndicatorType) {
                 case RangeIndicatorType.Self:
-                    Debug.Log("Self");
                     break;
                 case RangeIndicatorType.Point:
                     PointAttributes.ForEach(att => DrawProperty(att, position, property));
@@ -49,14 +51,31 @@ namespace Editor {
             }
 
             EditorGUI.indentLevel--;
-            EditorGUI.EndProperty();
         }
 
-        private static void DrawProperty(string propertyName, Rect position, SerializedProperty property) {
+        private static void DrawProperty(string propertyName, Rect position, SerializedProperty parent) {
             var pos = new Rect(position);
             pos.y += ++_count * EditorGUIUtility.singleLineHeight;
             pos.height = EditorGUIUtility.singleLineHeight;
-            EditorGUI.PropertyField(pos, property.FindPropertyRelative(propertyName));
+            var prop = parent.FindPropertyRelative(propertyName);
+            switch (propertyName) {
+                case Range:
+                case IndicatorSize:
+                    FloatField(pos, prop);
+                    break;
+                case IndicatorPrefab:
+                    ObjectField(pos, prop);
+                    break;
+            }
+        }
+
+
+        private static void FloatField(Rect pos, SerializedProperty prop) {
+            prop.floatValue = EditorGUI.FloatField(pos, new GUIContent(prop.displayName), prop.floatValue);
+        }
+
+        private static void ObjectField(Rect pos, SerializedProperty prop) {
+            EditorGUI.ObjectField(pos, prop);
         }
     }
 }
