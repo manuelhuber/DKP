@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 11458064}
   - component: {fileID: 11981980}
   m_Layer: 0
-  m_Name: RangeBasic 1
+  m_Name: RangeRedTransparent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 4.5
-  m_Material: {fileID: 2100000, guid: c8bdd1e0c6ae80341a27d1f9162f86fc, type: 2}
+  m_Material: {fileID: 2100000, guid: ca746789b2af8f348b694d1326109650, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 1

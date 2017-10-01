@@ -15,7 +15,8 @@ namespace Abilities.Scripts {
         public override bool OnActivation(GameObject c) {
             var melee = c.GetComponent<MeleeAttack>();
             if (melee == null) return true;
-            SpellTargeting.Range = melee.Range;
+            // Overwriting the asset is bad practices, but whatever
+            SpellTargeting.Range = melee.ColliderRadius * 2;
             ActivateRangeIndicator(c);
             melee.ChangeAttackForDuration(AttackEverything, Duration);
             melee.DoAfterDelay(() => CancelTargeting(c), Duration);

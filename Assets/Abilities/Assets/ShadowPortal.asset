@@ -13,9 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 895118e94c1d84f42a0b7f8d321a12c6, type: 3}
   Name: Nether Portal
-  Cooldown: 30
   Tooltip: Create an entrance and exit portal that teleports all units that enter
     for {{Duration}} seconds.
+  SpellTargeting:
+    TargetPrefab: {fileID: 118330, guid: b2ee7a54062d06848b6e1eefd07adea3, type: 2}
+    TargetSize: 0
+    RangePrefab: {fileID: 133056, guid: a10150de6b639e7478298d4b3b65bd9c, type: 2}
+    Range: 10
+  Cooldown: 30
   EnterPortalPrefab: {fileID: 1459791855920822, guid: 4a6d2b930ffb6fa438f400b8fc706555,
     type: 2}
   ExitPortalPrefab: {fileID: 1459791855920822, guid: 46caa258509c2e04c8112dc54bd4822d,

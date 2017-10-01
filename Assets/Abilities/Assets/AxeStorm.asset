@@ -17,8 +17,8 @@ MonoBehaviour:
   SpellTargeting:
     TargetPrefab: {fileID: 0}
     TargetSize: 0
-    RangePrefab: {fileID: 178182, guid: 93627fbdd94f74340831c5b44c9bcb8d, type: 2}
-    Range: 1
-  Cooldown: 1
-  Duration: 2
+    RangePrefab: {fileID: 178182, guid: ac01267dfa3647843b0d0c107119b777, type: 2}
+    Range: 3
+  Cooldown: 20
+  Duration: 10
   Effect: {fileID: 1234274649833954, guid: f24cb29031b2b0e4d867cc9972749b06, type: 2}

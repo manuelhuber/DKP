@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RangeBasic
+  m_Name: RangeRedTransparent
   m_Shader: {fileID: 4800000, guid: 2f3a255de5843884e8ccb4c66cb6ddca, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -61,5 +61,5 @@ Material:
     m_Colors:
     - _ChargeColor: {r: 0.11724138, g: 1, b: 0, a: 1}
     - _FillColor: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 0, b: 0, a: 0.472}
     - _SecondaryColor: {r: 0, g: 0, b: 0, a: 0.95000017}

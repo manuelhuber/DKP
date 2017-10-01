@@ -166,6 +166,7 @@ namespace Control {
             rangeObject.name = RangeName;
             range = rangeObject.GetComponent<RangeIndicator>();
             range.Scale = SpellTargeting.Range;
+            range.DefaultScale = SpellTargeting.Range;
             return range;
         }
     }

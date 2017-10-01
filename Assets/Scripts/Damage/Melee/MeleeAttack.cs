@@ -17,6 +17,10 @@ namespace Damage.Melee {
             }
         }
 
+        public float ColliderRadius {
+            get { return rangeCollider.radius; }
+        }
+
         public override bool InRange {
             get { return CurrentTarget != null && WithinRange.Contains(CurrentTarget); }
         }
