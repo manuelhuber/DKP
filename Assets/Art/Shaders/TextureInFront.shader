@@ -8,11 +8,13 @@
 Shader "Custome/TextureInFront" {
 Properties {
     _MainTex ("Base (RGB)", 2D) = "white" {}
+    _Color ("Color", Color) = (1,1,1,1)
 }
 
 SubShader {
-    Tags { "RenderType"="Opaque" }
-    LOD 100
+    Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+    Blend SrcAlpha OneMinusSrcAlpha
+    Cull Off
     ZTest always
     Pass {
         CGPROGRAM
@@ -35,9 +37,10 @@ SubShader {
                 UNITY_FOG_COORDS(1)
                 UNITY_VERTEX_OUTPUT_STEREO
             };
-
+            
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            fixed4 _Color;
 
             v2f vert (appdata_t v)
             {
@@ -52,11 +55,10 @@ SubShader {
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.texcoord);
-                UNITY_APPLY_FOG(i.fogCoord, col);
-                UNITY_OPAQUE_ALPHA(col.a);
+                fixed4 col = _Color;
                 return col;
             }
+            
         ENDCG
     }
 }
