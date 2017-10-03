@@ -26,6 +26,8 @@ namespace Editor {
 
             if (builder.AttackType == AttackType.Melee) {
                 builder.AttackDamage = EditorGUILayout.IntField("Melee Damage", builder.AttackDamage);
+                builder.MeleeAnimationOffset =
+                    EditorGUILayout.FloatField("Melee Animation Offse", builder.MeleeAnimationOffset);
             } else {
                 builder.ProjectilePrefab = (GameObject) EditorGUILayout.ObjectField("Projectile Prefab",
                     builder.ProjectilePrefab, typeof(GameObject), true);

@@ -36,14 +36,19 @@ namespace Damage.Melee {
         }
 
         public readonly List<Damageable> WithinRange = new List<Damageable>();
+        public float AnimationOffset;
+
+        [SerializeField] private float range;
+
         private Action<MeleeAttack> defaultAttack = MeleeAttackVariants.SingleTargetDamage;
+        private Action<MeleeAttack> meleeAttack;
 
         private float nextAttackPossible;
-        private Action<MeleeAttack> meleeAttack;
+        private bool attackAnimationInProgress;
+
         private Animator animator;
         private CapsuleCollider rangeCollider;
         private Team team;
-        [SerializeField] private float range;
 
         public void ChangeAttackForDuration(Action<MeleeAttack> attack, float duration) {
             meleeAttack = attack;
@@ -59,7 +64,7 @@ namespace Damage.Melee {
         protected virtual void DealDamage() {
             meleeAttack(this);
             if (animator == null) return;
-            animator.SetTrigger("Attack");
+            attackAnimationInProgress = false;
         }
 
         /// <summary>
@@ -92,6 +97,12 @@ namespace Damage.Melee {
             rangeCollider.height = (float) colliderHeight;
         }
 
+        protected virtual void CheckAnimation() {
+            if (attackAnimationInProgress || !(nextAttackPossible - AnimationOffset < Time.time)) return;
+            attackAnimationInProgress = true;
+            animator.SetTrigger("Attack");
+        }
+
         #region UnityLifecycle
 
         private void Awake() {
@@ -101,13 +112,15 @@ namespace Damage.Melee {
         }
 
         private void Start() {
-            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag);
+            animator = UnityUtil.FindComponentInChildrenWithTag<Animator>(gameObject, PcControl.PlayerAnimationTag) ??
+                       GetComponent<Animator>();
             team = GetComponent<Team>();
         }
 
         private void Update() {
-            if (CurrentTarget == null || !InRange || !(nextAttackPossible < Time.time)) return;
-
+            if (CurrentTarget == null || !InRange) return;
+            CheckAnimation();
+            if (!(nextAttackPossible < Time.time)) return;
             if (!CurrentTarget.Targetable) {
                 CurrentTarget = null;
                 return;

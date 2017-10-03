@@ -22,6 +22,7 @@ namespace PCs.Scripts {
         [HideInInspector] public float AttackRange;
         [HideInInspector] public float AttackIntervall;
         [HideInInspector] public int AttackDamage;
+        [HideInInspector] public float MeleeAnimationOffset;
         [HideInInspector] public GameObject ProjectilePrefab;
 
         public GameObject MakeHero(GameObject hero) {
@@ -42,6 +43,7 @@ namespace PCs.Scripts {
             if (AttackType == AttackType.Melee) {
                 attack = hero.AddComponent<MeleeAttack>();
                 ((MeleeAttack) attack).AttackDamage = AttackDamage;
+                ((MeleeAttack) attack).AnimationOffset = MeleeAnimationOffset;
             } else {
                 attack = hero.AddComponent<RangeAttack>();
                 ((RangeAttack) attack).ProjectilePrefab = ProjectilePrefab;
