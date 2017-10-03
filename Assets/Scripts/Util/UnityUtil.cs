@@ -11,8 +11,7 @@ namespace Util {
         /// Returns the component only from children with a specific tag. If multiple children are found the first one is chosen
         /// </summary>
         public static T FindComponentInChildrenWithTag<T>(GameObject parent, string tag) where T : Component {
-            var all = parent.GetComponentsInChildren<T>().ToList().Where(o => o.CompareTag(tag)).ToList();
-            return all.Count == 0 ? null : all.First();
+            return parent.GetComponentsInChildren<T>().ToList().FirstOrDefault(o => o.CompareTag(tag));
         }
 
         /// <summary>
