@@ -97,7 +97,12 @@ namespace Damage.Melee {
             rangeCollider.height = (float) colliderHeight;
         }
 
-        protected virtual void CheckAnimation() {
+        protected virtual void Animate() {
+            var lookPos = CurrentTarget.transform.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+
             if (attackAnimationInProgress || !(nextAttackPossible - AnimationOffset < Time.time)) return;
             attackAnimationInProgress = true;
             animator.SetTrigger("Attack");
@@ -119,7 +124,7 @@ namespace Damage.Melee {
 
         private void Update() {
             if (CurrentTarget == null || !InRange) return;
-            CheckAnimation();
+            Animate();
             if (!(nextAttackPossible < Time.time)) return;
             if (!CurrentTarget.Targetable) {
                 CurrentTarget = null;
