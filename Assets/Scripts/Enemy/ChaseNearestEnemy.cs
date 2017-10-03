@@ -13,9 +13,11 @@ namespace Enemy {
         private Attack attack;
         private Team team;
         private float nextEnemyCheck;
+        private Animator animator;
 
         private void Update() {
             if (NotActive()) return;
+            if (animator != null) animator.SetFloat("Speed", agent.velocity.magnitude);
             if (nextEnemyCheck <= Time.time) {
                 attack.SetTarget(
                     TargetManager.Instance.GetValidEnemyTargets(team)
@@ -38,6 +40,7 @@ namespace Enemy {
             agent = GetComponent<NavMeshAgent>();
             attack = GetComponent<Attack>();
             team = GetComponent<Team>();
+            animator = GetComponent<Animator>();
         }
     }
 }

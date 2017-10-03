@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Control;
 using Damage.Common;
 using PCs.Scripts;
@@ -28,7 +29,7 @@ namespace Raid {
 
         private void Awake() {
             folder = new GameObject {name = "PCs"};
-            Heroes.ForEach(h => SpawnHero(h, 1));
+            Heroes.Take(PcCount).ToList().ForEach(h => SpawnHero(h, 1));
         }
 
         private void SpawnHero(Hero hero, int amount) {
