@@ -29,7 +29,9 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
             nextAttack = Time.time + attackTimeIntervall;
             endTime = startTime + Duration;
             mat = gameObject.GetComponent<Projector>().material;
-            Caster.GetComponent<Animator>().SetTrigger("Slash");
+            var animator = Caster.GetComponent<Animator>();
+            animator.SetTrigger("Slash");
+            animator.ResetTrigger("Attack");
             Caster.PauseBehaviour(true);
         }
 
