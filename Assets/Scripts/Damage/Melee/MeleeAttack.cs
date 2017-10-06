@@ -138,7 +138,7 @@ namespace Damage.Melee {
 
         private void OnTriggerEnter(Collider other) {
             var dmg = other.gameObject.GetComponent<Damageable>();
-            if (dmg == null || team.SameTeam(dmg.gameObject)) return;
+            if (dmg == null || team.SameTeam(dmg.gameObject) || WithinRange.Contains(dmg)) return;
             WithinRange.Add(dmg);
         }
 
