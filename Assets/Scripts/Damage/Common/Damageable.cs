@@ -132,6 +132,8 @@ namespace Damage {
             if (agent != null) agent.enabled = value;
             var attack = GetComponent<Attack>();
             if (attack != null) attack.enabled = value;
+            var body = GetComponent<Rigidbody>();
+            if (body != null) body.isKinematic = !value;
         }
 
         private void Awake() {
