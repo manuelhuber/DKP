@@ -20,7 +20,6 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
         public void PauseBehaviour(bool value) {
             meleeAttack.StopAttack = value;
             agent.isStopped = value;
-            Debug.Log("Toggling: " + value);
         }
 
 
