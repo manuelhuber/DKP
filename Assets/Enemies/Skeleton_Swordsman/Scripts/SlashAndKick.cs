@@ -35,12 +35,17 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
         }
 
         private void Update() {
-            if (nextAttack <= Time.time && hitNumber < HitOffset.Length) {
-                targets.ForEach(damageable => damageable.ModifyHitpoints(DmgPerHit));
-                nextAttack = Time.time + HitOffset[hitNumber++];
-            }
             AnimateIndicator();
-            if (!(endTime <= Time.time)) return;
+            if (nextAttack <= Time.time && hitNumber < HitOffset.Length) Slash();
+            if (endTime <= Time.time) Kick();
+        }
+
+        private void Slash() {
+            targets.ForEach(damageable => damageable.ModifyHitpoints(DmgPerHit));
+            nextAttack = Time.time + HitOffset[hitNumber++];
+        }
+
+        private void Kick() {
             targets.ForEach(damageable => {
                 var body = damageable.gameObject.GetComponent<Rigidbody>();
                 if (body == null) return;
@@ -57,10 +62,7 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
         }
 
         private void OnTriggerExit(Collider other) {
-            var damageable = other.gameObject.GetComponent<Damageable>();
-            if (targets.Contains(damageable)) {
-                targets.Remove(damageable);
-            }
+            targets.Remove(other.gameObject.GetComponent<Damageable>());
         }
 
         private void OnTriggerEnter(Collider other) {
