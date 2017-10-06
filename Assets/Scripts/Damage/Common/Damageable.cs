@@ -17,8 +17,10 @@ public class DamageInterceptor {
 namespace Damage {
     [RequireComponent(typeof(Team))]
     public class Damageable : DkpMonoBehaviour {
-        public GameObject HealthbarPrefab;
+        public GameObject CanvasPrefab;
         public GameObject CombatTextPrefab;
+        public float CanvasOffsetTop = 1.5f;
+        public int CanvasWidth = 75;
         public bool Untargetable;
 
 
@@ -96,10 +98,9 @@ namespace Damage {
 
         public void ModifyHitpoints(int initialAmount) {
             if (dead) return;
-            var orderedInterceptors = damageInterceptors.OrderBy(interceptor => interceptor.Order);
-
-            var amount =
-                orderedInterceptors.Aggregate(initialAmount, (acc, interceptor) => interceptor.Interceptor(acc));
+            var amount = damageInterceptors
+                .OrderBy(interceptor => interceptor.Order)
+                .Aggregate(initialAmount, (acc, interceptor) => interceptor.Interceptor(acc));
             if (amount == 0) return;
             Hitpoints += amount;
             healthbars.ForEach(bar => bar.value = Hitpoints);
@@ -115,6 +116,30 @@ namespace Damage {
         /// Can be overriden to allow custom code on hit
         /// </summary>
         protected virtual void OnHit(int amount) {
+        }
+
+        private void InitCanvas() {
+            // Create a new local canvas that's attached to this gameobject
+            canvas = Instantiate(CanvasPrefab, gameObject.transform, false);
+
+            var rectTransform = canvas.GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(CanvasWidth, rectTransform.sizeDelta[1]);
+
+//            canvas = new GameObject {name = "UnitCanvas"};
+//            canvas.transform.SetParent(transform, false);
+//            canvas.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
+
+            var transformPosition = canvas.transform.localPosition;
+            transformPosition.y = CanvasOffsetTop;
+            canvas.transform.localPosition = transformPosition;
+
+//            var canvasComponent = canvas.AddComponent<Canvas>();
+//            canvasComponent.sortingOrder = 1000;
+
+            // Make the canvas face the camera
+//            canvas.AddComponent<Billboarding>();
+
+            AddHealthbar(canvas.GetComponentInChildren<Slider>());
         }
 
 
@@ -144,8 +169,7 @@ namespace Damage {
         /// Generates a local canvas above the gameobject for healthbar and combat text
         /// </summary>
         protected virtual void Start() {
-            canvas = GetComponentInChildren<Canvas>().gameObject;
-            AddHealthbar(GetComponentInChildren<Slider>());
+            InitCanvas();
             TargetManager.Instance.AddTarget(gameObject);
         }
     }

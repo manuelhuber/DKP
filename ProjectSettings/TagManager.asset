@@ -9,6 +9,7 @@ TagManager:
   - PlayerAnimation
   - AvatarFolder
   - AbilityFolder
+  - DebuffFolder
   layers:
   - Default
   - TransparentFX

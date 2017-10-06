@@ -13,36 +13,35 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
         public int DmgPerHit;
         public float KnockbackForce;
         public int[] AffectedTeams;
-        public GameObject Caster;
-        public float[] HitOffset;
+        public SkeletonSwordmanController Caster;
 
         private float startTime;
         private float endTime;
         private float nextAttack;
+        private float attackTimeIntervall;
         private readonly List<Damageable> targets = new List<Damageable>();
         private Material mat;
-        private int hitNumber;
         private MeleeAttack casterMelee;
 
         private void Start() {
             startTime = Time.time;
-            nextAttack = Time.time + HitOffset[hitNumber++];
+            attackTimeIntervall = Duration / NumberOfHits;
+            nextAttack = Time.time + attackTimeIntervall;
             endTime = startTime + Duration;
             mat = gameObject.GetComponent<Projector>().material;
             Caster.GetComponent<Animator>().SetTrigger("Slash");
-            casterMelee = Caster.GetComponent<MeleeAttack>();
-            casterMelee.enabled = false;
+            Caster.PauseBehaviour(true);
         }
 
         private void Update() {
             AnimateIndicator();
-            if (nextAttack <= Time.time && hitNumber < HitOffset.Length) Slash();
+            if (nextAttack <= Time.time) Slash();
             if (endTime <= Time.time) Kick();
         }
 
         private void Slash() {
             targets.ForEach(damageable => damageable.ModifyHitpoints(DmgPerHit));
-            nextAttack = Time.time + HitOffset[hitNumber++];
+            nextAttack = Time.time + attackTimeIntervall;
         }
 
         private void Kick() {
@@ -52,8 +51,11 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
                 var dir = body.gameObject.transform.position - Caster.transform.position;
                 body.AddForce(dir * KnockbackForce, ForceMode.Impulse);
             });
-            casterMelee.enabled = true;
             Destroy(gameObject);
+        }
+
+        private void OnDestroy() {
+            Caster.PauseBehaviour(false);
         }
 
         private void AnimateIndicator() {

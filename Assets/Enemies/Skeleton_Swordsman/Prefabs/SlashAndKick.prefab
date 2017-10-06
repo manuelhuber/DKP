@@ -67,15 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 2.2
-  NumberOfHits: 3
-  DmgPerHit: -15
-  KnockbackForce: 200
+  NumberOfHits: 4
+  DmgPerHit: -1
+  KnockbackForce: 150
   AffectedTeams: 00000000
   Caster: {fileID: 0}
-  HitOffset:
-  - 0.24
-  - 0.28
-  - 0.52
 --- !u!114 &114992102434510682
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -38,6 +38,8 @@ namespace Damage.Melee {
         public readonly List<Damageable> WithinRange = new List<Damageable>();
         public float AnimationOffset;
 
+        public bool StopAttack;
+
         [SerializeField] private float range;
 
         private Action<MeleeAttack> defaultAttack = MeleeAttackVariants.SingleTargetDamage;
@@ -123,9 +125,9 @@ namespace Damage.Melee {
         }
 
         private void Update() {
-            if (CurrentTarget == null || !InRange) return;
+            if (CurrentTarget == null || !InRange || StopAttack) return;
             Animate();
-            if (!(nextAttackPossible < Time.time)) return;
+            if (nextAttackPossible > Time.time) return;
             if (!CurrentTarget.Targetable) {
                 CurrentTarget = null;
                 return;
@@ -141,9 +143,7 @@ namespace Damage.Melee {
         }
 
         private void OnTriggerExit(Collider other) {
-            var dmg = other.gameObject.GetComponent<Damageable>();
-            if (dmg == null) return;
-            WithinRange.Remove(dmg);
+            WithinRange.Remove(other.gameObject.GetComponent<Damageable>());
         }
 
         #endregion
