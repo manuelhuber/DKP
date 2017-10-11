@@ -9,7 +9,8 @@ namespace Control {
     public class WaypointHandler : MonoBehaviour {
         [Header("Waypoints")] [SerializeField] private GameObject moveWaypointMarkerPrefab;
         [SerializeField] private GameObject attackWaypointMarkerPrefab;
-        public Color WaypointLineColor;
+        public Color MoveWaypointLineColor;
+        public Color AttackWaypointLineColor;
         public float WaypointLineWidth;
         public Animator Animator;
 
@@ -53,6 +54,8 @@ namespace Control {
             var previousWaypoint = waypoints.Count < 2 ? currentDestination : waypoints[waypoints.Count - 2];
             if (previousWaypoint == null) return;
             var lineRenderer = marker.GetComponent<LineRenderer>();
+//            lineRenderer.material = new Material(lineRenderer.material) {color = WaypointLineColor};
+            lineRenderer.material.color = MoveWaypointLineColor;
             lineRenderer.SetPosition(0, waypoints[waypoints.Count - 1].transform.position);
             lineRenderer.SetPosition(1, previousWaypoint.transform.position);
         }
@@ -113,6 +116,8 @@ namespace Control {
             var prefab = attackMove ? attackWaypointMarkerPrefab : moveWaypointMarkerPrefab;
             currentDestination = CreateMarker(prefab, nextPosition, out foo);
             currentDestinationLineRenderer = foo.GetComponent<LineRenderer>();
+            currentDestinationLineRenderer.material.color =
+                attackMove ? AttackWaypointLineColor : MoveWaypointLineColor;
             if (currentDestinationLineRenderer) {
                 currentDestinationLineRenderer.SetPosition(0, currentDestination.transform.position);
                 currentDestinationLineRenderer.SetPosition(1, transform.position);
