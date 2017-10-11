@@ -35,8 +35,10 @@ namespace Damage.Melee {
             }
         }
 
-        public readonly List<Damageable> WithinRange = new List<Damageable>();
         public float AnimationOffset;
+        public string AttackAnimationTrigger = "Attack";
+
+        public readonly List<Damageable> WithinRange = new List<Damageable>();
 
         public bool StopAttack;
 
@@ -107,7 +109,7 @@ namespace Damage.Melee {
 
             if (attackAnimationInProgress || !(nextAttackPossible - AnimationOffset < Time.time)) return;
             attackAnimationInProgress = true;
-            animator.SetTrigger("Attack");
+            animator.SetTrigger(AttackAnimationTrigger);
         }
 
         #region UnityLifecycle
@@ -144,6 +146,7 @@ namespace Damage.Melee {
 
         private void OnTriggerExit(Collider other) {
             WithinRange.Remove(other.gameObject.GetComponent<Damageable>());
+            if (!InRange) animator.ResetTrigger(AttackAnimationTrigger);
         }
 
         #endregion

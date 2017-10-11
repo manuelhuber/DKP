@@ -7,8 +7,8 @@ using Util;
 
 namespace Control {
     public class WaypointHandler : MonoBehaviour {
-        [Header("Waypoints")] public GameObject MoveWaypointMarkerPrefab;
-        public GameObject AttackWaypointMarkerPrefab;
+        [Header("Waypoints")] [SerializeField] private GameObject moveWaypointMarkerPrefab;
+        [SerializeField] private GameObject attackWaypointMarkerPrefab;
         public Color WaypointLineColor;
         public float WaypointLineWidth;
         public Animator Animator;
@@ -46,7 +46,7 @@ namespace Control {
         /// </summary>
         public void AddWaypoint(Vector3 location) {
             GameObject marker;
-            var markerWrapper = CreateMarker(MoveWaypointMarkerPrefab, location, out marker);
+            var markerWrapper = CreateMarker(moveWaypointMarkerPrefab, location, out marker);
             waypoints.Add(markerWrapper);
 
             // Connect waypoint to previous waypoint
@@ -110,7 +110,7 @@ namespace Control {
             var nextPosition = next.transform.position;
             agent.SetDestination(nextPosition);
             GameObject foo;
-            var prefab = attackMove ? AttackWaypointMarkerPrefab : MoveWaypointMarkerPrefab;
+            var prefab = attackMove ? attackWaypointMarkerPrefab : moveWaypointMarkerPrefab;
             currentDestination = CreateMarker(prefab, nextPosition, out foo);
             currentDestinationLineRenderer = foo.GetComponent<LineRenderer>();
             if (currentDestinationLineRenderer) {

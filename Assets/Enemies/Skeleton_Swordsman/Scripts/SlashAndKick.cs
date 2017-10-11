@@ -31,7 +31,6 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
             mat = gameObject.GetComponent<Projector>().material;
             var animator = Caster.GetComponent<Animator>();
             animator.SetTrigger("Slash");
-            animator.ResetTrigger("Attack");
             Caster.PauseBehaviour(true);
         }
 

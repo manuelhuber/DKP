@@ -13,10 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: f8ec6f1264d53f447982907b0b375267, type: 3}
   Name: Smoke Bomb
-  Cooldown: 15
   Tooltip: Makes you untargetable for {{Duration}} seconds.
+  SpellTargeting:
+    TargetPrefab: {fileID: 0}
+    TargetSize: 0
+    RangePrefab: {fileID: 0}
+    Range: 0
+  Cooldown: 15
   Duration: 5
   HealingAmount: 50
-  EffectPrefab: {fileID: 1889786680281242, guid: 514e68d9d3b1d41428a468f00504d380,
-    type: 2}
   EffectDuration: 2
+  effectPrefab: {fileID: 1889786680281242, guid: 514e68d9d3b1d41428a468f00504d380,
+    type: 2}
