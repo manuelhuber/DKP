@@ -200,7 +200,8 @@ MonoBehaviour:
     type: 2}
   attackWaypointMarkerPrefab: {fileID: 1164089754727880, guid: 428390a77a4809b4caa7cf78dc22fb15,
     type: 2}
-  WaypointLineColor: {r: 0.2598884, g: 0.9191176, b: 0, a: 0}
+  MoveWaypointLineColor: {r: 0.0344826, g: 1, b: 0, a: 0.541}
+  AttackWaypointLineColor: {r: 1, g: 0, b: 0, a: 0.541}
   WaypointLineWidth: 0.05
   Animator: {fileID: 0}
 --- !u!114 &114798815986694532
