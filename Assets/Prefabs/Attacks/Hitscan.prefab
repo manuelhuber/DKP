@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37441c3dc46e4b5caed286d8b6634e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: -10
+  AffectedTeams: 
+  Damage: 10
+  Range: 100

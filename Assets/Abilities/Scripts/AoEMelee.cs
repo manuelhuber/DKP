@@ -25,7 +25,7 @@ namespace Abilities.Scripts {
 
         public void AttackEverything(MeleeAttack attack) {
             Destroy(Instantiate(Effect, attack.gameObject.transform), attack.AttackInterval / 2);
-            attack.WithinRange.ForEach(damageable => damageable.ModifyHitpoints(attack.AttackDamage));
+            attack.WithinRange.ForEach(damageable => damageable.Damage(attack.AttackDamage));
         }
     }
 }

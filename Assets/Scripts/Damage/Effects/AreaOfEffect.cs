@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Damage.Effects {
     public class AreaOfEffect : Effect {
-        public int Amount;
+        public int Damage;
         public float Intervall;
         public int Lifetime;
 
@@ -21,7 +21,7 @@ namespace Damage.Effects {
         private void Update() {
             if (!(nextTime <= Time.time)) return;
             nextTime = Time.time + Intervall;
-            affected.ForEach(target => target.ModifyHitpoints(Amount));
+            affected.ForEach(target => target.Damage(Damage));
         }
 
         private void OnTriggerEnter(Collider other) {

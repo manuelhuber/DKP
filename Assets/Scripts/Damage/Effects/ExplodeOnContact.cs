@@ -11,7 +11,7 @@ namespace Damage.Effects {
         private void OnTriggerEnter(Collider other) {
             var team = other.gameObject.GetComponent<Team>();
             if (team == null || !AffectedTeams.Contains(team.TeamId)) return;
-            other.gameObject.GetComponent<Damageable>().ModifyHitpoints(Damage);
+            other.gameObject.GetComponent<Damageable>().Damage(Damage);
             if (exploding) return;
             gameObject.GetComponent<SphereCollider>().radius = Radius;
             Destroy(gameObject, 0.1f);

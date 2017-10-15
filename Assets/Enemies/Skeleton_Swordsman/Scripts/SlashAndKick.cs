@@ -41,7 +41,7 @@ namespace Enemies.Skeleton_Swordsman.Scripts {
         }
 
         private void Slash() {
-            targets.ForEach(damageable => damageable.ModifyHitpoints(DmgPerHit));
+            targets.ForEach(damageable => damageable.Damage(DmgPerHit));
             nextAttack = Time.time + attackTimeIntervall;
         }
 

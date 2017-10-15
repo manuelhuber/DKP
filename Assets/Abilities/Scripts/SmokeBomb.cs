@@ -17,7 +17,7 @@ namespace Abilities.Scripts {
         public override bool OnActivation(GameObject caster) {
             var damageable = caster.GetComponent<Damageable>();
             damageable.MakeUntargetableFor(Duration);
-            damageable.ModifyHitpoints(HealingAmount);
+            damageable.Heal(HealingAmount);
             Destroy(Instantiate(effectPrefab, caster.transform.position, Quaternion.identity), EffectDuration);
             return true;
         }

@@ -87,13 +87,21 @@ namespace Damage {
             if (!dead) return;
             dead = false;
             TargetManager.Instance.AddTarget(gameObject);
-            ModifyHitpoints(amount > 0 ? amount : MaxHitpoints);
+            Heal(amount > 0 ? amount : MaxHitpoints);
             var immune = new DamageInterceptor {
                 Interceptor = (int x) => 0,
                 Order = 1
             };
             AddDamageInterceptorWithDuration(immune, vulnerabilityDuartion);
             ToggleCommonComponents(true);
+        }
+
+        public void Heal(int amount) {
+            ModifyHitpoints(amount);
+        }
+
+        public void Damage(int amount) {
+            ModifyHitpoints(-amount);
         }
 
         /// <summary>

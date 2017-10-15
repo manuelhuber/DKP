@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Duration: 2.2
   NumberOfHits: 4
-  DmgPerHit: -1
+  DmgPerHit: 1
   KnockbackForce: 150
   AffectedTeams: 00000000
   Caster: {fileID: 0}

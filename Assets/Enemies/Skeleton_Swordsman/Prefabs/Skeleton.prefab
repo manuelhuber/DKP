@@ -1775,10 +1775,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa8f41b4c6f1004ba0685cd0ae13d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasPrefab: {fileID: 1724744743405062, guid: 8d1ecddc8f6b7ef4fad613516a8ff998,
-    type: 2}
-  CombatTextPrefab: {fileID: 1171010767140262, guid: 27890d926f1e07742ac85e312dcba900,
-    type: 2}
+  canvasPrefab: {fileID: 0}
+  combatTextPrefab: {fileID: 0}
   CanvasOffsetTop: 4
   CanvasWidth: 75
   Untargetable: 0
@@ -1819,8 +1817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackInterval: 1
-  AttackDamage: -10
+  AttackDamage: 10
   AnimationOffset: 0.1
+  AttackAnimationTrigger: Attack
   StopAttack: 0
   range: 1
 --- !u!114 &114609531230494254

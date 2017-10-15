@@ -5,7 +5,7 @@ using Util;
 
 namespace Damage.Range {
     public class HitscanProjectile : Projectile {
-        [Tooltip("Positive numbers heal, negative numbers deal damage")] public int Damage;
+        public int Damage;
         public float Range = 100;
 
         private void Shoot() {
@@ -14,7 +14,7 @@ namespace Damage.Range {
                 var dmg = hit.transform.gameObject.GetComponent<Damageable>();
                 var team = hit.transform.gameObject.GetComponent<Team>();
                 if (dmg == null || !AffectedTeams.Contains(team.TeamId)) continue;
-                dmg.ModifyHitpoints(Damage);
+                dmg.Damage(Damage);
                 break;
             }
 

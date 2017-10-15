@@ -8,7 +8,7 @@ namespace Damage.Melee {
     /// </summary>
     public class MeleeAttackVariants {
         public static void SingleTargetDamage(MeleeAttack attack) {
-            attack.GetTarget().ModifyHitpoints(attack.AttackDamage);
+            attack.GetTarget().Damage(attack.AttackDamage);
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Damage.Melee {
                 if (!PositionUtil.Facing(attack.GetTarget().gameObject.transform, attack.gameObject.transform)) {
                     dmg = (int) (dmg * factor);
                 }
-                attack.GetTarget().ModifyHitpoints(dmg);
+                attack.GetTarget().Damage(dmg);
             };
         }
     }

@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AffectedTeams: 01000000
   Radius: 3
-  Damage: -8
+  Damage: 8
 --- !u!114 &114522112217538844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180b0b6bac0a33f4f861536dfbd3932b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AffectedTeams: 
   Speed: 10
 --- !u!135 &135581353385681192
 SphereCollider:
