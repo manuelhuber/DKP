@@ -6,6 +6,7 @@ using Generic;
 using Raid;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 [Serializable]
@@ -17,12 +18,11 @@ public class DamageInterceptor {
 namespace Damage {
     [RequireComponent(typeof(Team))]
     public class Damageable : DkpMonoBehaviour {
-        public GameObject CanvasPrefab;
-        public GameObject CombatTextPrefab;
+        [SerializeField] private GameObject canvasPrefab;
+        [SerializeField] private GameObject combatTextPrefab;
         public float CanvasOffsetTop = 1.5f;
         public int CanvasWidth = 75;
         public bool Untargetable;
-
 
         public bool Targetable {
             get { return !IsDead() && !Untargetable; }
@@ -55,7 +55,7 @@ namespace Damage {
         }
 
         public void DisplayText(string text) {
-            var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
+            var textObject = Instantiate(combatTextPrefab, canvas.transform, false);
             textObject.GetComponent<Text>().text = text;
             Destroy(textObject, 3);
         }
@@ -96,6 +96,15 @@ namespace Damage {
             ToggleCommonComponents(true);
         }
 
+        /// <summary>
+        /// Damage or heal the target.
+        /// Negative numbers deal damage
+        /// Positive numbers heal
+        /// The amount will be modified depending on the units damage modifiers
+        /// </summary>
+        /// <param name="initialAmount">
+        /// The unmodified amount
+        /// </param>
         public void ModifyHitpoints(int initialAmount) {
             if (dead) return;
             var amount = damageInterceptors
@@ -104,7 +113,7 @@ namespace Damage {
             if (amount == 0) return;
             Hitpoints += amount;
             healthbars.ForEach(bar => bar.value = Hitpoints);
-            var textObject = Instantiate(CombatTextPrefab, canvas.transform, false);
+            var textObject = Instantiate(combatTextPrefab, canvas.transform, false);
             textObject.GetComponent<Text>().text = amount.ToString();
             textObject.GetComponent<Animator>().SetTrigger(amount < 0 ? "Hit" : "Heal");
             Destroy(textObject, 3);
@@ -113,31 +122,23 @@ namespace Damage {
         }
 
         /// <summary>
-        /// Can be overriden to allow custom code on hit
+        /// Can be overriden to allow custom code when receiving damage or heal
         /// </summary>
         protected virtual void OnHit(int amount) {
         }
 
         private void InitCanvas() {
             // Create a new local canvas that's attached to this gameobject
-            canvas = Instantiate(CanvasPrefab, gameObject.transform, false);
+            canvas = Instantiate(canvasPrefab, gameObject.transform, false);
 
+            // Set width
             var rectTransform = canvas.GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(CanvasWidth, rectTransform.sizeDelta[1]);
 
-//            canvas = new GameObject {name = "UnitCanvas"};
-//            canvas.transform.SetParent(transform, false);
-//            canvas.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
-
+            // Change vertical position
             var transformPosition = canvas.transform.localPosition;
             transformPosition.y = CanvasOffsetTop;
             canvas.transform.localPosition = transformPosition;
-
-//            var canvasComponent = canvas.AddComponent<Canvas>();
-//            canvasComponent.sortingOrder = 1000;
-
-            // Make the canvas face the camera
-//            canvas.AddComponent<Billboarding>();
 
             AddHealthbar(canvas.GetComponentInChildren<Slider>());
         }
@@ -163,13 +164,13 @@ namespace Damage {
 
         private void Awake() {
             Hitpoints = MaxHitpoints;
+            InitCanvas();
         }
 
         /// <summary>
         /// Generates a local canvas above the gameobject for healthbar and combat text
         /// </summary>
         protected virtual void Start() {
-            InitCanvas();
             TargetManager.Instance.AddTarget(gameObject);
         }
     }
